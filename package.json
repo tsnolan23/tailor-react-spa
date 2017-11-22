@@ -4,7 +4,10 @@
   "description": "mosaic-tailor-react-example",
   "main": "index.js",
   "scripts": {
-    "start": "node tailor.js"
+    "start": "node tailor.js",
+    "install-fragment-dependencies": "lerna bootstrap",
+    "build-fragments": "lerna run build",
+    "start-fragments": "lerna run start"
   },
   "repository": {
     "type": "git",
