@@ -1,0 +1,15 @@
+.contact {
+    display: flex;
+    flex: 1;
+    box-sizing: border-box;
+    min-width: 25%;
+    max-width: 25%;
+    height: 250px;
+    padding: 10px;
+    cursor: pointer;
+    .contact-details {
+        flex: 1;
+        border-radius: 3px;
+        background: #d8dee9;
+    }
+}

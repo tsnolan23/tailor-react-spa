@@ -1,0 +1,29 @@
+{
+  "name": "mosaic-tailor-react-example",
+  "version": "1.0.0",
+  "description": "mosaic-tailor-react-example",
+  "main": "index.js",
+  "scripts": {
+    "start": "node tailor.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tsnolan23/mosaic-tailor-react-example.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/tsnolan23/mosaic-tailor-react-example/issues"
+  },
+  "homepage": "https://github.com/tsnolan23/mosaic-tailor-react-example#readme",
+  "devDependencies": {
+    "babel-eslint": "^8.0.2",
+    "eslint": "^4.11.0",
+    "eslint-import-resolver-webpack": "^0.8.3",
+    "eslint-plugin-import": "^2.8.0",
+    "eslint-plugin-react": "^7.5.1",
+    "lerna": "^2.5.1",
+    "node-tailor": "^3.4.0",
+    "webpack": "^3.8.1"
+  }
+}
