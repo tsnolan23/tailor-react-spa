@@ -1,4 +1,4 @@
-# Mosaic Tailor React Example
+# Tailor React Single-Page Application
 
 This repo is an example application using the Mosaic frontend microservices architecture. Since the idea is that a separate team would be in charge of each of the fragments, there is some duplicate code within each of the fragments such as the Webpack configuration.
 
