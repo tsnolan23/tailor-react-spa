@@ -7,7 +7,7 @@
     "start": "node tailor.js",
     "install-fragment-dependencies": "lerna bootstrap",
     "build-fragments": "lerna run build",
-    "start-fragments": "lerna run start"
+    "start-fragments": "lerna run --parallel start"
   },
   "repository": {
     "type": "git",
