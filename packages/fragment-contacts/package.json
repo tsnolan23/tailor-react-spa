@@ -2,17 +2,18 @@
   "name": "fragment-contacts",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "fragment.js",
   "scripts": {
     "build": "webpack -p",
+    "watch": "webpack -p --watch",
     "start": "node fragment.js"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "axios": "^0.17.1",
     "classnames": "^2.2.5",
     "react": "^16.1.1",
+    "react-avatar": "^3.1.0",
     "react-dom": "^16.1.1"
   },
   "devDependencies": {

@@ -1,40 +1,40 @@
 import React, { Component } from 'react'
-import axios from 'axios'
 import Contact from '../Contact'
 import './styles.scss'
 
 class Contacts extends Component {
-
   constructor(props) {
     super(props)
-    this.state ={
+
+    this.state = {
       contacts: []
     }
   }
 
-  componentWillMount() {
+  componentDidMount() {
     this.fetchContacts()
   }
 
   fetchContacts() {
-    axios.get('https://randomuser.me/api/?results=20').then((response) => {
-      this.setState({ contacts: response.data.results })
-    })
+    fetch('https://randomuser.me/api/?results=20')
+      .then(response => response.json())
+      .then(data => this.setState({ contacts: data.results }))
   }
 
   render() {
     const { contacts } = this.state
-    return(
+
+    return (
       <div className="contacts">
-        {
-          contacts.length > 0 && contacts.map((contact) => {
-            return <Contact key={contact.id.value}/>
-          })
-        }
+        {contacts.map(contact => (
+          <Contact
+            key={contact.id.value}
+            contact={contact}
+          />
+        ))}
       </div>
     )
   }
-
 }
 
 export default Contacts
