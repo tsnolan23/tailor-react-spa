@@ -1,30 +1,20 @@
-import React, { Component } from 'react'
+import React from 'react'
+import PropTypes from 'prop-types'
 import classNames from 'classnames'
+
+import Toggle from '../Toggle'
+
 import './styles.scss'
 
-class Chat extends Component {
-
-  constructor(props) {
-    super(props)
-    this.state ={
-      isExpanded: false
-    }
-  }
-
-  toggleExpansion() {
-    this.setState({ isExpanded: !this.state.isExpanded })
-  }
-
-  render() {
-    const classes = classNames({
-      chat: true,
-      expanded: this.state.isExpanded
-    })
-    return(
-      <div onClick={() => this.toggleExpansion() } className={classes}></div>
-    )
-  }
-
-}
+const Chat = () => (
+  <Toggle>
+    {({ on, toggle }) => (
+      <div
+        className={classNames('chat', { expanded: on })}
+        onClick={toggle}
+      />
+    )}
+  </Toggle>
+)
 
 export default Chat

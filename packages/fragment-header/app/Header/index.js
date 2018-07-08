@@ -1,48 +1,42 @@
-import React, { Component } from 'react'
-import './styles.scss'
-import NavItem from '../NavItem'
+import React from 'react'
+import PropTypes from 'prop-types'
+import { compose, withProps, withState } from 'proppy'
+import { attach } from 'proppy-react'
+
 import Logo from '../Logo'
+import NavItem from '../NavItem'
 
-const items = [ 0, 1, 2, 3 ]
+import './styles.scss'
 
-class Header extends Component {
+const withHeaderState = compose(
+  withState('active', 'setActive', 1),
+  withProps({ items: [ 0, 1, 2 ,3 ] })
+)
 
-  constructor(props) {
-    super(props)
-    this.state = {
-      name: 'Test',
-      active: 1
+const Header = ({
+  items,
+  active,
+  setActive
+}) => (
+  <div className="header">
+    <Logo/>
+    {
+      items.map((item, index) => (
+        <NavItem
+          key={index}
+          index={index}
+          active={index === active}
+          onClick={setActive}
+        />
+      ))
     }
-  }
+  </div>
+)
 
-  toggle() {
-    this.setState({ name: this.state.name === 'Test' ? 'New' : 'Test' })
-  }
-
-  selectNavItem(index) {
-    this.setState({ active: index })
-  }
-
-  render() {
-    return(
-      <div onClick={() => { this.toggle()}} className="header">
-        <Logo/>
-        {
-          items.map((item, index) => {
-            return(
-              <NavItem
-                active={index === this.state.active}
-                index={index}
-                onClick={(index) => this.selectNavItem(index)}
-                key={index}
-              />
-            )
-          })
-        }
-      </div>
-    )
-  }
-
+Header.propTypes =  {
+  items: PropTypes.arrayOf(PropTypes.number).isRequired,
+  active: PropTypes.bool.isRequired,
+  setActive: PropTypes.func.isRequired
 }
 
-export default Header
+export default attach(withHeaderState)(Header)

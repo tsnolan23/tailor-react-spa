@@ -1,40 +1,42 @@
-import React, { Component } from 'react'
+import React from 'react'
+import PropTypes from 'prop-types'
+import { compose, withState, didSubscribe } from 'proppy'
+import { attach } from 'proppy-react'
+
 import Contact from '../Contact'
+import ContactPropType from '../PropTypes/Contact'
+
 import './styles.scss'
 
-class Contacts extends Component {
-  constructor(props) {
-    super(props)
-
-    this.state = {
-      contacts: []
-    }
-  }
-
-  componentDidMount() {
-    this.fetchContacts()
-  }
-
-  fetchContacts() {
+const withContacts = compose(
+  withState('contacts', 'setContacts', []),
+  didSubscribe(props => {
     fetch('https://randomuser.me/api/?results=20')
       .then(response => response.json())
-      .then(data => this.setState({ contacts: data.results }))
-  }
+      .then(data => data.results)
+      .then(props.setContacts)
+  })
+);
 
-  render() {
-    const { contacts } = this.state
+const Contacts = ({
+  contacts
+}) => (
+  <div className="contacts">
+    {contacts.map(contact => (
+      <Contact
+        key={contact.id.value}
+        contact={contact}
+      />
+    ))}
+  </div>
+)
 
-    return (
-      <div className="contacts">
-        {contacts.map(contact => (
-          <Contact
-            key={contact.id.value}
-            contact={contact}
-          />
-        ))}
-      </div>
-    )
-  }
+Contacts.propTypes = {
+  contacts: PropTypes.arrayOf(ContactPropType)
 }
 
-export default Contacts
+Contacts.defaultProps = {
+  contacts: []
+}
+
+export default attach(withContacts)(Contacts)

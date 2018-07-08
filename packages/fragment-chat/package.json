@@ -12,6 +12,7 @@
   "license": "ISC",
   "dependencies": {
     "classnames": "^2.2.5",
+    "prop-types": "^15.6.2",
     "react": "^16.1.1",
     "react-dom": "^16.1.1"
   },
