@@ -22,9 +22,9 @@ const Contacts = ({
   contacts
 }) => (
   <div className="contacts">
-    {contacts.map(contact => (
+    {contacts.map((contact, index) => (
       <Contact
-        key={contact.id.value}
+        key={index}
         contact={contact}
       />
     ))}

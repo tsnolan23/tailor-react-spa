@@ -35,7 +35,7 @@ const Header = ({
 
 Header.propTypes =  {
   items: PropTypes.arrayOf(PropTypes.number).isRequired,
-  active: PropTypes.bool.isRequired,
+  active: PropTypes.number.isRequired,
   setActive: PropTypes.func.isRequired
 }
 

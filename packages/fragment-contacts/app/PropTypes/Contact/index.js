@@ -4,7 +4,10 @@ import {
 } from 'prop-types'
 
 export default shape({
-    id: string,
+    id: shape({
+        name: string,
+        value: string
+    }),
     email: string,
     name: shape({
         title: string,

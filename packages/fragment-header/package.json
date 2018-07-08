@@ -13,7 +13,7 @@
   },
   "scripts": {
     "build": "webpack -p",
-    "watch": "webpack -p --watch",
+    "watch": "webpack -w",
     "start": "node fragment.js"
   },
   "author": "",
