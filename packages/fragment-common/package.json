@@ -2,9 +2,10 @@
   "name": "fragment-common",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "fragment.js",
   "scripts": {
     "build": "webpack -p",
+    "watch": "webpack -p --watch",
     "start": "node fragment.js"
   },
   "author": "",
