@@ -1,5 +1,7 @@
 # Tailor React Single-Page Application
 
+![Project Screenshot](./.github/screenshot.png)
+
 This repository is an example application using the [Mosaic frontend microservices architecture](https://mosaic9.org).
 
 It makes use of [Tailor](https://github.com/zalando/tailor) only, so it is a pretty basic example.
