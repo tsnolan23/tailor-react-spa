@@ -1,12 +1,6 @@
-import React, { PureComponent } from 'react'
+import React from 'react'
 import './styles.scss'
 
-class Logo extends PureComponent {
-  render() {
-    return(
-      <div className="logo"></div>
-    )
-  }
-}
+const Logo = () => <div className="logo"/>
 
 export default Logo

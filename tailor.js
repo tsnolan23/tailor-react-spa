@@ -12,6 +12,10 @@ http
       res.writeHead(200, { 'Content-Type': 'image/x-icon' })
       return res.end('')
     }
+
+    req.headers['x-request-uri'] = req.url
+    req.url = '/index'
+
     tailor.requestHandler(req, res)
   })
   .listen(8080, function() {

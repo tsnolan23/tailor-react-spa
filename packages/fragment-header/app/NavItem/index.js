@@ -1,30 +1,33 @@
-import React, { Component } from 'react'
-import { bool, func, number } from 'prop-types'
+import React from 'react'
+import PropTypes from 'prop-types'
+import classnames from 'classnames'
+
 import './styles.scss'
-import classNames from 'classnames'
 
-class NavItem extends Component {
-
-  handleClick() {
-    this.props.onClick(this.props.index)
-  }
-
-  render() {
-    const classes = classNames({
+const NavItem = ({
+  index,
+  active,
+  onClick
+}) =>  (
+  <div
+    onClick={() => onClick(index)}
+    className={classnames({
       'nav-item': true,
-      'current': this.props.active
-    })
-    return(
-      <div className={classes} onClick={() => this.handleClick()}></div>
-    )
-  }
-
-}
+      'current': active
+    })}
+  >
+  </div>  
+)
 
 NavItem.propTypes = {
-  active: bool,
-  index: number,
-  onClick: func
+  active: PropTypes.bool,
+  index: PropTypes.number.isRequired,
+  onClick: PropTypes.func
+}
+
+NavItem.defaultProps = {
+  active: false,
+  onClick: () => {}
 }
 
 export default NavItem

@@ -2,15 +2,17 @@
   "name": "fragment-chat",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "fragment.js",
   "scripts": {
     "build": "webpack -p",
+    "watch": "webpack -w",
     "start": "node fragment.js"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
     "classnames": "^2.2.5",
+    "prop-types": "^15.6.2",
     "react": "^16.1.1",
     "react-dom": "^16.1.1"
   },

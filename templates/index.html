@@ -1,6 +1,8 @@
 <!doctype html>
 <html>
 <head>
+  <title>Tailor Example Application</title>
+  <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0">
   <style>
     body {
       background: #ECEFF4;
@@ -9,7 +11,7 @@
   <script>
     (function(d) {
       require(d);
-      var arr = [ 'react', 'react-dom', 'classnames' ];
+      var arr = [ 'react', 'react-dom', 'prop-types', 'classnames', 'proppy', 'proppy-react'];
       while (i = arr.pop())(function(dep) {
         define(dep, d, function(b) {
           return b[dep];

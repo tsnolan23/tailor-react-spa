@@ -1,40 +1,42 @@
-import React, { Component } from 'react'
-import axios from 'axios'
+import React from 'react'
+import PropTypes from 'prop-types'
+import { compose, withState, didSubscribe } from 'proppy'
+import { attach } from 'proppy-react'
+
 import Contact from '../Contact'
+import ContactPropType from '../PropTypes/Contact'
+
 import './styles.scss'
 
-class Contacts extends Component {
+const withContacts = compose(
+  withState('contacts', 'setContacts', []),
+  didSubscribe(props => {
+    fetch('https://randomuser.me/api/?results=20')
+      .then(response => response.json())
+      .then(data => data.results)
+      .then(props.setContacts)
+  })
+);
 
-  constructor(props) {
-    super(props)
-    this.state ={
-      contacts: []
-    }
-  }
+const Contacts = ({
+  contacts
+}) => (
+  <div className="contacts">
+    {contacts.map((contact, index) => (
+      <Contact
+        key={index}
+        contact={contact}
+      />
+    ))}
+  </div>
+)
 
-  componentWillMount() {
-    this.fetchContacts()
-  }
-
-  fetchContacts() {
-    axios.get('https://randomuser.me/api/?results=20').then((response) => {
-      this.setState({ contacts: response.data.results })
-    })
-  }
-
-  render() {
-    const { contacts } = this.state
-    return(
-      <div className="contacts">
-        {
-          contacts.length > 0 && contacts.map((contact) => {
-            return <Contact key={contact.id.value}/>
-          })
-        }
-      </div>
-    )
-  }
-
+Contacts.propTypes = {
+  contacts: PropTypes.arrayOf(ContactPropType)
 }
 
-export default Contacts
+Contacts.defaultProps = {
+  contacts: []
+}
+
+export default attach(withContacts)(Contacts)
