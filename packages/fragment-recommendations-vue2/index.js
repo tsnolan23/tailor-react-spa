@@ -15,7 +15,7 @@ module.exports = (req, res) => {
 		default:
 			res.writeHead(200, {
 				'Content-Type': 'text/html',
-				'Link': '<http://localhost:6699/dist/bundle.js>; rel="fragment-script"'
+				'Link': '<http://localhost:5655/dist/bundle.js>; rel="fragment-script"'
 			})
 
 			renderStream().pipe(res);

@@ -1,6 +1,7 @@
 <template>
     <div id="recommendations2">
-        <div class="contacts">
+        <div class="asdasdasdas">
+            <button v-on:click="test"></button>
             <Recommendation v-bind:recommendation="recommendation" v-bind:key="recommendation.id.value" v-for="recommendation in recommendations"/>
         </div>
     </div>
@@ -10,6 +11,11 @@
     import Recommendation from './Recommendation.vue';
 
     export default {
+    	methods: {
+    	    test() {
+    	    	console.log(12312);
+            }
+        },
     	components: {
             Recommendation
         },
@@ -22,7 +28,7 @@
 </script>
 
 <style scoped>
-    .contacts {
+    .asdasdasdas {
         display: grid;
         box-sizing: border-box;
         margin-top: 80px;
@@ -30,19 +36,19 @@
     }
 
     @media (min-width: 40em) {
-        .contacts {
+        .asdasdasdas {
             grid-template-columns: 50% 50%;
         }
     }
 
     @media (min-width: 52em) {
-        .contacts {
+        .asdasdasdas {
             grid-template-columns: 33% 33% 33%;
         }
     }
 
     @media (min-width: 64em) {
-        .contacts {
+        .asdasdasdas {
             grid-template-columns: 25% 25% 25% 25%;
         }
     }
