@@ -1,0 +1,38 @@
+{
+  "name": "fragment-contacts",
+  "sideEffects": false,
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "build": "webpack --mode production",
+    "watch": "webpack --watch",
+    "start": "cross-env BABEL_ENV=server micro -l tcp://0.0.0.0:1234"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^0.18.0",
+    "classnames": "^2.2.5",
+    "micro": "^9.3.3",
+    "prop-types": "^15.6.2",
+    "react": "^16.1.1",
+    "react-dom": "^16.1.1",
+    "react-redux": "^5.0.7",
+    "redux": "^4.0.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.0.0",
+    "@babel/preset-env": "^7.0.0",
+    "@babel/preset-react": "^7.0.0",
+    "@babel/register": "^7.0.0",
+    "babel-loader": "^8.0.2",
+    "babel-plugin-css-modules-transform": "^1.6.1",
+    "cross-env": "^5.2.0",
+    "css-loader": "^0.28.7",
+    "node-sass": "^4.7.2",
+    "sass-loader": "^6.0.6",
+    "style-loader": "^0.19.0",
+    "webpack": "^4.17.2",
+    "webpack-command": "^0.4.1"
+  }
+}
