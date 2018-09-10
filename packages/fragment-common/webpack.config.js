@@ -1,11 +1,10 @@
-var webpack = require('webpack')
-
-module.exports = {
-  entry: './common.js',
-  output: {
-    path: __dirname + '/public',
-    publicPath: 'http://localhost:8081/public/',
-    filename: 'bundle.js',
-    libraryTarget: 'umd'
-  }
+module.exports = () => {
+  return {
+		entry: './common.js',
+		output: {
+			path: __dirname + '/dist',
+			filename: 'bundle.js',
+			libraryTarget: 'umd'
+		}
+	};
 }

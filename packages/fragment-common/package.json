@@ -1,29 +1,33 @@
 {
   "name": "fragment-common",
+  "sideEffects": false,
   "version": "1.0.0",
   "description": "",
-  "main": "fragment.js",
   "scripts": {
-    "build": "webpack -p",
-    "watch": "webpack -w",
-    "start": "node fragment.js"
+    "build": "webpack --mode production",
+    "watch": "webpack --watch",
+    "start": "micro -l tcp://0.0.0.0:${PORT-5000}"
   },
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "babel": "^6.23.0",
-    "babel-core": "^6.26.0",
-    "babel-loader": "^7.1.2",
-    "babel-preset-env": "^1.6.1",
-    "babel-preset-react": "^6.24.1",
-    "webpack": "^3.8.1"
+    "@babel/core": "^7.0.0",
+    "@babel/preset-env": "^7.0.0",
+    "@babel/register": "^7.0.0",
+    "babel-loader": "^8.0.2",
+    "webpack": "^4.17.2",
+    "webpack-command": "^0.4.1"
   },
   "dependencies": {
+    "axios": "^0.18.0",
     "classnames": "^2.2.5",
+    "micro": "^9.3.3",
     "prop-types": "^15.6.2",
-    "proppy": "^1.2.2",
-    "proppy-react": "^1.2.2",
     "react": "^16.1.1",
-    "react-dom": "^16.1.1"
+    "react-dom": "^16.1.1",
+    "react-redux": "^5.0.7",
+    "redux": "^4.0.0",
+    "vue": "^2.5.17",
+    "vuex": "^3.0.1"
   }
 }

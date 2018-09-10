@@ -11,21 +11,17 @@
   <script>
     (function(d) {
       require(d);
-      var arr = [ 'react', 'react-dom', 'prop-types', 'classnames', 'proppy', 'proppy-react'];
+      var arr = [ 'react', 'react-dom', 'react-redux', 'redux', 'prop-types', 'classnames', 'vue', 'vuex', 'axios'];
       while (i = arr.pop())(function(dep) {
         define(dep, d, function(b) {
           return b[dep];
         })
       })(i);
-    }(['http://localhost:6006/public/bundle.js']));
+    }(['http://localhost:6006/dist/bundle.js']));
   </script>
 </head>
 <body>
-  <div id="header"></div>
-  <div id="contacts"></div>
-  <div id="chat"></div>
-  <fragment src="http://localhost:8081"></fragment>
-  <fragment src="http://localhost:5000"></fragment>
-  <fragment src="http://localhost:3000"></fragment>
+  <fragment src="http://localhost:1234"></fragment>
+  <fragment src="http://localhost:6699"></fragment>
 </body>
 </html>

@@ -26,7 +26,7 @@ This app consists basically in a couple of fragments:
 
  - fragment-common
  - fragment-header
- - fragment-contacts
+ - fragment-applications-react
  - fragment-chat
 
 Each fragment contains it's own `webpack.config.js` that specifies how to build it.
