@@ -13,7 +13,6 @@ heroku i docker
 
 -------
 
-
 fyi:
 - gzip + http2 na nginx?
 - axios nie jest uzywany frontowo

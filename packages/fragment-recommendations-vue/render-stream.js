@@ -7,9 +7,9 @@ const { renderToStream } = createBundleRenderer(
 		runInNewContext: false,
 		inject: false,
 		template: `
-		<!--vue-ssr-outlet-->
 		{{{ renderState({ windowKey: '__RECOMMENDATIONS_STATE__' }) }}}
 		{{{ renderStyles() }}}
+		<!--vue-ssr-outlet-->
 		`
 	}
 );
