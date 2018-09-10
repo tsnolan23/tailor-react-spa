@@ -1,0 +1,55 @@
+0 silly input [ 'build' ]
+1 silly flags { _: [ 'run' ],
+1 silly flags   'reject-cycles': false,
+1 silly flags   rejectCycles: false,
+1 silly flags   script: 'build',
+1 silly flags   args: [] }
+2 verbose rootPath /www/sites/tailor-react-spa
+3 info version 2.11.0
+4 silly existsSync /www/sites/tailor-react-spa/VERSION
+5 silly initialize attempt
+6 silly initialize success
+7 silly execute attempt
+8 silly runScriptInDir build [] fragment-applications-react
+9 silly getExecOpts { cwd: '/www/sites/tailor-react-spa/packages/fragment-applications-react' }
+10 silly runScriptInDir build [] fragment-common
+11 silly getExecOpts { cwd: '/www/sites/tailor-react-spa/packages/fragment-common' }
+12 silly runScriptInDir build [] fragment-recommendations-vue
+13 silly getExecOpts { cwd: '/www/sites/tailor-react-spa/packages/fragment-recommendations-vue' }
+14 silly runScriptInDir build [] fragment-recommendations-vue2
+15 silly getExecOpts { cwd: '/www/sites/tailor-react-spa/packages/fragment-recommendations-vue2' }
+16 error build Errored while running script in 'fragment-recommendations-vue2'
+17 error execute callback with error
+18 error Error: Command failed: npm run build
+18 error module.js:557
+18 error     throw err;
+18 error     ^
+18 error
+18 error Error: Cannot find module './global'
+18 error     at Function.Module._resolveFilename (module.js:555:15)
+18 error     at Function.Module._load (module.js:482:25)
+18 error     at Module.require (module.js:604:17)
+18 error     at require (internal/module.js:11:18)
+18 error     at Object.<anonymous> (/www/sites/tailor-react-spa/packages/fragment-recommendations-vue2/node_modules/.bin/webpack:5:24)
+18 error     at Module._compile (module.js:660:30)
+18 error     at Object.Module._extensions..js (module.js:671:10)
+18 error     at Module.load (module.js:573:32)
+18 error     at tryModuleLoad (module.js:513:12)
+18 error     at Function.Module._load (module.js:505:3)
+18 error npm ERR! code ELIFECYCLE
+18 error npm ERR! errno 1
+18 error npm ERR! fragment-recommendations-vue2@1.0.0 build: `webpack --mode production && webpack --mode production --config webpack.server.config.js`
+18 error npm ERR! Exit status 1
+18 error npm ERR!
+18 error npm ERR! Failed at the fragment-recommendations-vue2@1.0.0 build script.
+18 error npm ERR! This is probably not a problem with npm. There is likely additional logging output above.
+18 error
+18 error npm ERR! A complete log of this run can be found in:
+18 error npm ERR!     /Users/morriq/.npm/_logs/2018-09-10T16_45_18_808Z-debug.log
+18 error
+18 error > fragment-recommendations-vue2@1.0.0 build /www/sites/tailor-react-spa/packages/fragment-recommendations-vue2
+18 error > webpack --mode production && webpack --mode production --config webpack.server.config.js
+18 error
+18 error
+18 error     at Promise.all.then.arr (/www/sites/tailor-react-spa/node_modules/execa/index.js:236:11)
+18 error     at <anonymous>
