@@ -26,7 +26,7 @@
     "eslint-import-resolver-webpack": "^0.8.3",
     "eslint-plugin-import": "^2.8.0",
     "eslint-plugin-react": "^7.5.1",
-    "lerna": "^2.5.1",
+    "lerna": "^3.3.0",
     "node-tailor": "^3.4.0"
   },
   "dependencies": {
