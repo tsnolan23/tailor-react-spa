@@ -17,8 +17,24 @@ const logger = bunyan.createLogger({
 const tailor = new Tailor({
   templatesPath: __dirname + '/templates',
 	/*
+
+	Jagger
 	docker run -d -p5775:5775/udp -p6831:6831/udp -p6832:6832/udp -p16686:16686 jaegertracing/all-in-one:latest
 	 https://github.com/jaegertracing/jaeger-client-node/issues/121
+
+	 % sysctl net.inet.udp.maxdgram
+net.inet.udp.maxdgram: 9216
+% sudo sysctl net.inet.udp.maxdgram=65536
+net.inet.udp.maxdgram: 9216 -> 65536
+% sudo sysctl net.inet.udp.maxdgram
+net.inet.udp.maxdgram: 65536
+
+https://github.com/jaegertracing/jaeger-client-node/issues/124
+
+
+prometeus
+https://prometheus.io/docs/prometheus/latest/getting_started/
+./prometheus --config.file=prometheus.yml
 	 */
 	tracer: initTracer(
 		config,
