@@ -10,7 +10,6 @@ const renderStream = require('./render-stream.js');
 
 
 const bundleStream = createReadStream('./dist/bundle.js');
-const markupStream = renderStream();
 
 module.exports = (req, res) => {
 	const pathname = url.parse(req.url).pathname
@@ -26,7 +25,7 @@ module.exports = (req, res) => {
 				'Link': '<http://localhost:1234/dist/bundle.js>; rel="fragment-script"'
 			})
 
-			markupStream.then(({ stream, state }) => {
+			renderStream().then(({ stream, state }) => {
 				res.write(`
      			<script>window.CONTACTS_STATE = ${JSON.stringify(state).replace(/</g, '\\\u003c')}</script>
       `);

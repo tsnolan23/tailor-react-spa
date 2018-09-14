@@ -5,7 +5,6 @@ const renderStream = require('./render-stream.js');
 
 
 const bundleStream = createReadStream('./dist/bundle.js');
-const markupStream = renderStream();
 
 module.exports = (req, res) => {
 	const pathname = url.parse(req.url).pathname
@@ -21,6 +20,6 @@ module.exports = (req, res) => {
 				'Link': '<http://localhost:5655/dist/bundle.js>; rel="fragment-script"'
 			})
 
-			markupStream.pipe(res);
+			renderStream().pipe(res);
 	}
 };
