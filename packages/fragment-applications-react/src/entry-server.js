@@ -6,6 +6,11 @@ import createApp from './index.js'
 
 export default () => {
 	return axios.get('https://randomuser.me/api/?results=15')
+		.catch(() => ({
+			data: {
+				results: []
+			}
+		}))
 		.then(({ data }) => data.results)
 		.then((state) => {
 			const markup = (
