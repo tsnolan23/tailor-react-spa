@@ -4,4 +4,4 @@ import createApp from './index.js';
 const { app, store } = createApp();
 
 store.replaceState(window.__RECOMMENDATIONS_STATE__);
-app.$mount('#recommendations2');
+app.$mount('#poc-vue-test');

@@ -12,14 +12,11 @@ export default function createStore() {
 		},
 		actions: {
 			fetchItems({ commit }) {
-				return axios.get('https://randomuser.me/api/?results=15')
-					.catch(() => ({
-						data: {
-							results: []
-						}
-					}))
-					.then(({ data }) => data.results)
-					.then((results) => commit('setItems', results))
+				return axios.get('https://jsonplaceholder.typicode.com/comments')
+                    .catch(() => ({data: []}))
+					.then(({data}) => {
+						commit('setItems', data)
+					})
 			}
 		},
 		mutations: {

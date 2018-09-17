@@ -1,26 +1,32 @@
 <template>
-    <div id="recommendations2">
-        <div class="asdasdasdas">
-            <button v-on:click="test"></button>
-            <Recommendation v-bind:recommendation="recommendation" v-bind:key="recommendation.id.value" v-for="recommendation in recommendations"/>
+    <div id="poc-vue-test">
+        <div class="recommendation" v-for="recommendation in recommendations"
+            :key="recommendation.id"
+             @click="test(recommendation.id)"
+        >
+            <h3>{{ recommendation.name}}</h3>
+            <p>{{ recommendation.email}}</p>
+
+            <br/>
+            <br/>
+            <br/>
+
+            <p>{{recommendation.body}}</p>
         </div>
     </div>
 </template>
 
 <script>
-    import Recommendation from './Recommendation.vue';
 
-    console.log('dasdsadasdas');
+    console.log('poc-vue-test');
 
     export default {
     	methods: {
-    	    test() {
-    	    	console.log(12312);
+    	    test(id) {
+    	    	alert(id);
             }
         },
-    	components: {
-            Recommendation
-        },
+
     	computed: {
         	recommendations() {
         		return this.$store.state.items;
@@ -30,29 +36,21 @@
 </script>
 
 <style scoped>
-    .asdasdasdas {
-        display: grid;
-        box-sizing: border-box;
-        margin-top: 80px;
-        padding: 20px;
+
+    #poc-vue-test {
+        width: 100%;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        flex-wrap: wrap;
     }
 
-    @media (min-width: 40em) {
-        .asdasdasdas {
-            grid-template-columns: 50% 50%;
-        }
+    .recommendation {
+        width: 250px;
+        padding: 10px;
+        margin: 10px;
+        box-shadow: 0 0 10px black;
     }
 
-    @media (min-width: 52em) {
-        .asdasdasdas {
-            grid-template-columns: 33% 33% 33%;
-        }
-    }
-
-    @media (min-width: 64em) {
-        .asdasdasdas {
-            grid-template-columns: 25% 25% 25% 25%;
-        }
-    }
 
 </style>

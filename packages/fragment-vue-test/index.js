@@ -8,7 +8,7 @@ const bundleStream = createReadStream('./dist/bundle.js');
 express.all('/', ((req, res) => {
     res.set({
         'Content-Type': 'text/html',
-        'Link': '<http://localhost:5655/dist/bundle.js>; rel="fragment-script"' // https://www.w3.org/wiki/LinkHeader
+        'Link': '<http://localhost:5666/dist/bundle.js>; rel="fragment-script"' // https://www.w3.org/wiki/LinkHeader
     })
     renderStream().pipe(res);
 }));
@@ -19,4 +19,4 @@ express.all('/dist/bundle.js', (req, res) => {
 });
 
 
-express.listen(5655);
+express.listen(5666);
