@@ -12,7 +12,7 @@ module.exports = (req, res) => {
 		default:
 			res.writeHead(200, {
 				'Content-Type': 'text/html',
-				'Link': '<http://localhost:6006/dist/bundle.js>; rel="fragment-script"'
+				'Link': '<http://localhost:6007/dist/bundle.js>; rel="fragment-script"'
 			})
 			return res.end('')
 	}
