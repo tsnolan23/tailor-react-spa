@@ -45,6 +45,8 @@ docker run -p 9200:9200 -p 9300:9300 -e "discovery.type=single-node" -e "network
 https://stackoverflow.com/questions/47341662/cannot-connect-to-elasticsearch-on-docker-from-golang
 https://github.com/olivere/elastic/issues/470
 
+kibana
+
 do poduszki:
 https://www.jaegertracing.io/docs/1.6/deployment/#elasticsearch
 https://github.com/jaegertracing/jaeger/tree/master/plugin/storage/es
