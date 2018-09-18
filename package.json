@@ -4,11 +4,7 @@
   "description": "mosaic-tailor-react-example",
   "main": "index.js",
   "scripts": {
-    "bang": "pm2 start startup.js --watch",
-    "bang-fragments": "pm2 start startup-fragments.js --watch",
-    "bang-monit": "pm2 monit",
-    "bang-kill": "pm2 delete all --watch",
-    "start": "micro -l tcp://0.0.0.0:8080",
+    "start": "micro -l tcp://0.0.0.0:80",
     "install-fragment-dependencies": "lerna bootstrap",
     "build-fragments": "lerna run build",
     "start-fragments": "lerna run --parallel start",
@@ -38,7 +34,6 @@
     "jaeger-client": "^3.12.0",
     "micro": "^9.3.3",
     "node-cmd": "^3.0.0",
-    "pm2": "^3.1.2",
     "prom-client": "^11.1.1"
   }
 }

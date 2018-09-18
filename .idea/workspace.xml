@@ -2,9 +2,143 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1a313d92-b0d5-45c3-bb99-9acb22683222" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.dockerignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Dockerfile" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/packages/fragment-applications-react/.dockerignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/packages/fragment-applications-react/Dockerfile" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/packages/fragment-common/.dockerignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/packages/fragment-common/Dockerfile" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/packages/fragment-dotnet/.dockerignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/packages/fragment-dotnet/obj/Debug/netcoreapp2.1/TemporaryGeneratedFile_E7A71F73-0F8D-4B9B-B56E-8E70B10BC5D3.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/packages/fragment-dotnet/obj/Debug/netcoreapp2.1/dotnet.csproj.CopyComplete" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/packages/fragment-dotnet/wwwroot/js/site.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/packages/fragment-recommendations-vue/.dockerignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/packages/fragment-recommendations-vue/Dockerfile" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/packages/fragment-recommendations-vue2/.dockerignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/packages/fragment-recommendations-vue2/Dockerfile" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/packages/fragment-simple-vue-test/.dockerignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/packages/fragment-simple-vue-test/Dockerfile" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/packages/fragment-vue-http/.dockerignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/packages/fragment-vue-http/Dockerfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.dockerignore" beforeDir="false" afterPath="$PROJECT_DIR$/.dockerignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.github/screenshot.png" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/Dockerfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lerna-debug.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/dotnet/.vs/dotnet/DesignTimeBuild/.dtbcache" beforeDir="false" afterPath="$PROJECT_DIR$/packages/fragment-dotnet/.vs/dotnet/DesignTimeBuild/.dtbcache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/dotnet/.vs/dotnet/v15/Server/sqlite3/db.lock" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/dotnet/.vs/dotnet/v15/Server/sqlite3/storage.ide" beforeDir="false" afterPath="$PROJECT_DIR$/packages/fragment-dotnet/.vs/dotnet/v15/Server/sqlite3/storage.ide" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/dotnet/.vs/dotnet/v15/Server/sqlite3/storage.ide-shm" beforeDir="false" afterPath="$PROJECT_DIR$/packages/fragment-dotnet/.vs/dotnet/v15/Server/sqlite3/storage.ide-shm" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/dotnet/.vs/dotnet/v15/Server/sqlite3/storage.ide-wal" beforeDir="false" afterPath="$PROJECT_DIR$/packages/fragment-dotnet/.vs/dotnet/v15/Server/sqlite3/storage.ide-wal" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/dotnet/Controllers/HomeController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/packages/fragment-dotnet/Controllers/HomeController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/dotnet/Models/ErrorViewModel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/packages/fragment-dotnet/Models/ErrorViewModel.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/dotnet/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/packages/fragment-dotnet/Program.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/dotnet/Properties/launchSettings.json" beforeDir="false" afterPath="$PROJECT_DIR$/packages/fragment-dotnet/Properties/launchSettings.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/dotnet/Startup.cs" beforeDir="false" afterPath="$PROJECT_DIR$/packages/fragment-dotnet/Startup.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/dotnet/Views/Home/About.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/packages/fragment-dotnet/Views/Home/About.cshtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/dotnet/Views/Home/Contact.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/packages/fragment-dotnet/Views/Home/Contact.cshtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/dotnet/Views/Home/Index.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/packages/fragment-dotnet/Views/Home/Index.cshtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/dotnet/Views/Home/Privacy.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/packages/fragment-dotnet/Views/Home/Privacy.cshtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/dotnet/Views/Shared/Error.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/packages/fragment-dotnet/Views/Shared/Error.cshtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/dotnet/Views/Shared/_CookieConsentPartial.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/packages/fragment-dotnet/Views/Shared/_CookieConsentPartial.cshtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/dotnet/Views/Shared/_Layout.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/packages/fragment-dotnet/Views/Shared/_Layout.cshtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/dotnet/Views/Shared/_ValidationScriptsPartial.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/packages/fragment-dotnet/Views/Shared/_ValidationScriptsPartial.cshtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/dotnet/Views/_ViewImports.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/packages/fragment-dotnet/Views/_ViewImports.cshtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/dotnet/Views/_ViewStart.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/packages/fragment-dotnet/Views/_ViewStart.cshtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/dotnet/appsettings.Development.json" beforeDir="false" afterPath="$PROJECT_DIR$/packages/fragment-dotnet/appsettings.Development.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/dotnet/appsettings.json" beforeDir="false" afterPath="$PROJECT_DIR$/packages/fragment-dotnet/appsettings.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/dotnet/bin/Debug/netcoreapp2.1/dotnet.deps.json" beforeDir="false" afterPath="$PROJECT_DIR$/packages/fragment-dotnet/bin/Debug/netcoreapp2.1/dotnet.deps.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/dotnet/bin/Debug/netcoreapp2.1/dotnet.runtimeconfig.dev.json" beforeDir="false" afterPath="$PROJECT_DIR$/packages/fragment-dotnet/bin/Debug/netcoreapp2.1/dotnet.runtimeconfig.dev.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/dotnet/bin/Debug/netcoreapp2.1/dotnet.runtimeconfig.json" beforeDir="false" afterPath="$PROJECT_DIR$/packages/fragment-dotnet/bin/Debug/netcoreapp2.1/dotnet.runtimeconfig.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/dotnet/dotnet.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/packages/fragment-dotnet/dotnet.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/dotnet/obj/Debug/netcoreapp2.1/Razor/Views/Home/About.g.cshtml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/packages/fragment-dotnet/obj/Debug/netcoreapp2.1/Razor/Views/Home/About.g.cshtml.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/dotnet/obj/Debug/netcoreapp2.1/Razor/Views/Home/Contact.g.cshtml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/packages/fragment-dotnet/obj/Debug/netcoreapp2.1/Razor/Views/Home/Contact.g.cshtml.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/dotnet/obj/Debug/netcoreapp2.1/Razor/Views/Home/Index.g.cshtml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/packages/fragment-dotnet/obj/Debug/netcoreapp2.1/Razor/Views/Home/Index.g.cshtml.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/dotnet/obj/Debug/netcoreapp2.1/Razor/Views/Home/Privacy.g.cshtml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/packages/fragment-dotnet/obj/Debug/netcoreapp2.1/Razor/Views/Home/Privacy.g.cshtml.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/dotnet/obj/Debug/netcoreapp2.1/Razor/Views/Shared/Error.g.cshtml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/packages/fragment-dotnet/obj/Debug/netcoreapp2.1/Razor/Views/Shared/Error.g.cshtml.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/dotnet/obj/Debug/netcoreapp2.1/Razor/Views/Shared/_CookieConsentPartial.g.cshtml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/packages/fragment-dotnet/obj/Debug/netcoreapp2.1/Razor/Views/Shared/_CookieConsentPartial.g.cshtml.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/dotnet/obj/Debug/netcoreapp2.1/Razor/Views/Shared/_Layout.g.cshtml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/packages/fragment-dotnet/obj/Debug/netcoreapp2.1/Razor/Views/Shared/_Layout.g.cshtml.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/dotnet/obj/Debug/netcoreapp2.1/Razor/Views/Shared/_ValidationScriptsPartial.g.cshtml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/packages/fragment-dotnet/obj/Debug/netcoreapp2.1/Razor/Views/Shared/_ValidationScriptsPartial.g.cshtml.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/dotnet/obj/Debug/netcoreapp2.1/Razor/Views/_ViewImports.g.cshtml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/packages/fragment-dotnet/obj/Debug/netcoreapp2.1/Razor/Views/_ViewImports.g.cshtml.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/dotnet/obj/Debug/netcoreapp2.1/Razor/Views/_ViewStart.g.cshtml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/packages/fragment-dotnet/obj/Debug/netcoreapp2.1/Razor/Views/_ViewStart.g.cshtml.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/dotnet/obj/Debug/netcoreapp2.1/TemporaryGeneratedFile_036C0B5B-1481-4323-8D20-8F5ADCB23D92.cs" beforeDir="false" afterPath="$PROJECT_DIR$/packages/fragment-dotnet/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/dotnet/obj/Debug/netcoreapp2.1/TemporaryGeneratedFile_5937a670-0e60-4077-877b-f7221da3dda1.cs" beforeDir="false" afterPath="$PROJECT_DIR$/packages/fragment-dotnet/.vs/dotnet/v15/Server/sqlite3/db.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/dotnet/obj/Debug/netcoreapp2.1/TemporaryGeneratedFile_E7A71F73-0F8D-4B9B-B56E-8E70B10BC5D3.cs" beforeDir="false" afterPath="$PROJECT_DIR$/packages/fragment-dotnet/Dockerfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/dotnet/obj/Debug/netcoreapp2.1/dotnet.AssemblyInfo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/packages/fragment-dotnet/obj/Debug/netcoreapp2.1/dotnet.AssemblyInfo.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/dotnet/obj/Debug/netcoreapp2.1/dotnet.RazorAssemblyInfo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/packages/fragment-dotnet/obj/Debug/netcoreapp2.1/dotnet.RazorAssemblyInfo.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/dotnet/obj/Debug/netcoreapp2.1/dotnet.RazorTargetAssemblyInfo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/packages/fragment-dotnet/obj/Debug/netcoreapp2.1/dotnet.RazorTargetAssemblyInfo.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/dotnet/obj/Debug/netcoreapp2.1/dotnet.csproj.CopyComplete" beforeDir="false" afterPath="$PROJECT_DIR$/packages/fragment-dotnet/obj/Debug/netcoreapp2.1/TemporaryGeneratedFile_036C0B5B-1481-4323-8D20-8F5ADCB23D92.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/dotnet/obj/Debug/netcoreapp2.1/dotnet.csproj.FileListAbsolute.txt" beforeDir="false" afterPath="$PROJECT_DIR$/packages/fragment-dotnet/obj/Debug/netcoreapp2.1/dotnet.csproj.FileListAbsolute.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/dotnet/obj/dotnet.csproj.nuget.g.props" beforeDir="false" afterPath="$PROJECT_DIR$/packages/fragment-dotnet/obj/dotnet.csproj.nuget.g.props" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/dotnet/obj/dotnet.csproj.nuget.g.targets" beforeDir="false" afterPath="$PROJECT_DIR$/packages/fragment-dotnet/obj/dotnet.csproj.nuget.g.targets" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/dotnet/obj/project.assets.json" beforeDir="false" afterPath="$PROJECT_DIR$/packages/fragment-dotnet/obj/project.assets.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/dotnet/wwwroot/css/site.css" beforeDir="false" afterPath="$PROJECT_DIR$/packages/fragment-dotnet/wwwroot/css/site.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/dotnet/wwwroot/css/site.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/packages/fragment-dotnet/wwwroot/css/site.min.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/dotnet/wwwroot/favicon.ico" beforeDir="false" afterPath="$PROJECT_DIR$/packages/fragment-dotnet/wwwroot/favicon.ico" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/dotnet/wwwroot/images/banner1.svg" beforeDir="false" afterPath="$PROJECT_DIR$/packages/fragment-dotnet/wwwroot/images/banner1.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/dotnet/wwwroot/images/banner2.svg" beforeDir="false" afterPath="$PROJECT_DIR$/packages/fragment-dotnet/wwwroot/images/banner2.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/dotnet/wwwroot/images/banner3.svg" beforeDir="false" afterPath="$PROJECT_DIR$/packages/fragment-dotnet/wwwroot/images/banner3.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/dotnet/wwwroot/js/site.js" beforeDir="false" afterPath="$PROJECT_DIR$/packages/fragment-dotnet/wwwroot/js/site.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/dotnet/wwwroot/js/site.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/packages/fragment-dotnet/obj/Debug/netcoreapp2.1/TemporaryGeneratedFile_5937a670-0e60-4077-877b-f7221da3dda1.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/dotnet/wwwroot/lib/bootstrap/.bower.json" beforeDir="false" afterPath="$PROJECT_DIR$/packages/fragment-dotnet/wwwroot/lib/bootstrap/.bower.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/dotnet/wwwroot/lib/bootstrap/LICENSE" beforeDir="false" afterPath="$PROJECT_DIR$/packages/fragment-dotnet/wwwroot/lib/bootstrap/LICENSE" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/dotnet/wwwroot/lib/bootstrap/dist/css/bootstrap-theme.css" beforeDir="false" afterPath="$PROJECT_DIR$/packages/fragment-dotnet/wwwroot/lib/bootstrap/dist/css/bootstrap-theme.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/dotnet/wwwroot/lib/bootstrap/dist/css/bootstrap-theme.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/packages/fragment-dotnet/wwwroot/lib/bootstrap/dist/css/bootstrap-theme.css.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/dotnet/wwwroot/lib/bootstrap/dist/css/bootstrap-theme.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/packages/fragment-dotnet/wwwroot/lib/bootstrap/dist/css/bootstrap-theme.min.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/dotnet/wwwroot/lib/bootstrap/dist/css/bootstrap-theme.min.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/packages/fragment-dotnet/wwwroot/lib/bootstrap/dist/css/bootstrap-theme.min.css.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/dotnet/wwwroot/lib/bootstrap/dist/css/bootstrap.css" beforeDir="false" afterPath="$PROJECT_DIR$/packages/fragment-dotnet/wwwroot/lib/bootstrap/dist/css/bootstrap.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/dotnet/wwwroot/lib/bootstrap/dist/css/bootstrap.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/packages/fragment-dotnet/wwwroot/lib/bootstrap/dist/css/bootstrap.css.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/dotnet/wwwroot/lib/bootstrap/dist/css/bootstrap.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/packages/fragment-dotnet/wwwroot/lib/bootstrap/dist/css/bootstrap.min.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/dotnet/wwwroot/lib/bootstrap/dist/css/bootstrap.min.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/packages/fragment-dotnet/wwwroot/lib/bootstrap/dist/css/bootstrap.min.css.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/dotnet/wwwroot/lib/bootstrap/dist/fonts/glyphicons-halflings-regular.eot" beforeDir="false" afterPath="$PROJECT_DIR$/packages/fragment-dotnet/wwwroot/lib/bootstrap/dist/fonts/glyphicons-halflings-regular.eot" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/dotnet/wwwroot/lib/bootstrap/dist/fonts/glyphicons-halflings-regular.svg" beforeDir="false" afterPath="$PROJECT_DIR$/packages/fragment-dotnet/wwwroot/lib/bootstrap/dist/fonts/glyphicons-halflings-regular.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/dotnet/wwwroot/lib/bootstrap/dist/fonts/glyphicons-halflings-regular.ttf" beforeDir="false" afterPath="$PROJECT_DIR$/packages/fragment-dotnet/wwwroot/lib/bootstrap/dist/fonts/glyphicons-halflings-regular.ttf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/dotnet/wwwroot/lib/bootstrap/dist/fonts/glyphicons-halflings-regular.woff" beforeDir="false" afterPath="$PROJECT_DIR$/packages/fragment-dotnet/wwwroot/lib/bootstrap/dist/fonts/glyphicons-halflings-regular.woff" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/dotnet/wwwroot/lib/bootstrap/dist/fonts/glyphicons-halflings-regular.woff2" beforeDir="false" afterPath="$PROJECT_DIR$/packages/fragment-dotnet/wwwroot/lib/bootstrap/dist/fonts/glyphicons-halflings-regular.woff2" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/dotnet/wwwroot/lib/bootstrap/dist/js/bootstrap.js" beforeDir="false" afterPath="$PROJECT_DIR$/packages/fragment-dotnet/wwwroot/lib/bootstrap/dist/js/bootstrap.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/dotnet/wwwroot/lib/bootstrap/dist/js/bootstrap.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/packages/fragment-dotnet/wwwroot/lib/bootstrap/dist/js/bootstrap.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/dotnet/wwwroot/lib/bootstrap/dist/js/npm.js" beforeDir="false" afterPath="$PROJECT_DIR$/packages/fragment-dotnet/wwwroot/lib/bootstrap/dist/js/npm.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/dotnet/wwwroot/lib/jquery-validation-unobtrusive/.bower.json" beforeDir="false" afterPath="$PROJECT_DIR$/packages/fragment-dotnet/wwwroot/lib/jquery-validation-unobtrusive/.bower.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/dotnet/wwwroot/lib/jquery-validation-unobtrusive/LICENSE.txt" beforeDir="false" afterPath="$PROJECT_DIR$/packages/fragment-dotnet/wwwroot/lib/jquery-validation-unobtrusive/LICENSE.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/dotnet/wwwroot/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.js" beforeDir="false" afterPath="$PROJECT_DIR$/packages/fragment-dotnet/wwwroot/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/dotnet/wwwroot/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/packages/fragment-dotnet/wwwroot/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/dotnet/wwwroot/lib/jquery-validation/.bower.json" beforeDir="false" afterPath="$PROJECT_DIR$/packages/fragment-dotnet/wwwroot/lib/jquery-validation/.bower.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/dotnet/wwwroot/lib/jquery-validation/LICENSE.md" beforeDir="false" afterPath="$PROJECT_DIR$/packages/fragment-dotnet/wwwroot/lib/jquery-validation/LICENSE.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/dotnet/wwwroot/lib/jquery-validation/dist/additional-methods.js" beforeDir="false" afterPath="$PROJECT_DIR$/packages/fragment-dotnet/wwwroot/lib/jquery-validation/dist/additional-methods.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/dotnet/wwwroot/lib/jquery-validation/dist/additional-methods.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/packages/fragment-dotnet/wwwroot/lib/jquery-validation/dist/additional-methods.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/dotnet/wwwroot/lib/jquery-validation/dist/jquery.validate.js" beforeDir="false" afterPath="$PROJECT_DIR$/packages/fragment-dotnet/wwwroot/lib/jquery-validation/dist/jquery.validate.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/dotnet/wwwroot/lib/jquery-validation/dist/jquery.validate.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/packages/fragment-dotnet/wwwroot/lib/jquery-validation/dist/jquery.validate.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/dotnet/wwwroot/lib/jquery/.bower.json" beforeDir="false" afterPath="$PROJECT_DIR$/packages/fragment-dotnet/wwwroot/lib/jquery/.bower.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/dotnet/wwwroot/lib/jquery/LICENSE.txt" beforeDir="false" afterPath="$PROJECT_DIR$/packages/fragment-dotnet/wwwroot/lib/jquery/LICENSE.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/dotnet/wwwroot/lib/jquery/dist/jquery.js" beforeDir="false" afterPath="$PROJECT_DIR$/packages/fragment-dotnet/wwwroot/lib/jquery/dist/jquery.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/dotnet/wwwroot/lib/jquery/dist/jquery.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/packages/fragment-dotnet/wwwroot/lib/jquery/dist/jquery.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/dotnet/wwwroot/lib/jquery/dist/jquery.min.map" beforeDir="false" afterPath="$PROJECT_DIR$/packages/fragment-dotnet/wwwroot/lib/jquery/dist/jquery.min.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/fragment-applications-react/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/packages/fragment-applications-react/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/fragment-applications-react/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/packages/fragment-applications-react/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/fragment-common/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/packages/fragment-common/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/fragment-common/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/packages/fragment-common/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/fragment-recommendations-vue/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/packages/fragment-recommendations-vue/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/fragment-recommendations-vue/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/packages/fragment-recommendations-vue/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/fragment-recommendations-vue2/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/packages/fragment-recommendations-vue2/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/fragment-recommendations-vue2/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/packages/fragment-recommendations-vue2/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/fragment-simple-vue-test/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/packages/fragment-simple-vue-test/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/fragment-simple-vue-test/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/packages/fragment-simple-vue-test/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/fragment-simple-vue-test/webpack.server.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/packages/fragment-simple-vue-test/webpack.server.config.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/fragment-vue-test/.babelrc.js" beforeDir="false" afterPath="$PROJECT_DIR$/packages/fragment-vue-http/.babelrc.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/fragment-vue-test/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/packages/fragment-vue-http/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/fragment-vue-test/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/packages/fragment-vue-http/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/fragment-vue-test/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/packages/fragment-vue-http/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/fragment-vue-test/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/packages/fragment-vue-http/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/fragment-vue-test/render-stream.js" beforeDir="false" afterPath="$PROJECT_DIR$/packages/fragment-vue-http/render-stream.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/fragment-vue-test/src/app/Recommendations.vue" beforeDir="false" afterPath="$PROJECT_DIR$/packages/fragment-vue-http/src/app/Recommendations.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/fragment-vue-test/src/app/store.js" beforeDir="false" afterPath="$PROJECT_DIR$/packages/fragment-vue-http/src/app/store.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/fragment-vue-test/src/entry-server.js" beforeDir="false" afterPath="$PROJECT_DIR$/packages/fragment-vue-http/src/entry-server.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/fragment-vue-test/src/entry.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/fragment-vue-test/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/packages/fragment-vue-http/src/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/fragment-vue-test/webpack.config.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/fragment-vue-test/webpack.server.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/packages/fragment-vue-http/webpack.server.config.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/startup-fragments.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/startup.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/index.html" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -109,36 +243,50 @@
     <session id="871380585">
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="Dockerfile" value="1" />
-          <entry key="dockerignore" value="1" />
-          <entry key="html" value="2" />
-          <entry key="js" value="12" />
-          <entry key="json" value="3" />
+          <entry key="Dockerfile" value="20" />
+          <entry key="cs" value="3" />
+          <entry key="dockerignore" value="4" />
+          <entry key="gitignore" value="2" />
+          <entry key="html" value="7" />
+          <entry key="js" value="38" />
+          <entry key="json" value="26" />
           <entry key="ts" value="2" />
+          <entry key="yml" value="4" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="Dockerfile" value="1" />
-          <entry key="HTML" value="2" />
-          <entry key="JSON" value="3" />
-          <entry key="JavaScript" value="12" />
-          <entry key="PLAIN_TEXT" value="1" />
+          <entry key="CSFile" value="3" />
+          <entry key="Dockerfile" value="20" />
+          <entry key="HTML" value="7" />
+          <entry key="JSON" value="26" />
+          <entry key="JavaScript" value="38" />
+          <entry key="PLAIN_TEXT" value="6" />
           <entry key="TypeScript" value="2" />
+          <entry key="YAML" value="4" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="Dockerfile" value="49" />
-          <entry key="html" value="8" />
-          <entry key="js" value="33" />
+          <entry key="Dockerfile" value="282" />
+          <entry key="cs" value="3" />
+          <entry key="dockerignore" value="77" />
+          <entry key="gitignore" value="4" />
+          <entry key="html" value="58" />
+          <entry key="js" value="128" />
+          <entry key="json" value="25" />
+          <entry key="yml" value="392" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="Dockerfile" value="49" />
-          <entry key="HTML" value="8" />
-          <entry key="JavaScript" value="33" />
+          <entry key="CSFile" value="3" />
+          <entry key="Dockerfile" value="282" />
+          <entry key="HTML" value="58" />
+          <entry key="JSON" value="25" />
+          <entry key="JavaScript" value="128" />
+          <entry key="PLAIN_TEXT" value="81" />
+          <entry key="YAML" value="392" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.lifecycle.project">
@@ -158,26 +306,84 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/templates/index.html">
+        <entry file="file://$PROJECT_DIR$/packages/fragment-recommendations-vue2/index.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="304">
-              <caret line="25" column="26" selection-start-line="25" selection-start-column="26" selection-end-line="25" selection-end-column="26" />
+            <state relative-caret-position="323">
+              <caret line="19" column="37" selection-start-line="19" selection-start-column="37" selection-end-line="19" selection-end-column="37" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Dockerfile">
+        <entry file="file://$PROJECT_DIR$/templates/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="204">
-              <caret line="12" selection-start-line="12" selection-end-line="12" />
+            <state relative-caret-position="408">
+              <caret line="24" column="39" lean-forward="true" selection-start-line="24" selection-start-column="38" selection-end-line="24" selection-end-column="62" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/docker-compose.yml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="357">
+              <caret line="21" column="20" lean-forward="true" selection-start-line="21" selection-start-column="20" selection-end-line="21" selection-end-column="20" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/packages/fragment-applications-react/Dockerfile">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="187">
+              <caret line="11" selection-start-line="11" selection-end-line="11" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/.dockerignore">
-          <provider selected="true" editor-type-id="text-editor" />
+        <entry file="file://$PROJECT_DIR$/packages/fragment-dotnet/Dockerfile">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="289">
+              <caret line="17" column="9" selection-start-line="17" selection-start-column="9" selection-end-line="17" selection-end-column="9" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/packages/fragment-vue-http/Dockerfile">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="272">
+              <caret line="16" selection-start-line="16" selection-end-line="16" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/packages/fragment-common/Dockerfile">
+          <provider selected="true" editor-type-id="text-editor">
+            <state>
+              <caret column="11" lean-forward="true" selection-start-column="11" selection-end-column="11" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/packages/fragment-common/index.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="306">
+              <caret line="18" lean-forward="true" selection-start-line="18" selection-end-line="18" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/packages/fragment-common/package.json">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="136">
+              <caret line="8" column="39" selection-start-line="8" selection-start-column="39" selection-end-line="8" selection-end-column="39" />
+            </state>
+          </provider>
         </entry>
       </file>
     </leaf>
@@ -190,12 +396,15 @@
       <find>vue-server-renderer</find>
       <find>6006</find>
       <find>5656</find>
+      <find>tailor-react-spa</find>
+      <find>entry.js</find>
     </findStrings>
     <replaceStrings>
       <replace>5659</replace>
     </replaceStrings>
     <dirStrings>
       <dir>$PROJECT_DIR$/packages/fragment-recommendations-vue2</dir>
+      <dir>C:\htdocs\tailor-react-spa\packages\fragment-vue-http</dir>
     </dirStrings>
   </component>
   <component name="Git.Settings">
@@ -209,15 +418,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/packages/fragment-vue/render-stream.js" />
-        <option value="$PROJECT_DIR$/packages/fragment-vue/index.js" />
-        <option value="$PROJECT_DIR$/packages/fragment-recommendations-vue2/src/app/Recommendation.vue" />
-        <option value="$PROJECT_DIR$/packages/fragment-recommendations-vue2/src/entry.js" />
-        <option value="$PROJECT_DIR$/packages/fragment-recommendations-vue2/src/index.js" />
-        <option value="$PROJECT_DIR$/packages/fragment-recommendations-vue2/src/app/router.js" />
-        <option value="$PROJECT_DIR$/packages/fragment-recommendations-vue2/src/app/App.vue" />
-        <option value="$PROJECT_DIR$/packages/fragment-recommendations-vue2/src/entry-server.js" />
-        <option value="$PROJECT_DIR$/packages/fragment-recommendations-vue2/test.js" />
         <option value="$PROJECT_DIR$/packages/vue-ssr-test/src/main.js" />
         <option value="$PROJECT_DIR$/packages/vue-ssr-test/src/App.vue" />
         <option value="$PROJECT_DIR$/packages/vue-ssr-test/src/router.js" />
@@ -227,29 +427,48 @@
         <option value="$PROJECT_DIR$/packages/vue-ssr-test/src/entry-client.js" />
         <option value="$PROJECT_DIR$/packages/fragment-recommendations-vue2/render-stream.js" />
         <option value="$PROJECT_DIR$/packages/fragment-recommendations-vue2/src/app/Recommendations.vue" />
-        <option value="$PROJECT_DIR$/packages/fragment-recommendations-vue2/package.json" />
-        <option value="$PROJECT_DIR$/packages/fragment-recommendations-vue2/index.js" />
-        <option value="$PROJECT_DIR$/packages/fragment-vue-test/package.json" />
         <option value="$PROJECT_DIR$/packages/fragment-vue-test/src/entry.js" />
         <option value="$PROJECT_DIR$/packages/fragment-simple-vue-test/src/entry.js" />
         <option value="$PROJECT_DIR$/packages/fragment-simple-vue-test/src/index.js" />
         <option value="$PROJECT_DIR$/packages/fragment-simple-vue-test/render-stream.js" />
         <option value="$PROJECT_DIR$/packages/fragment-simple-vue-test/src/app/Recommendations.vue" />
         <option value="$PROJECT_DIR$/packages/fragment-simple-vue-test/src/entry-server.js" />
-        <option value="$PROJECT_DIR$/packages/fragment-simple-vue-test/index.js" />
-        <option value="$PROJECT_DIR$/packages/fragment-simple-vue-test/package.json" />
         <option value="$PROJECT_DIR$/packages/fragment-vue-test/src/app/Recommendations.vue" />
-        <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/process.yml" />
         <option value="$PROJECT_DIR$/process.json" />
         <option value="$PROJECT_DIR$/startup.js" />
-        <option value="$PROJECT_DIR$/package.json" />
         <option value="$PROJECT_DIR$/index.js" />
         <option value="$PROJECT_DIR$/startup-fragments.js" />
-        <option value="$PROJECT_DIR$/packages/fragment-vue-test/index.js" />
-        <option value="$PROJECT_DIR$/templates/index.html" />
         <option value="$PROJECT_DIR$/packages/fragment-vue-test/src/app/store.js" />
+        <option value="$PROJECT_DIR$/.gitignore" />
+        <option value="$PROJECT_DIR$/.dockerignore" />
+        <option value="$PROJECT_DIR$/packages/fragment-simple-vue-test/.dockerignore" />
+        <option value="$PROJECT_DIR$/packages/fragment-simple-vue-test/webpack.server.config.js" />
+        <option value="$PROJECT_DIR$/packages/fragment-simple-vue-test/index.js" />
+        <option value="$PROJECT_DIR$/packages/fragment-simple-vue-test/package.json" />
         <option value="$PROJECT_DIR$/Dockerfile" />
+        <option value="$PROJECT_DIR$/package.json" />
+        <option value="$PROJECT_DIR$/packages/fragment-vue-test/Dockerfile" />
+        <option value="$PROJECT_DIR$/packages/fragment-vue-test/index.js" />
+        <option value="$PROJECT_DIR$/packages/fragment-vue-test/package.json" />
+        <option value="$PROJECT_DIR$/packages/fragment-vue-http/package.json" />
+        <option value="$PROJECT_DIR$/packages/fragment-simple-vue-test/Dockerfile" />
+        <option value="$PROJECT_DIR$/packages/fragment-applications-react/package.json" />
+        <option value="$PROJECT_DIR$/packages/fragment-recommendations-vue/package.json" />
+        <option value="$PROJECT_DIR$/packages/fragment-recommendations-vue2/package.json" />
+        <option value="$PROJECT_DIR$/packages/fragment-recommendations-vue2/Dockerfile" />
+        <option value="$PROJECT_DIR$/packages/fragment-applications-react/Dockerfile" />
+        <option value="$PROJECT_DIR$/packages/fragment-common/package.json" />
+        <option value="$PROJECT_DIR$/docker-compose.yml" />
+        <option value="$PROJECT_DIR$/packages/fragment-dotnet/Program.cs" />
+        <option value="$PROJECT_DIR$/templates/index.html" />
+        <option value="$PROJECT_DIR$/packages/fragment-dotnet/.dockerignore" />
+        <option value="$PROJECT_DIR$/packages/fragment-dotnet/.gitignore" />
+        <option value="$PROJECT_DIR$/packages/fragment-applications-react/index.js" />
+        <option value="$PROJECT_DIR$/packages/fragment-recommendations-vue/index.js" />
+        <option value="$PROJECT_DIR$/packages/fragment-recommendations-vue2/index.js" />
+        <option value="$PROJECT_DIR$/packages/fragment-dotnet/Dockerfile" />
+        <option value="$PROJECT_DIR$/packages/fragment-common/index.js" />
       </list>
     </option>
   </component>
@@ -266,7 +485,7 @@
     <handled-path value="$PROJECT_DIR$/packages/fragment-recommendations-vue/node_modules" />
     <handled-path value="$PROJECT_DIR$/packages/fragment-recommendations-vue2/node_modules" />
     <handled-path value="$PROJECT_DIR$/packages/fragment-simple-vue-test/node_modules" />
-    <handled-path value="$PROJECT_DIR$/packages/fragment-vue-test/node_modules" />
+    <handled-path value="$PROJECT_DIR$/packages/fragment-vue-http/node_modules" />
   </component>
   <component name="NodePackageJsonFileManager">
     <packageJsonPaths>
@@ -276,13 +495,16 @@
       <path value="$PROJECT_DIR$/packages/fragment-recommendations-vue/package.json" />
       <path value="$PROJECT_DIR$/packages/fragment-recommendations-vue2/package.json" />
       <path value="$PROJECT_DIR$/packages/fragment-simple-vue-test/package.json" />
-      <path value="$PROJECT_DIR$/packages/fragment-vue-test/package.json" />
+      <path value="$PROJECT_DIR$/packages/fragment-vue-http/package.json" />
     </packageJsonPaths>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
+  <component name="ProjectFrameBounds" extendedState="7">
     <option name="x" value="658" />
     <option name="width" value="1029" />
     <option name="height" value="1027" />
+  </component>
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
   </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
@@ -300,18 +522,44 @@
             <path>
               <item name="tailor-react-spa" type="b2602c69:ProjectViewProjectNode" />
               <item name="tailor-react-spa" type="462c0819:PsiDirectoryNode" />
-              <item name="node_modules" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="tailor-react-spa" type="b2602c69:ProjectViewProjectNode" />
-              <item name="tailor-react-spa" type="462c0819:PsiDirectoryNode" />
-              <item name="node_modules" type="462c0819:PsiDirectoryNode" />
-              <item name="node-tailor" type="462c0819:PsiDirectoryNode" />
+              <item name="packages" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="tailor-react-spa" type="b2602c69:ProjectViewProjectNode" />
               <item name="tailor-react-spa" type="462c0819:PsiDirectoryNode" />
               <item name="packages" type="462c0819:PsiDirectoryNode" />
+              <item name="fragment-applications-react" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="tailor-react-spa" type="b2602c69:ProjectViewProjectNode" />
+              <item name="tailor-react-spa" type="462c0819:PsiDirectoryNode" />
+              <item name="packages" type="462c0819:PsiDirectoryNode" />
+              <item name="fragment-applications-react" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="tailor-react-spa" type="b2602c69:ProjectViewProjectNode" />
+              <item name="tailor-react-spa" type="462c0819:PsiDirectoryNode" />
+              <item name="packages" type="462c0819:PsiDirectoryNode" />
+              <item name="fragment-common" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="tailor-react-spa" type="b2602c69:ProjectViewProjectNode" />
+              <item name="tailor-react-spa" type="462c0819:PsiDirectoryNode" />
+              <item name="packages" type="462c0819:PsiDirectoryNode" />
+              <item name="fragment-dotnet" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="tailor-react-spa" type="b2602c69:ProjectViewProjectNode" />
+              <item name="tailor-react-spa" type="462c0819:PsiDirectoryNode" />
+              <item name="packages" type="462c0819:PsiDirectoryNode" />
+              <item name="fragment-recommendations-vue" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="tailor-react-spa" type="b2602c69:ProjectViewProjectNode" />
+              <item name="tailor-react-spa" type="462c0819:PsiDirectoryNode" />
+              <item name="packages" type="462c0819:PsiDirectoryNode" />
+              <item name="fragment-recommendations-vue2" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="tailor-react-spa" type="b2602c69:ProjectViewProjectNode" />
@@ -323,22 +571,7 @@
               <item name="tailor-react-spa" type="b2602c69:ProjectViewProjectNode" />
               <item name="tailor-react-spa" type="462c0819:PsiDirectoryNode" />
               <item name="packages" type="462c0819:PsiDirectoryNode" />
-              <item name="fragment-vue-test" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="tailor-react-spa" type="b2602c69:ProjectViewProjectNode" />
-              <item name="tailor-react-spa" type="462c0819:PsiDirectoryNode" />
-              <item name="packages" type="462c0819:PsiDirectoryNode" />
-              <item name="fragment-vue-test" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="tailor-react-spa" type="b2602c69:ProjectViewProjectNode" />
-              <item name="tailor-react-spa" type="462c0819:PsiDirectoryNode" />
-              <item name="packages" type="462c0819:PsiDirectoryNode" />
-              <item name="fragment-vue-test" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="fragment-vue-http" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="tailor-react-spa" type="b2602c69:ProjectViewProjectNode" />
@@ -400,7 +633,11 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/packages" />
+      <recent name="C:\htdocs\tailor-react-spa\packages\fragment-dotnet" />
+      <recent name="C:\htdocs\tailor-react-spa\packages\fragment-applications-react" />
+      <recent name="C:\htdocs\tailor-react-spa\packages\fragment-common" />
+      <recent name="C:\htdocs\tailor-react-spa\packages\fragment-recommendations-vue" />
+      <recent name="C:\htdocs\tailor-react-spa\packages\fragment-recommendations-vue2" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -427,18 +664,17 @@
       <updated>1537122254955</updated>
       <workItem from="1537122256846" duration="1800000" />
       <workItem from="1537124086079" duration="25792000" />
-      <workItem from="1537271869731" duration="1627000" />
+      <workItem from="1537271869731" duration="14232000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="40153000" />
+    <option name="totallyTimeSpent" value="52758000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1696" height="1036" extended-state="6" />
-    <editor active="true" />
+    <frame x="-8" y="-8" width="1936" height="1066" extended-state="6" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.24969843" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.21812434" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -449,7 +685,7 @@
       <window_info anchor="bottom" id="Quokka" />
       <window_info anchor="bottom" id="Docker" show_stripe_button="false" />
       <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.32984293" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.32939914" />
       <window_info anchor="bottom" id="Run" order="2" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
@@ -457,7 +693,7 @@
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Version Control" order="7" weight="0.32939914" />
       <window_info anchor="bottom" id="Database Changes" order="8" show_stripe_button="false" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="9" visible="true" weight="0.42128602" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="9" visible="true" weight="0.40665236" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
       <window_info anchor="bottom" id="TypeScript" order="11" />
       <window_info anchor="bottom" id="Messages" order="12" />
@@ -493,174 +729,72 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/packages/fragment-recommendations-vue2/src/app/Recommendations.vue">
+    <entry file="file://$PROJECT_DIR$/index.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="15" column="16" selection-start-line="15" selection-start-column="16" selection-end-line="15" selection-end-column="35" />
+        <state relative-caret-position="646">
+          <caret line="38" column="9" selection-start-line="38" selection-start-column="9" selection-end-line="38" selection-end-column="9" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/packages/fragment-recommendations-vue2/src/app/RecommendationDeepListing.vue">
+    <entry file="file://$PROJECT_DIR$/packages/fragment-vue-http/render-stream.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="16" column="42" selection-start-line="16" selection-start-column="42" selection-end-line="16" selection-end-column="42" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/packages/fragment-vue-http/node_modules/vue-server-renderer/types/index.d.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="391">
+          <caret line="24" column="16" selection-start-line="24" selection-start-column="2" selection-end-line="24" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/packages/fragment-vue-http/dist/vue-ssr-server-bundle.json">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/packages/fragment-recommendations-vue2/index.js">
+    <entry file="file://$PROJECT_DIR$/packages/fragment-vue-http/webpack.server.config.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret selection-end-line="25" />
+        <state relative-caret-position="799">
+          <caret line="47" column="15" selection-start-line="47" selection-start-column="15" selection-end-line="47" selection-end-column="15" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/packages/fragment-recommendations-vue2/webpack.server.config.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="440">
-          <caret line="46" column="14" selection-start-line="46" selection-start-column="14" selection-end-line="46" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/packages/fragment-recommendations-vue2/render-stream.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="24" selection-start-column="24" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/packages/fragment-recommendations-vue2/webpack.config.js">
+    <entry file="file://$PROJECT_DIR$/packages/fragment-vue-http/src/entry-server.js">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/packages/fragment-vue-test/src/app/RecommendationDeepListing.vue" />
-    <entry file="file://$PROJECT_DIR$/packages/fragment-vue-test/src/app/Recommendation.vue" />
-    <entry file="file://$PROJECT_DIR$/packages/fragment-vue-test/src/app/RecommendationDeepItem.vue" />
-    <entry file="file://$PROJECT_DIR$/packages/fragment-vue-test/src/index.js">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/packages/fragment-simple-vue-test/src/app/store.js" />
-    <entry file="file://$PROJECT_DIR$/packages/fragment-simple-vue-test/src/entry.js" />
-    <entry file="file://$PROJECT_DIR$/packages/fragment-vue-test/package.json">
+    <entry file="file://$PROJECT_DIR$/packages/fragment-vue-http/src/app/store.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="11" column="17" selection-start-line="11" selection-start-column="17" selection-end-line="11" selection-end-column="17" />
+        <state relative-caret-position="306">
+          <caret line="20" column="6" lean-forward="true" selection-start-line="20" selection-start-column="6" selection-end-line="20" selection-end-column="6" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/packages/fragment-simple-vue-test/src/app/Recommendations.vue">
+    <entry file="file://$PROJECT_DIR$/2018-09-17_20-51-39.225915/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="10" column="20" selection-start-line="10" selection-start-column="20" selection-end-line="10" selection-end-column="20" />
+        <state relative-caret-position="306">
+          <caret line="18" column="9" lean-forward="true" selection-start-line="18" selection-start-column="9" selection-end-line="18" selection-end-column="9" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/packages/fragment-simple-vue-test/src/entry-server.js">
+    <entry file="file://$PROJECT_DIR$/.dockerignore">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="5" selection-start-line="5" selection-end-line="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/packages/fragment-simple-vue-test/render-stream.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="9" selection-start-line="9" selection-end-line="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/packages/fragment-vue-test/src/entry.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="7" selection-start-line="7" selection-end-line="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/packages/fragment-simple-vue-test/.babelrc.js">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/packages/fragment-simple-vue-test/src/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="13" selection-start-line="13" selection-end-line="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/packages/fragment-simple-vue-test/webpack.server.config.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="545">
-          <caret line="47" column="18" selection-start-line="47" selection-end-line="48" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/packages/fragment-simple-vue-test/webpack.config.js" />
-    <entry file="file://$PROJECT_DIR$/packages/fragment-simple-vue-test/package.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="405">
-          <caret line="27" column="19" selection-start-line="27" selection-start-column="19" selection-end-line="27" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/packages/fragment-vue-test/src/app/Recommendations.vue">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="9" column="10" selection-start-line="9" selection-start-column="10" selection-end-line="9" selection-end-column="10" />
+        <state relative-caret-position="34">
+          <caret line="2" selection-start-line="2" selection-end-line="2" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="15" selection-start-column="15" selection-end-column="15" />
+        <state relative-caret-position="34">
+          <caret line="2" column="15" selection-start-line="2" selection-start-column="15" selection-end-line="2" selection-end-column="15" />
         </state>
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/packages/fragment-applications-react/src/entry-server.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-69" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/packages/fragment-applications-react/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="391">
-          <caret line="20" column="12" selection-start-line="20" selection-start-column="12" selection-end-line="23" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/lerna.json">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/process.yml" />
-    <entry file="file://$PROJECT_DIR$/process.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="14" column="43" selection-start-line="14" selection-start-column="43" selection-end-line="14" selection-end-column="43" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/README.md" />
-    <entry file="file://$PROJECT_DIR$/package-lock.json">
-      <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/startup.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="46">
+        <state relative-caret-position="34">
           <caret line="2" column="21" selection-end-line="2" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/packages/fragment-applications-react/.gitignore">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/packages/fragment-common/.gitignore">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="9" selection-start-line="2" selection-start-column="9" selection-end-line="2" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/packages/fragment-recommendations-vue/.gitignore">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
         </state>
       </provider>
     </entry>
@@ -671,94 +805,256 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/process.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="17" column="3" lean-forward="true" selection-start-line="17" selection-start-column="3" selection-end-line="17" selection-end-column="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/packages/fragment-simple-vue-test/webpack.server.config.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="9" column="10" selection-start-line="9" selection-start-column="10" selection-end-line="9" selection-end-column="43" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lerna.json">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Dockerfile">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="13" column="9" selection-start-line="13" selection-start-column="9" selection-end-line="13" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/package.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-193">
-          <caret line="9" column="42" selection-start-line="9" selection-start-column="42" selection-end-line="9" selection-end-column="42" />
+        <state relative-caret-position="102">
+          <caret line="6" column="39" selection-start-line="6" selection-start-column="39" selection-end-line="6" selection-end-column="39" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/node_modules/node-tailor/package.json">
+    <entry file="file://$PROJECT_DIR$/packages/fragment-vue-test/src/entry.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="391">
-          <caret line="35" column="30" selection-start-line="35" selection-start-column="30" selection-end-line="35" selection-end-column="30" />
+        <state relative-caret-position="119">
+          <caret line="7" selection-start-line="7" selection-end-line="7" />
         </state>
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/packages/fragment-vue-test/node_modules/vue-server-renderer/server-plugin.d.ts">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="646">
-          <caret line="38" column="9" selection-start-line="38" selection-start-column="9" selection-end-line="38" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/packages/fragment-vue-test/render-stream.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="16" column="42" selection-start-line="16" selection-start-column="42" selection-end-line="16" selection-end-column="42" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/packages/fragment-vue-test/node_modules/vue-server-renderer/types/index.d.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="391">
-          <caret line="24" column="16" selection-start-line="24" selection-start-column="2" selection-end-line="24" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/packages/fragment-vue-test/dist/vue-ssr-server-bundle.json">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/packages/fragment-vue-test/webpack.server.config.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="799">
-          <caret line="47" column="15" selection-start-line="47" selection-start-column="15" selection-end-line="47" selection-end-column="15" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/packages/fragment-vue-test/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="50" selection-start-line="2" selection-start-column="50" selection-end-line="2" selection-end-column="50" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/packages/fragment-vue-test/src/entry-server.js">
-      <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/packages/fragment-simple-vue-test/index.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="14" selection-start-line="14" selection-end-line="14" />
+        <state relative-caret-position="34">
+          <caret line="2" selection-start-line="2" selection-end-line="8" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/packages/fragment-vue-test/src/app/store.js">
+    <entry file="file://$PROJECT_DIR$/packages/fragment-simple-vue-test/package.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="20" column="6" lean-forward="true" selection-start-line="20" selection-start-column="6" selection-end-line="20" selection-end-column="6" />
+        <state relative-caret-position="136">
+          <caret line="8" column="31" lean-forward="true" selection-start-line="8" selection-start-column="31" selection-end-line="9" selection-end-column="40" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/packages/fragment-vue-http/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" selection-start-line="2" selection-end-line="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/packages/fragment-vue-http/src/index.js">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/packages/fragment-vue-http/webpack.config.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="5" column="18" selection-start-line="5" selection-start-column="18" selection-end-line="5" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/packages/fragment-vue-http/package.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-5">
+          <caret line="7" column="14" selection-start-line="7" selection-start-column="14" selection-end-line="7" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/packages/fragment-dotnet/Startup.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-645" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/packages/fragment-simple-vue-test/Dockerfile">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="15" column="9" lean-forward="true" selection-start-line="15" selection-start-column="9" selection-end-line="15" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/packages/fragment-applications-react/package.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="8" column="66" selection-start-line="8" selection-start-column="66" selection-end-line="8" selection-end-column="66" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/packages/fragment-recommendations-vue/Dockerfile">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/packages/fragment-recommendations-vue/package.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="9" column="39" selection-start-line="9" selection-start-column="39" selection-end-line="9" selection-end-column="39" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/packages/fragment-recommendations-vue2/package.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="11" column="17" lean-forward="true" selection-start-line="11" selection-start-column="17" selection-end-line="11" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/packages/fragment-recommendations-vue2/Dockerfile">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="11" column="17" lean-forward="true" selection-start-line="11" selection-start-column="17" selection-end-line="11" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/packages/fragment-common/webpack.config.js">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/packages/fragment-common/common.js">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/packages/fragment-applications-react/render-stream.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <folding>
+            <element signature="e#0#54#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/packages/fragment-applications-react/.babelrc.js">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/packages/fragment-applications-react/src/entry-server.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <folding>
+            <element signature="e#0#25#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/packages/fragment-dotnet/Program.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="357">
+          <caret line="21" column="39" selection-start-line="21" selection-start-column="39" selection-end-line="21" selection-end-column="39" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/packages/fragment-simple-vue-test/.dockerignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="1" selection-start-line="1" selection-end-line="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/packages/fragment-dotnet/.dockerignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" column="4" selection-start-line="4" selection-start-column="4" selection-end-line="4" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/packages/fragment-dotnet/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="4" selection-start-column="4" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/packages/fragment-applications-react/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="22" column="37" selection-start-line="22" selection-start-column="37" selection-end-line="22" selection-end-column="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/packages/fragment-recommendations-vue/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="19" column="37" selection-start-line="19" selection-start-column="37" selection-end-line="19" selection-end-column="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/packages/fragment-recommendations-vue2/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="19" column="37" selection-start-line="19" selection-start-column="37" selection-end-line="19" selection-end-column="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/packages/fragment-applications-react/Dockerfile">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="11" selection-start-line="11" selection-end-line="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/packages/fragment-common/package.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="8" column="39" selection-start-line="8" selection-start-column="39" selection-end-line="8" selection-end-column="39" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/templates/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="304">
-          <caret line="25" column="26" selection-start-line="25" selection-start-column="26" selection-end-line="25" selection-end-column="26" />
+        <state relative-caret-position="408">
+          <caret line="24" column="39" lean-forward="true" selection-start-line="24" selection-start-column="38" selection-end-line="24" selection-end-column="62" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Dockerfile">
+    <entry file="file://$PROJECT_DIR$/packages/fragment-common/Dockerfile">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="12" selection-start-line="12" selection-end-line="12" />
+        <state>
+          <caret column="11" lean-forward="true" selection-start-column="11" selection-end-column="11" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/.dockerignore">
-      <provider selected="true" editor-type-id="text-editor" />
+    <entry file="file://$PROJECT_DIR$/packages/fragment-vue-http/Dockerfile">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="16" selection-start-line="16" selection-end-line="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/packages/fragment-common/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="18" lean-forward="true" selection-start-line="18" selection-end-line="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/docker-compose.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="357">
+          <caret line="21" column="20" lean-forward="true" selection-start-line="21" selection-start-column="20" selection-end-line="21" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/packages/fragment-dotnet/Dockerfile">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="17" column="9" selection-start-line="17" selection-start-column="9" selection-end-line="17" selection-end-column="9" />
+        </state>
+      </provider>
     </entry>
   </component>
 </project>

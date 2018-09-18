@@ -6,7 +6,7 @@
   "scripts": {
     "build": "webpack --mode production",
     "watch": "webpack --watch",
-    "start": "micro -l tcp://0.0.0.0:6007"
+    "start": "micro -l tcp://0.0.0.0:80"
   },
   "author": "",
   "license": "ISC",

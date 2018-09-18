@@ -5,9 +5,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build": "webpack --mode production && webpack --mode production --config webpack.server.config.js",
+    "build": "webpack --mode production --config webpack.server.config.js",
     "watch": "webpack --watch",
-    "start": "node index"
+    "start": "micro -l tcp://0.0.0.0:80"
   },
   "keywords": [],
   "author": "",
@@ -27,7 +27,6 @@
   },
   "dependencies": {
     "axios": "^0.18.0",
-    "express": "^4.16.3",
     "micro": "^9.3.3",
     "vue": "^2.5.17",
     "vuex": "^3.0.1"
