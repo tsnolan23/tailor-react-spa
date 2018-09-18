@@ -1,0 +1,19 @@
+{
+  "apps": [
+    {
+      "name": "lerna",
+      "script": "index.js",
+      "watch": true
+    },
+    {
+      "name": "fragment-vue-test",
+      "script": "./packages/fragment-vue-test",
+      "watch": true
+    },
+    {
+      "name": "fragment-simple-vue-test",
+      "script": "./packages/fragment-simple-vue-test",
+      "watch": true
+    }
+  ]
+}

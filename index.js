@@ -1,5 +1,3 @@
-'use strict'
-
 const Tailor = require('node-tailor')
 const { initTracer, PrometheusMetricsFactory, ConstSampler } = require('jaeger-client');
 const promClient = require('prom-client');
