@@ -8,6 +8,8 @@ services:
     #restart: always
     ports:
       - "8080:80"
+    depends_on:
+      - jaeger
 
   fragment-simple-vue-test:
     build: packages/fragment-simple-vue-test
@@ -26,3 +28,34 @@ services:
     ports:
       - "1234:80"
     #restart: always
+
+#############
+#############
+#############
+#############
+
+  elasticsearch:
+    image: docker.elastic.co/elasticsearch/elasticsearch:6.4.0
+    ports:
+    - "9200:9200"
+    - "9300:9300"
+    environment:
+      discovery.type: "single-node"
+      network.host: "0.0.0.0"
+
+  jaeger:
+    image: jaegertracing/all-in-one:latest
+    ports:
+    - "5775:5775/udp"
+    - "6831:6831/udp"
+    - "6832:6832/udp"
+    - "5778:5778"
+    - "16686:16686"
+    - "14268:14268"
+    - "9411:9411"
+    environment:
+      SPAN_STORAGE_TYPE: elasticsearch
+      ES_SERVER_URLS: http://elasticsearch:9200
+    depends_on:
+    - elasticsearch
+    restart: always

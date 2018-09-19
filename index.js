@@ -17,16 +17,9 @@ const tailor = new Tailor({
 	/*
 
 	Jagger
-	docker run -d -p5775:5775/udp -p9200:9200 -p6831:6831/udp -p6832:6832/udp -p16686:16686 -e SPAN_STORAGE_TYPE=elasticsearch -e ES_SERVER_URLS=http://172.17.0.2:9200 jaegertracing/all-in-one:latest
+	docker run -d -p5775:5775/udp -p6831:6831/udp -p6832:6832/udp -p16686:16686 -e SPAN_STORAGE_TYPE=elasticsearch -e ES_SERVER_URLS=http://172.17.0.2:9200 jaegertracing/all-in-one:latest
 
 	 https://github.com/jaegertracing/jaeger-client-node/issues/121
-
-	 % sysctl net.inet.udp.maxdgram
-net.inet.udp.maxdgram: 9216
-% sudo sysctl net.inet.udp.maxdgram=65536
-net.inet.udp.maxdgram: 9216 -> 65536
-% sudo sysctl net.inet.udp.maxdgram
-net.inet.udp.maxdgram: 65536
 
 https://github.com/jaegertracing/jaeger-client-node/issues/124
 
@@ -54,8 +47,9 @@ https://github.com/jaegertracing/jaeger/tree/master/plugin/storage/es
 	tracer: initTracer(
 		config,
 		{
-			host: '127.0.0.1',
-			port: 6832,
+			reporter: {
+				collectorEndpoint: 'http://jaeger:14268/api/traces'
+			},
 			metrics,
 			logger,
 			sampler: new ConstSampler(true)
