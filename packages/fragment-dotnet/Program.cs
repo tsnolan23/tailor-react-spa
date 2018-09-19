@@ -19,7 +19,6 @@ namespace dotnet
 
         public static IWebHostBuilder CreateWebHostBuilder(string[] args) =>
             WebHost.CreateDefaultBuilder(args)
-                .UseStartup<Startup>()
-                .UseUrls("http://localhost:2137/");
+                .UseStartup<Startup>();
     }
 }

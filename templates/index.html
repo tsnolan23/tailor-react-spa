@@ -1,29 +1,28 @@
 <!doctype html>
 <html>
 <head>
-  <title>Tailor Example Application</title>
-  <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0">
-  <style>
-    body {
-      background: #ECEFF4;
-    }
-  </style>
-  <script>
-    (function(d) {
-      require(d);
-      var arr = [ 'react', 'react-dom', 'react-redux', 'redux', 'prop-types', 'classnames', 'vue', 'vuex', 'axios'];
-      while (i = arr.pop())(function(dep) {
-        define(dep, d, function(b) {
-          return b[dep];
-        })
-      })(i);
-    }(['http://localhost:6007/dist/bundle.js']));
-  </script>
+    <title>Tailor Example Application</title>
+    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0">
+    <style>
+        body {
+            background: #ECEFF4;
+        }
+    </style>
+    <script>
+        (function (d) {
+            require(d);
+            var arr = ['react', 'react-dom', 'react-redux', 'redux', 'prop-types', 'classnames', 'vue', 'vuex', 'axios'];
+            while (i = arr.pop()) (function (dep) {
+                define(dep, d, function (b) {
+                    return b[dep];
+                })
+            })(i);
+        }(['http://fragment-common/dist/bundle.js']));
+    </script>
 </head>
 <body>
-  <fragment id="react" src="http://localhost:1234"></fragment>
-  <fragment id="vue" src="http://localhost:6699"></fragment>
-  <fragment id="vue2" src="http://localhost:5656"></fragment>
-  <fragment id="dotnet" src="http://localhost:2137"></fragment>
+<fragment id="fragment-simple-vue-test" src="http://fragment-simple-vue-test"></fragment>
+<fragment id="fragment-vue-http" src="http://fragment-vue-http"></fragment>
+<fragment id="fragment-dotnet" src="http://fragment-dotnet"></fragment>
 </body>
 </html>

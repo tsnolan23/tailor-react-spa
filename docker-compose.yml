@@ -1,0 +1,26 @@
+# docker-compose up --force-recreate --build
+version: "3.7"
+
+services:
+
+  tailor:
+    build: .
+    #restart: always
+    ports:
+      - "8080:80"
+
+  fragment-simple-vue-test:
+    build: packages/fragment-simple-vue-test
+    #restart: always
+
+  fragment-vue-http:
+    build: packages/fragment-vue-http
+    #restart: always
+
+  fragment-dotnet:
+    build: packages/fragment-dotnet
+    #restart: always
+
+  fragment-common:
+    build: packages/fragment-common
+    #restart: always
