@@ -17,10 +17,12 @@ services:
     build: packages/fragment-vue-http
     #restart: always
 
-  fragment-dotnet:
-    build: packages/fragment-dotnet
+  #fragment-dotnet:
+   # build: packages/fragment-dotnet
     #restart: always
 
   fragment-common:
     build: packages/fragment-common
+    ports:
+      - "1234:80"
     #restart: always
