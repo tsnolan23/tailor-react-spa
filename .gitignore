@@ -1,5 +1,3 @@
-/node_modules
-/packages/fragment-chat/node_modules
-/packages/fragment-common/node_modules
-/packages/fragment-contacts/node_modules
-/packages/fragment-header/node_modules
+**/node_modules
+/.idea
+lerna-debug.log
