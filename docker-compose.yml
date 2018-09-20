@@ -7,7 +7,7 @@ services:
     build: .
     #restart: always
     ports:
-      - "8080:80"
+      - 8080:80
     depends_on:
       - jaeger
 
@@ -22,20 +22,20 @@ services:
   fragment-dotnet:
     build: packages/fragment-dotnet
     ports:
-      - "1231:1231"
+      - 1231:1231
     # restart: always
 
   fragment-common:
     build: packages/fragment-common
     ports:
-      - "1234:80"
+      - 1234:80
     #restart: always
 
   elasticsearch:
     image: docker.elastic.co/elasticsearch/elasticsearch:6.4.0
     ports:
-    - "9200:9200"
-    - "9300:9300"
+      - 9200:9200
+      - 9300:9300
     environment:
       discovery.type: "single-node"
       network.host: "0.0.0.0"
@@ -60,6 +60,20 @@ services:
   kibana:
     image: docker.elastic.co/kibana/kibana:6.4.1
     ports:
-      - "5601:5601"
+      - 5601:5601
     depends_on:
-    - elasticsearch
+      - elasticsearch
+
+  grafana:
+    image: grafana/grafana:5.1.0
+    ports:
+      - 3000:3000
+    depends_on:
+      - elasticsearch
+
+  prometheus:
+    image: prom/prometheus
+    ports:
+      - 9090:9090
+    depends_on:
+      - elasticsearch
