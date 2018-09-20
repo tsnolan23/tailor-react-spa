@@ -1,10 +1,13 @@
 const Tailor = require('node-tailor')
-const { initTracer, PrometheusMetricsFactory, ConstSampler } = require('jaeger-client');
+const { initTracer, PrometheusMetricsFactory, ProbabilisticSampler } = require('jaeger-client');
 const promClient = require('prom-client');
 const bunyan = require('bunyan');
 
 const config = {
-	serviceName: 'my:awesome:service'
+	serviceName: 'my:awesome:service',
+	reporter: {
+		agentHost: "jaeger"
+	}
 };
 const namespace = config.serviceName;
 const metrics = new PrometheusMetricsFactory(promClient, namespace);
@@ -22,6 +25,8 @@ const tailor = new Tailor({
 	 https://github.com/jaegertracing/jaeger-client-node/issues/121
 
 https://github.com/jaegertracing/jaeger-client-node/issues/124
+
+konsul
 
 grafana
 docker run -d --name=grafana -p 3000:3000 grafana/grafana
@@ -47,9 +52,10 @@ https://github.com/jaegertracing/jaeger/tree/master/plugin/storage/es
 	tracer: initTracer(
 		config,
 		{
+			host: "jaeger",
+			sampler: new ProbabilisticSampler(1),
 			metrics,
-			logger,
-			sampler: new ConstSampler(true)
+			logger
 		})
 })
 
