@@ -11500,35 +11500,29 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\dawid.winiarczyk\\.nuget\\packages\\": {},
-    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
+    "/Users/morriq/.nuget/packages/": {},
+    "/usr/local/share/dotnet/sdk/NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\htdocs\\tailor-react-spa\\packages\\dotnet\\dotnet.csproj",
+      "projectUniqueName": "/www/sites/tailor-react-spa/packages/fragment-dotnet/dotnet.csproj",
       "projectName": "dotnet",
-      "projectPath": "C:\\htdocs\\tailor-react-spa\\packages\\dotnet\\dotnet.csproj",
-      "packagesPath": "C:\\Users\\dawid.winiarczyk\\.nuget\\packages\\",
-      "outputPath": "C:\\htdocs\\tailor-react-spa\\packages\\dotnet\\obj\\",
+      "projectPath": "/www/sites/tailor-react-spa/packages/fragment-dotnet/dotnet.csproj",
+      "packagesPath": "/Users/morriq/.nuget/packages/",
+      "outputPath": "/www/sites/tailor-react-spa/packages/fragment-dotnet/obj/",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
-        "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        "/usr/local/share/dotnet/sdk/NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "C:\\Users\\dawid.winiarczyk\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        "/Users/morriq/.nuget/NuGet/NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "netcoreapp2.1"
       ],
       "sources": {
-        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-        "http://nuget.gp.local/nuget": {},
-        "https://api.nuget.org/v3/index.json": {},
-        "https://dotnet.myget.org/F/aspnetcore-dev/api/v3/index.json": {},
-        "https://dotnet.myget.org/F/aspnetcore-tools/api/v3/index.json": {},
-        "https://dotnet.myget.org/F/dotnet-core/api/v3/index.json": {}
+        "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
         "netcoreapp2.1": {
@@ -11551,6 +11545,7 @@
             "autoReferenced": true
           },
           "Microsoft.NETCore.App": {
+            "suppressParent": "All",
             "target": "Package",
             "version": "[2.1.0, )",
             "autoReferenced": true

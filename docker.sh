@@ -14,6 +14,5 @@ echo "running grafana at http://localhost:3000"
 
 docker-compose up -d prometheus
 echo "running prometheus at http://localhost:9090"
-sleep 5
 
 docker-compose up -d
