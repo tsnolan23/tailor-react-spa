@@ -17,7 +17,7 @@ const tailor = new Tailor({
 	/*
 
 	Jagger
-	docker run -d -p5775:5775/udp -p6831:6831/udp -p6832:6832/udp -p16686:16686 -e SPAN_STORAGE_TYPE=elasticsearch -e ES_SERVER_URLS=http://172.17.0.2:9200 jaegertracing/all-in-one:latest
+	docker run -d -p5775:5775/udp -p6831:6831/udp -p6832:6832/udp -p 5778:5778 -p16686:16686 -p 14268:14268 -p 9411:9411 -e SPAN_STORAGE_TYPE=elasticsearch -e ES_SERVER_URLS=http://172.17.0.4:9200 jaegertracing/all-in-one:latest
 
 	 https://github.com/jaegertracing/jaeger-client-node/issues/121
 
