@@ -31,11 +31,6 @@ services:
       - "1234:80"
     #restart: always
 
-#############
-#############
-#############
-#############
-
   elasticsearch:
     image: docker.elastic.co/elasticsearch/elasticsearch:6.4.0
     ports:
@@ -59,5 +54,12 @@ services:
       SPAN_STORAGE_TYPE: elasticsearch
       ES_SERVER_URLS: http://elasticsearch:9200
     depends_on:
-    - elasticsearch
+      - elasticsearch
     restart: always
+
+  kibana:
+    image: docker.elastic.co/kibana/kibana:6.4.1
+    ports:
+      - "5601:5601"
+    depends_on:
+    - elasticsearch
