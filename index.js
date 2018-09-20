@@ -47,9 +47,6 @@ https://github.com/jaegertracing/jaeger/tree/master/plugin/storage/es
 	tracer: initTracer(
 		config,
 		{
-			reporter: {
-				collectorEndpoint: 'http://jaeger:14268/api/traces'
-			},
 			metrics,
 			logger,
 			sampler: new ConstSampler(true)

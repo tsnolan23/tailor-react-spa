@@ -30,3 +30,5 @@ C:\htdocs\tailor-react-spa\packages\dotnet\obj\Debug\netcoreapp2.1\dotnet.Views.
 C:\htdocs\tailor-react-spa\packages\dotnet\obj\Debug\netcoreapp2.1\dotnet.dll
 C:\htdocs\tailor-react-spa\packages\dotnet\obj\Debug\netcoreapp2.1\dotnet.pdb
 C:\htdocs\tailor-react-spa\packages\dotnet\obj\Debug\netcoreapp2.1\dotnet.csproj.CopyComplete
+C:\htdocs\tailor-react-spa\packages\fragment-dotnet\obj\Debug\netcoreapp2.1\dotnet.dll
+C:\htdocs\tailor-react-spa\packages\fragment-dotnet\obj\Debug\netcoreapp2.1\dotnet.pdb
