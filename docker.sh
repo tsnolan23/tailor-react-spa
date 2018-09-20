@@ -1,4 +1,9 @@
+if [ $1 == "umrzyj" ]
+then
+docker-compose up --force-recreate --build
+else
 docker-compose down
+fi
 
 docker-compose up -d elasticsearch
 sleep 5
