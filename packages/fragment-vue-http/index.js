@@ -1,9 +1,11 @@
+const { machineIdSync } = require('node-machine-id')
+const ip = require('ip')
+
 const renderStream = require('./render-stream.js')
 var consul = require('consul')({
-  host: 'consul'
+  host: 'consul',
+	promisify: true
 });
-const { machineIdSync } = require('node-machine-id');
-var ip = require("ip");
 
 
 module.exports = (req, res) => {

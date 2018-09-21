@@ -8,9 +8,6 @@ https://github.com/vuejs/vue-hackernews-2.0/blob/4dff0740b182f34c4c5fe1e2017576e
 jakis sposob klejenia stora dobry do reacta - patrz vue
 react css taki sam mechanizm jak vue
 https://www.google.pl/search?q=mini-css-extract-plugin+inline&oq=mini-css-extract-plugin+inline&aqs=chrome..69i57j69i60.2081j0j4&sourceid=chrome&ie=UTF-8
-
-heroku i docker
-
 -------
 
 fyi:
