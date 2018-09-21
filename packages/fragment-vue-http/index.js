@@ -1,28 +1,31 @@
 const { machineIdSync } = require('node-machine-id')
-const ip = require('ip')
+const { address } = require('ip')
+const consul = require('consul')
 
 const renderStream = require('./render-stream.js')
-var consul = require('consul')({
-  host: 'consul',
+
+
+const { agent } = consul({
+	host: 'consul',
 	promisify: true
-});
+})
 
-
-module.exports = (req, res) => {
-  consul.agent.service.register({
+module.exports = async (request, response) => {
+  const [, error] = await agent.service.register({
     id: machineIdSync(),
     name: 'test2',
-    address: ip.address(),
+    address: address(),
     port: 80
-  }, (err, t) => {
-    console.log(err);
-    console.log(t);
   })
+    .then(() => [true])
+    .catch((error) => [, error])
 
+	error && 'proszę to wyslać do spana i wywalić serwis'
 
-  res.writeHead(200, {
+  response.writeHead(200, {
     'Content-Type': 'text/html'
   })
 
-  renderStream().pipe(res);
+  renderStream()
+    .pipe(response);
 }

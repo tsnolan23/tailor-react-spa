@@ -2,9 +2,13 @@ const Tailor = require('node-tailor')
 const { initTracer, PrometheusMetricsFactory, ProbabilisticSampler } = require('jaeger-client')
 const promClient = require('prom-client')
 const bunyan = require('bunyan')
-const consul = require('consul')({
-  host: 'consul'
-});
+const consul = require('consul')
+
+
+const { agent } = consul({
+	host: 'consul',
+	promisify: true
+})
 
 const config = {
 	serviceName: 'my:awesome:service',
@@ -30,26 +34,29 @@ const tailor = new Tailor({
 		})
 })
 
-module.exports = (req, res) => {
-  consul.agent.service.list(function(err, result) {
-  	Object.values(result)
-			.filter(({ Service }) => Service === 'test2')
-			.forEach(({ Address }) => {
-				console.log(Address);
+module.exports = async (request, response) => {
+  const [ services, error ] = await agent.service.list()
+		.then((result) => [ result ])
+		.catch((error) => [, error ])
 
-				// consul.agent.join(Address, ((er, res) => {
-				// 	console.log(er, res);
-				// }));
-			});
-  });
-	if (req.url === '/favicon.ico') {
-		res.writeHead(200, { 'Content-Type': 'image/x-icon' })
-		res.end('')
+  error && 'do spana i zabic serwer'
+
+	Object.values(services)
+		.filter(({ Service }) => Service === 'test2')
+		.forEach(({ Address }) => {
+			consul.agent.join(Address, ((er, res) => {
+				console.log(er, res)
+			}))
+		})
+
+	if (request.url === '/favicon.ico') {
+		response.writeHead(200, { 'Content-Type': 'image/x-icon' })
+		response.end('')
 	  return
 	}
 
-	req.headers['x-request-uri'] = req.url
-	req.url = '/index'
+	request.headers['x-request-uri'] = request.url
+	request.url = '/index'
 
-	tailor.requestHandler(req, res)
+	tailor.requestHandler(request, response)
 }
