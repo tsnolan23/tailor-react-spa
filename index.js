@@ -1,4 +1,6 @@
 const Tailor = require('node-tailor')
+const tailorFragment = require('node-tailor/lib/request-fragment.js')
+const filterReqHeadersFn = require('node-tailor/lib/filter-headers.js')
 const { initTracer, PrometheusMetricsFactory, ProbabilisticSampler } = require('jaeger-client')
 const promClient = require('prom-client')
 const bunyan = require('bunyan')
@@ -18,12 +20,17 @@ const config = {
 }
 const namespace = config.serviceName
 const metrics = new PrometheusMetricsFactory(promClient, namespace)
-
 const logger = bunyan.createLogger({
 	name: namespace
 })
+const z = new Map();
 const tailor = new Tailor({
   templatesPath: __dirname + '/templates',
+	requestFragment(url, attributes, request, span = null) {
+  	const src = z.get(attributes.id);
+
+		return tailorFragment(filterReqHeadersFn)(src, attributes, request, span)
+	},
 	tracer: initTracer(
 		config,
 		{
@@ -42,11 +49,9 @@ module.exports = async (request, response) => {
   error && 'do spana i zabic serwer'
 
 	Object.values(services)
-		.filter(({ Service }) => Service === 'test2')
-		.forEach(({ Address }) => {
-			consul.agent.join(Address, ((er, res) => {
-				console.log(er, res)
-			}))
+		.filter(({ Service }) => Service === 'fragment-vue-http')
+		.forEach((a) => {
+			z.set(a.Service, 'http://' + a.Address + ':' + a.Port)
 		})
 
 	if (request.url === '/favicon.ico') {

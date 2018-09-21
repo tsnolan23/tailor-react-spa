@@ -10,18 +10,18 @@ const { agent } = consul({
 	promisify: true
 })
 
+// @todo module.exports powinno zwracac server dopiero po rozwiazaniu:
+agent.service.register({
+	id: machineIdSync(),
+	name: 'fragment-vue-http',
+	address: address(),
+	port: 80
+})
+	.catch(() => {
+		'logowanie do spana';
+	})
+
 module.exports = async (request, response) => {
-  const [, error] = await agent.service.register({
-    id: machineIdSync(),
-    name: 'test2',
-    address: address(),
-    port: 80
-  })
-    .then(() => [true])
-    .catch((error) => [, error])
-
-	error && 'proszę to wyslać do spana i wywalić serwis'
-
   response.writeHead(200, {
     'Content-Type': 'text/html'
   })

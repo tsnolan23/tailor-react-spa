@@ -8,22 +8,10 @@ services:
     #restart: always
     ports:
       - 8080:80
-    depends_on:
-      - jaeger
-
-  fragment-simple-vue-test:
-    build: packages/fragment-simple-vue-test
-    #restart: always
 
   fragment-vue-http:
     build: packages/fragment-vue-http
     #restart: always
-
-  fragment-dotnet:
-    build: packages/fragment-dotnet
-    ports:
-      - 1231:1231
-    # restart: always
 
   fragment-common:
     build: packages/fragment-common
@@ -34,59 +22,3 @@ services:
   consul:
     image: consul
     # UI dać
-
-  elasticsearch:
-    image: docker.elastic.co/elasticsearch/elasticsearch:6.4.0
-    ports:
-      - 9200:9200
-      - 9300:9300
-    environment:
-      discovery.type: "single-node"
-      network.host: "0.0.0.0"
-
-  # running jaeger at http://localhost:16686
-  jaeger:
-    image: jaegertracing/all-in-one:latest
-    ports:
-    - "5775:5775/udp"
-    - "6831:6831/udp"
-    - "6832:6832/udp"
-    - "5778:5778"
-    - "16686:16686"
-    - "14268:14268"
-    - "9411:9411"
-    environment:
-      SPAN_STORAGE_TYPE: elasticsearch
-      ES_SERVER_URLS: http://elasticsearch:9200
-    depends_on:
-      - elasticsearch
-    restart: always
-    healthcheck:
-      test: ["CMD", "curl", "-f", "http://elasticsearch:9200"]
-      interval: 30s
-      timeout: 10s
-      retries: 5
-
-  # running kibana at http://localhost:5601
-  kibana:
-    image: docker.elastic.co/kibana/kibana:6.4.1
-    ports:
-      - 5601:5601
-    depends_on:
-      - elasticsearch
-
-  # running grafana at http://localhost:3000
-  grafana:
-    image: grafana/grafana:5.1.0
-    ports:
-      - 3000:3000
-    depends_on:
-      - elasticsearch
-
-  # running prometheus at http://localhost:9090
-  prometheus:
-    image: prom/prometheus
-    ports:
-      - 9090:9090
-    depends_on:
-      - elasticsearch
