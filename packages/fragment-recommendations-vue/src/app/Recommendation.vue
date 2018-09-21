@@ -8,8 +8,6 @@
             </div>
             <span class="contact-email">{{recommendation.email}}</span>
         </div>
-
-        <RecommendationsDeepListing />
     </div>
 </template>
 
@@ -64,11 +62,7 @@
 </style>
 
 <script>
-    import RecommendationsDeepListing from './RecommendationDeepListing.vue';
     export default {
-    	components: {
-            RecommendationsDeepListing
-        },
     	props: {
     		recommendation: Object
         }
