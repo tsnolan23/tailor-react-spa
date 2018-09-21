@@ -44,6 +44,7 @@ services:
       discovery.type: "single-node"
       network.host: "0.0.0.0"
 
+  # running jaeger at http://localhost:16686
   jaeger:
     image: jaegertracing/all-in-one:latest
     ports:
@@ -60,7 +61,13 @@ services:
     depends_on:
       - elasticsearch
     restart: always
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://elasticsearch:9200"]
+      interval: 30s
+      timeout: 10s
+      retries: 5
 
+  # running kibana at http://localhost:5601
   kibana:
     image: docker.elastic.co/kibana/kibana:6.4.1
     ports:
@@ -68,6 +75,7 @@ services:
     depends_on:
       - elasticsearch
 
+  # running grafana at http://localhost:3000
   grafana:
     image: grafana/grafana:5.1.0
     ports:
@@ -75,6 +83,7 @@ services:
     depends_on:
       - elasticsearch
 
+  # running prometheus at http://localhost:9090
   prometheus:
     image: prom/prometheus
     ports:
