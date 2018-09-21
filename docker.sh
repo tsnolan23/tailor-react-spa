@@ -1,4 +1,5 @@
-if [ $1 == "rebuild" ]
+# https://stackoverflow.com/questions/31746182/docker-compose-wait-for-container-x-before-starting-y
+if [ $1 == "rebuild" ];
 then
 docker-compose up --force-recreate --build
 else

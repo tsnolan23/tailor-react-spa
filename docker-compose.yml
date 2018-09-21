@@ -31,6 +31,10 @@ services:
       - 1234:80
     #restart: always
 
+  consul:
+    image: consul
+    # UI dać
+
   elasticsearch:
     image: docker.elastic.co/elasticsearch/elasticsearch:6.4.0
     ports:
