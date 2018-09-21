@@ -1,4 +1,4 @@
-if [ $1 == "umrzyj" ]
+if [ $1 == "rebuild" ]
 then
 docker-compose up --force-recreate --build
 else
