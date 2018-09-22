@@ -6,9 +6,11 @@ const promClient = require('prom-client')
 const bunyan = require('bunyan')
 const consul = require('consul')
 
+const { consulHost } = require('./environment.js')
+
 
 const { agent } = consul({
-	host: 'consul',
+	host: consulHost,
 	promisify: true
 })
 

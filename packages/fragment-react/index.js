@@ -9,11 +9,11 @@ require('@babel/register')({
 })
 
 const renderStream = require('./render-stream.js')
-const { address, name, port } = require('./environment.js')
+const { consulHost, address, name, port } = require('./environment.js')
 
 
 const { agent } = consul({
-	host: 'consul',
+	host: consulHost,
 	promisify: true
 })
 

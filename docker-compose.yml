@@ -8,8 +8,9 @@ services:
     #restart: always
     ports:
       - 8080:80
+    environment:
+      - CONSUL_HOST=consul
     depends_on:
-      - jaeger
       - consul
     healthcheck:
       test: ["CMD", "curl", "-f", "consul:8500"]
@@ -19,6 +20,8 @@ services:
 
   fragment-vue-client:
     build: packages/fragment-vue-client
+    environment:
+      - CONSUL_HOST=consul
     depends_on:
       - consul
     #restart: always
@@ -30,8 +33,10 @@ services:
 
   fragment-vue-file-read:
     build: packages/fragment-vue-file-read
+    environment:
+      - CONSUL_HOST=consul
     depends_on:
-    - consul
+      - consul
     #restart: always
     healthcheck:
       test: ["CMD", "curl", "-f", "consul:8500"]
@@ -41,6 +46,8 @@ services:
 
   fragment-vue-http:
     build: packages/fragment-vue-http
+    environment:
+      - CONSUL_HOST=consul
     depends_on:
       - consul
     #restart: always
@@ -52,6 +59,8 @@ services:
 
   fragment-react:
     build: packages/fragment-react
+    environment:
+      - CONSUL_HOST=consul
     depends_on:
       - consul
     #restart: always
@@ -63,6 +72,8 @@ services:
 
   fragment-dotnet:
     build: packages/fragment-dotnet
+    environment:
+      - CONSUL_HOST=consul
     ports:
       - 1231:1231
     depends_on:
@@ -76,6 +87,8 @@ services:
 
   fragment-common:
     build: packages/fragment-common
+    environment:
+      - CONSUL_HOST=consul
     ports:
       - 1234:80
     depends_on:
@@ -90,13 +103,3 @@ services:
   consul:
     image: consul
     # UI dać
-
-  elasticsearch:
-    image: docker.elastic.co/elasticsearch/elasticsearch:6.4.0
-    ports:
-      - 9200:9200
-      - 9300:9300
-    environment:
-      discovery.type: "single-node"
-      network.host: "0.0.0.0"
-
