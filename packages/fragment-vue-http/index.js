@@ -10,7 +10,6 @@ const { agent } = consul({
 })
 
 agent.service.register({
-	id,
 	name,
 	address,
 	port

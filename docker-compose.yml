@@ -9,7 +9,6 @@ services:
     ports:
       - 8080:80
     depends_on:
-      - jaeger
       - consul
     healthcheck:
       test: ["CMD", "curl", "-f", "consul:8500"]
@@ -90,13 +89,3 @@ services:
   consul:
     image: consul
     # UI dać
-
-  elasticsearch:
-    image: docker.elastic.co/elasticsearch/elasticsearch:6.4.0
-    ports:
-      - 9200:9200
-      - 9300:9300
-    environment:
-      discovery.type: "single-node"
-      network.host: "0.0.0.0"
-
