@@ -4,11 +4,14 @@
   "description": "Frontend microservices",
   "main": "index.js",
   "scripts": {
-    "start": "micro -l tcp://0.0.0.0:80",
     "install-fragment-dependencies": "lerna bootstrap",
     "build-fragments": "lerna run build",
     "start-fragments": "lerna run --parallel start",
-    "watch-fragments": "lerna run --parallel watch"
+    "watch-fragments": "lerna run --parallel watch",
+    "start": "micro -l tcp://0.0.0.0:${npm_package_config_port}"
+  },
+  "config": {
+    "port": "80"
   },
   "repository": {
     "type": "git",
