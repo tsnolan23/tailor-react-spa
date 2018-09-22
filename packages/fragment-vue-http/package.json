@@ -7,7 +7,10 @@
   "scripts": {
     "build": "webpack --mode production --config webpack.server.config.js",
     "watch": "webpack --watch",
-    "start": "micro -l tcp://0.0.0.0:80"
+    "start": "micro -l tcp://0.0.0.0:${npm_package_config_port}"
+  },
+  "config": {
+    "port": "80"
   },
   "keywords": [],
   "author": "",

@@ -6,7 +6,10 @@
   "scripts": {
     "build": "webpack --mode production",
     "watch": "webpack --watch",
-    "start": "cross-env BABEL_ENV=server micro -l tcp://0.0.0.0:80"
+    "start": "cross-env BABEL_ENV=server micro -l tcp://0.0.0.0:${npm_package_config_port}"
+  },
+  "config": {
+    "port": "80"
   },
   "author": "",
   "license": "ISC",

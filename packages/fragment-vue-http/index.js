@@ -15,7 +15,7 @@ agent.service.register({
 	id: machineIdSync(),
 	name: 'fragment-vue-http',
 	address: address(),
-	port: 80
+	port: Number(process.env.npm_package_config_port)
 })
 	.catch(() => {
 		'logowanie do spana';

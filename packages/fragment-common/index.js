@@ -14,7 +14,7 @@ agent.service.register({
 	id: machineIdSync(),
 	name: 'fragment-common',
 	address: address(),
-	port: 80
+	port: Number(process.env.npm_package_config_port)
 })
 	.catch(() => {
 		'logowanie do spana';

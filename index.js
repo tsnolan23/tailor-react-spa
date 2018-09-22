@@ -28,7 +28,6 @@ const tailor = new Tailor({
   templatesPath: __dirname + '/templates',
 	requestFragment(url, attributes, request, span = null) {
   	const src = z.get(attributes.id);
-
 		return tailorFragment(filterReqHeadersFn)(src, attributes, request, span)
 	},
 	tracer: initTracer(
@@ -49,7 +48,6 @@ module.exports = async (request, response) => {
   error && 'do spana i zabic serwer'
 
 	Object.values(services)
-		.filter(({ Service }) => Service === 'fragment-vue-http')
 		.forEach((a) => {
 			z.set(a.Service, 'http://' + a.Address + ':' + a.Port)
 		})
