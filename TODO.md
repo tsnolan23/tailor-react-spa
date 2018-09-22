@@ -14,7 +14,3 @@ fyi:
 - gzip + http2 na nginx?
 - axios nie jest uzywany frontowo
 - jak w tym flow zarzadzac cdnem?
-- jak unikac kolizji:
-  - id
-  - window.state
-  - port

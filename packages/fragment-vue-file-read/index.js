@@ -1,11 +1,11 @@
 const consul = require('consul')
 
 const renderStream = require('./render-stream.js')
-const { consulHost, address, name, port } = require('./environment.js')
+const { consulAddress, address, name, port } = require('./environment.js')
 
 
 const { agent } = consul({
-	host: consulHost,
+	host: consulAddress,
 	promisify: true
 })
 
@@ -18,9 +18,9 @@ agent.service.register({
 		'logowanie do spana'
 	})
 
-module.exports = (req, res) => {
-  res.writeHead(200, {
+module.exports = (request, response) => {
+	response.writeHead(200, {
     'Content-Type': 'text/html'
   })
-  renderStream().pipe(res)
+  renderStream().pipe(response)
 }

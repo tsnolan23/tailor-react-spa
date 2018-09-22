@@ -1,19 +1,22 @@
 const { address } = require('ip')
 
 
-const setConsul = (consulHost) => ({ consulHost })
+const setConsul = (consulAddress) => ({ consulAddress })
+const setTracing = (tracingAddress) => ({ tracingAddress })
 const setName = (name) => ({ name })
 const setAddress = (address) => ({ address })
 const setPort = port => ({ port })
 
 const { env } = process
 const {
+	TRACING_HOST,
 	CONSUL_HOST,
 	npm_package_name,
 	npm_package_config_port
 } = env
 
 module.exports = ({
+	...setTracing(TRACING_HOST),
 	...setConsul(CONSUL_HOST),
 	...setName(npm_package_name),
 	...setAddress(address()),

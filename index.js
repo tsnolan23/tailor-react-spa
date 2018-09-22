@@ -1,23 +1,24 @@
 const Tailor = require('node-tailor')
-const tailorFragment = require('node-tailor/lib/request-fragment.js')
-const filterReqHeadersFn = require('node-tailor/lib/filter-headers.js')
+const tailorFragment = require('node-tailor/lib/fetch-template.js')
+const tailorParse = require('node-tailor/lib/parse-template.js')
 const { initTracer, PrometheusMetricsFactory, ProbabilisticSampler } = require('jaeger-client')
 const promClient = require('prom-client')
 const bunyan = require('bunyan')
 const consul = require('consul')
+const { render } = require('ejs')
 
-const { consulHost } = require('./environment.js')
+const { tracingAddress, consulAddress } = require('./environment.js')
 
 
 const { agent } = consul({
-	host: consulHost,
+	host: consulAddress,
 	promisify: true
 })
 
 const config = {
 	serviceName: 'my:awesome:service',
 	reporter: {
-		agentHost: 'jaeger'
+		agentHost: tracingAddress
 	}
 }
 const namespace = config.serviceName
@@ -25,17 +26,19 @@ const metrics = new PrometheusMetricsFactory(promClient, namespace)
 const logger = bunyan.createLogger({
 	name: namespace
 })
-const z = new Map();
-const tailor = new Tailor({
-  templatesPath: __dirname + '/templates',
-	requestFragment(url, attributes, request, span = null) {
-  	const src = url ? url : z.get(attributes.id)
-		return tailorFragment(filterReqHeadersFn)(src, attributes, request, span)
+const localAddresses = {}
+const { requestHandler } = new Tailor({
+	fetchTemplate(request) {
+		const templatePath = 'templates/index.html'
+		return tailorFragment(templatePath)(request, (baseTemplate, childTemplate) => {
+			// @todo cache based on consul services equality
+			return tailorParse(['fragment'], ['script'])(render(baseTemplate, {localAddresses}), childTemplate ? render(childTemplate, { localAddresses }) : childTemplate)
+		})
 	},
 	tracer: initTracer(
 		config,
 		{
-			host: 'jaeger',
+			host: tracingAddress,
 			sampler: new ProbabilisticSampler(1),
 			metrics,
 			logger
@@ -51,7 +54,7 @@ module.exports = async (request, response) => {
 
 	Object.values(services)
 		.forEach((a) => {
-			z.set(a.Service, 'http://' + a.Address + ':' + a.Port)
+			localAddresses[a.Service] = 'http://' + a.Address + ':' + a.Port
 		})
 
 	if (request.url === '/favicon.ico') {
@@ -63,5 +66,5 @@ module.exports = async (request, response) => {
 	request.headers['x-request-uri'] = request.url
 	request.url = '/index'
 
-	tailor.requestHandler(request, response)
+	requestHandler(request, response)
 }

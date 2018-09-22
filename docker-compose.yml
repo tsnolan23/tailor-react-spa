@@ -10,9 +10,10 @@ services:
       - 8080:80
     environment:
       - CONSUL_HOST=consul
+      - TRACING_HOST=jager
     depends_on:
       - consul
-      - jaeger
+
     healthcheck:
       test: ["CMD", "curl", "-f", "consul:8500"]
       interval: 30s
@@ -23,8 +24,12 @@ services:
     build: packages/fragment-vue-client
     environment:
       - CONSUL_HOST=consul
+      - TRACING_HOST=jager
+    ports:
+    - 2131:80
     depends_on:
       - consul
+
     #restart: always
     healthcheck:
       test: ["CMD", "curl", "-f", "consul:8500"]
@@ -36,8 +41,10 @@ services:
     build: packages/fragment-vue-file-read
     environment:
       - CONSUL_HOST=consul
+      - TRACING_HOST=jager
     depends_on:
       - consul
+
     #restart: always
     healthcheck:
       test: ["CMD", "curl", "-f", "consul:8500"]
@@ -49,8 +56,10 @@ services:
     build: packages/fragment-vue-http
     environment:
       - CONSUL_HOST=consul
+      - TRACING_HOST=jager
     depends_on:
       - consul
+
     #restart: always
     healthcheck:
       test: ["CMD", "curl", "-f", "consul:8500"]
@@ -62,8 +71,12 @@ services:
     build: packages/fragment-react
     environment:
       - CONSUL_HOST=consul
+      - TRACING_HOST=jager
+    ports:
+      - 2132:80
     depends_on:
       - consul
+
     #restart: always
     healthcheck:
       test: ["CMD", "curl", "-f", "consul:8500"]
@@ -75,10 +88,12 @@ services:
     build: packages/fragment-dotnet
     environment:
       - CONSUL_HOST=consul
+      - TRACING_HOST=jager
     ports:
       - 1231:1231
     depends_on:
       - consul
+
     # restart: always
     healthcheck:
       test: ["CMD", "curl", "-f", "consul:8500"]
@@ -90,10 +105,12 @@ services:
     build: packages/fragment-common
     environment:
       - CONSUL_HOST=consul
+      - TRACING_HOST=jager
     ports:
       - 1234:80
     depends_on:
       - consul
+
     #restart: always
     healthcheck:
       test: ["CMD", "curl", "-f", "consul:8500"]
