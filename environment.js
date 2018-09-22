@@ -1,13 +1,13 @@
 const setConsul = (consulAddress) => ({ consulAddress })
-const setJaeger = (jaegerAddress) => ({ jaegerAddress })
+const setTracing = (tracingAddress) => ({ tracingAddress })
 
 const { env } = process
 const {
-	JAEGER_HOST,
+	TRACING_HOST,
 	CONSUL_HOST
 } = env
 
 module.exports = ({
-	...setJaeger(JAEGER_HOST),
+	...setTracing(TRACING_HOST),
 	...setConsul(CONSUL_HOST)
 })

@@ -6,7 +6,7 @@ const promClient = require('prom-client')
 const bunyan = require('bunyan')
 const consul = require('consul')
 
-const { jaegerAddress, consulAddress } = require('./environment.js')
+const { tracingAddress, consulAddress } = require('./environment.js')
 
 
 const { agent } = consul({
@@ -17,7 +17,7 @@ const { agent } = consul({
 const config = {
 	serviceName: 'my:awesome:service',
 	reporter: {
-		agentHost: jaegerAddress
+		agentHost: tracingAddress
 	}
 }
 const namespace = config.serviceName
@@ -34,7 +34,7 @@ const tailor = new Tailor({
 	tracer: initTracer(
 		config,
 		{
-			host: jaegerAddress,
+			host: tracingAddress,
 			sampler: new ProbabilisticSampler(1),
 			metrics,
 			logger

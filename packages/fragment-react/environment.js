@@ -1,7 +1,7 @@
 const { address } = require('ip')
 
 
-const setJaeger = (jaegerAddress) => ({ jaegerAddress })
+const setTracing = (tracingAddress) => ({ tracingAddress })
 const setConsul = (consulAddress) => ({ consulAddress })
 const setName = (name) => ({ name })
 const setAddress = (address) => ({ address })
@@ -14,14 +14,14 @@ const getUrlFromPort = (port) => (path) => {
 
 const { env } = process
 const {
-	JAEGER_HOST,
+	TRACING_HOST,
 	CONSUL_HOST,
 	npm_package_name,
 	npm_package_config_port
 } = env
 
 module.exports = ({
-	...setJaeger(JAEGER_HOST),
+	...setTracing(TRACING_HOST),
 	...setConsul(CONSUL_HOST),
 	...setName(npm_package_name),
 	...setAddress(address()),
