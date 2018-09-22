@@ -3,7 +3,7 @@ version: "3.7"
 
 services:
 
-  tailor:
+  webapp:
     build: .
     #restart: always
     ports:
@@ -13,20 +13,18 @@ services:
       - TRACING_HOST=jager
     depends_on:
       - consul
-
+      - jaeger
     healthcheck:
       test: ["CMD", "curl", "-f", "consul:8500"]
       interval: 30s
       timeout: 10s
       retries: 5
 
-  fragment-vue-client:
+  service-vue-client:
     build: packages/fragment-vue-client
     environment:
       - CONSUL_HOST=consul
       - TRACING_HOST=jager
-    ports:
-    - 2131:80
     depends_on:
       - consul
 
@@ -37,7 +35,7 @@ services:
       timeout: 10s
       retries: 5
 
-  fragment-vue-file-read:
+  service-vue-file-read:
     build: packages/fragment-vue-file-read
     environment:
       - CONSUL_HOST=consul
@@ -52,7 +50,7 @@ services:
       timeout: 10s
       retries: 5
 
-  fragment-vue-http:
+  service-vue-http:
     build: packages/fragment-vue-http
     environment:
       - CONSUL_HOST=consul
@@ -67,13 +65,11 @@ services:
       timeout: 10s
       retries: 5
 
-  fragment-react:
+  service-react:
     build: packages/fragment-react
     environment:
       - CONSUL_HOST=consul
       - TRACING_HOST=jager
-    ports:
-      - 2132:80
     depends_on:
       - consul
 
@@ -84,7 +80,7 @@ services:
       timeout: 10s
       retries: 5
 
-  fragment-dotnet:
+  service-dotnet:
     build: packages/fragment-dotnet
     environment:
       - CONSUL_HOST=consul
@@ -101,7 +97,7 @@ services:
       timeout: 10s
       retries: 5
 
-  fragment-common:
+  service-common:
     build: packages/fragment-common
     environment:
       - CONSUL_HOST=consul
