@@ -17,6 +17,8 @@ services:
 
   fragment-vue-http:
     build: packages/fragment-vue-http
+    environment:
+      PORT: 80
     #restart: always
 
   fragment-dotnet:
