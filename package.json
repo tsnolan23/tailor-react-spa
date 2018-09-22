@@ -35,6 +35,7 @@
   "dependencies": {
     "bunyan": "^1.8.12",
     "consul": "^0.34.0",
+    "ejs": "^2.6.1",
     "jaeger-client": "^3.12.0",
     "micro": "^9.3.3",
     "node-cmd": "^3.0.0",
