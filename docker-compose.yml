@@ -1,4 +1,5 @@
 # docker-compose up --force-recreate --build
+# https://medium.com/travis-on-docker/how-to-run-dockerized-apps-on-heroku-and-its-pretty-great-76e07e610e22
 version: "3.7"
 
 services:
