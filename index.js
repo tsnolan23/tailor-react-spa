@@ -7,7 +7,7 @@ const bunyan = require('bunyan')
 const consul = require('consul')
 const { render } = require('ejs')
 
-const { name, tracingAddress, consulAddress } = require('./environment.js')
+const { serviceName, tracingAddress, consulAddress } = require('./environment.js')
 
 
 const { agent } = consul({
@@ -16,15 +16,14 @@ const { agent } = consul({
 })
 
 const config = {
-	serviceName: name,
+	serviceName,
 	reporter: {
 		agentHost: tracingAddress
 	}
 }
-const namespace = config.serviceName
-const metrics = new PrometheusMetricsFactory(promClient, namespace)
+const metrics = new PrometheusMetricsFactory(promClient, serviceName)
 const logger = bunyan.createLogger({
-	name: namespace
+	name: serviceName
 })
 const localAddresses = {}
 const { requestHandler } = new Tailor({
