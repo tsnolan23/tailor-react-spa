@@ -49,7 +49,8 @@ module.exports = async (request, response) => {
 
 	Object.values(services)
 		.forEach((a) => {
-			z.set(a.Service, 'http://' + a.Address + ':' + a.Port)
+			console.log(a);
+			z.set(a.Service, 'http://' + a.ServiceAddress + ':' + a.ServicePort)
 		})
 
 	if (request.url === '/favicon.ico') {

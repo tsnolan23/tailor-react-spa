@@ -8,7 +8,7 @@ const setAddress = (address) => ({ address })
 const setPort = port => ({ port })
 
 const getUrlFromPort = (port) => (path) => {
-	return `//localhost:${port}/${path}`
+	return `//test.local:${port}/${path}`
 }
 
 const { env } = process
@@ -23,5 +23,5 @@ module.exports = ({
 	...setAddress(address()),
 	...setPort(Number(npm_package_config_port)),
 
-	getUrl: getUrlFromPort(Number(npm_package_config_port))
+	getUrl: getUrlFromPort(npm_package_config_port)
 })
