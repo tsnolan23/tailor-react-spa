@@ -1,18 +1,41 @@
-const url = require('url')
-const fs = require('fs')
+const consul = require('consul')
+const { parse } = require('url')
+const { createReadStream } = require('fs')
 
-module.exports = (req, res) => {
-	const pathname = url.parse(req.url).pathname
+const { consulHost, address, name, port, getUrl } = require('./environment.js')
+
+
+const { agent } = consul({
+	host: consulHost,
+	promisify: true
+})
+
+agent.service.register({
+	name,
+	address,
+	port
+})
+	.catch(() => {
+		'logowanie do spana'
+	})
+
+module.exports = (request, response) => {
+	const { pathname } = parse(request.url)
+
+	const bundle = '/dist/bundle.js'
+	const pathToBundle = `.${bundle}`
+
 	switch(pathname) {
-		case '/dist/bundle.js':
-			res.writeHead(200, { 'Content-Type': 'application/javascript' })
-      fs.createReadStream('./dist/bundle.js').pipe(res);
+		case bundle:
+			response.writeHead(200, { 'Content-Type': 'application/javascript' })
+			createReadStream(pathToBundle)
+				.pipe(response)
 			break
 		default:
-			res.writeHead(200, {
+			response.writeHead(200, {
 				'Content-Type': 'text/html',
-				'Link': '<http://localhost:80/dist/bundle.js>; rel="fragment-script"'
+				'Link': `<${getUrl(bundle)}>; rel="fragment-script"`
 			})
-			return res.end('')
+			return response.end('')
 	}
 }

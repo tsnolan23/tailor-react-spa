@@ -1,7 +1,7 @@
 {
-  "name": "mosaic-tailor-react-example",
+  "name": "frontend-microservices",
   "version": "1.0.0",
-  "description": "mosaic-tailor-react-example",
+  "description": "Frontend microservices",
   "main": "index.js",
   "scripts": {
     "start": "micro -l tcp://0.0.0.0:80",
@@ -12,14 +12,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/tsnolan23/mosaic-tailor-react-example.git"
+    "url": "git+https://github.com/morriq/Frontend-microservices.git"
   },
-  "author": "",
+  "author": "morriq<dawid.winiarczyk@gmail.com>",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/tsnolan23/mosaic-tailor-react-example/issues"
+    "url": "https://github.com/morriq/Frontend-microservices/issues"
   },
-  "homepage": "https://github.com/tsnolan23/mosaic-tailor-react-example#readme",
+  "homepage": "https://github.com/morriq/Frontend-microservices#readme",
   "devDependencies": {
     "babel-eslint": "^9.0.0",
     "eslint": "^5.6.0",

@@ -1,4 +1,4 @@
-const { createBundleRenderer } = require('vue-server-renderer');
+const { createBundleRenderer } = require('vue-server-renderer')
 
 
 const { renderToStream } = createBundleRenderer(
@@ -12,6 +12,6 @@ const { renderToStream } = createBundleRenderer(
 		<!--vue-ssr-outlet-->
 		`
 	}
-);
+)
 
-module.exports = () => renderToStream({});
+module.exports = () => renderToStream({})

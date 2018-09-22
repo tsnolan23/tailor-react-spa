@@ -1,18 +1,23 @@
 {
-  "name": "fragment-contacts",
+  "name": "fragment-react",
   "sideEffects": false,
   "version": "1.0.0",
   "description": "",
   "scripts": {
     "build": "webpack --mode production",
     "watch": "webpack --watch",
-    "start": "cross-env BABEL_ENV=server micro -l tcp://0.0.0.0:80"
+    "start": "cross-env BABEL_ENV=server micro -l tcp://0.0.0.0:${npm_package_config_port}"
+  },
+  "config": {
+    "port": "80"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
     "axios": "^0.18.0",
     "classnames": "^2.2.5",
+    "consul": "^0.34.0",
+    "ip": "^1.1.5",
     "micro": "^9.3.3",
     "prop-types": "^15.6.2",
     "react": "^16.1.1",

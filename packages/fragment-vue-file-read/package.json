@@ -1,5 +1,5 @@
 {
-  "name": "fragment-simple-vue-test",
+  "name": "fragment-vue-file-read",
   "sideEffects": false,
   "version": "1.0.0",
   "description": "",
@@ -7,7 +7,10 @@
   "scripts": {
     "build": "webpack --mode production --config webpack.server.config.js",
     "watch": "webpack --watch",
-    "start": "micro -l tcp://0.0.0.0:80"
+    "start": "micro -l tcp://0.0.0.0:${npm_package_config_port}"
+  },
+  "config": {
+    "port": "80"
   },
   "keywords": [],
   "author": "",
@@ -26,6 +29,8 @@
     "webpack-command": "^0.4.1"
   },
   "dependencies": {
+    "consul": "^0.34.0",
+    "ip": "^1.1.5",
     "micro": "^9.3.3",
     "vue": "^2.5.17"
   }

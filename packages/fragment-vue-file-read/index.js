@@ -14,15 +14,13 @@ agent.service.register({
 	address,
 	port
 })
-	.catch(() => {
+	.catch((e) => {
 		'logowanie do spana'
 	})
 
-module.exports = async (request, response) => {
-  response.writeHead(200, {
+module.exports = (req, res) => {
+  res.writeHead(200, {
     'Content-Type': 'text/html'
   })
-
-  renderStream()
-    .pipe(response)
+  renderStream().pipe(res)
 }
