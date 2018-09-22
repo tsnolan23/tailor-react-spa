@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0">
     <script>
         (function (d) {
-        	var i;
+            var i;
             require(d);
             var arr = ['react', 'react-dom', 'react-redux', 'redux', 'prop-types', 'classnames', 'vue', 'vuex', 'axios'];
             while (i = arr.pop()) (function (dep) {
@@ -15,12 +15,45 @@
             })(i);
         }(['<%= localAddresses["service-common"] %>/dist/bundle.js']));
     </script>
+
+
+    <style>
+        .service {
+            padding: 25px 40px;
+            margin: 25px 40px;
+            border: 5px solid black
+        }
+
+        .service::before {
+            content: attr(data-title);
+            color: attr(data-color, red);
+            display: block;
+            font-size: 2em;
+            border-bottom: red;
+        }
+
+    </style>
 </head>
 <body>
-<fragment id="service-react" src="<%= localAddresses['service-react'] %>"></fragment>
-<fragment id="service-vue-client" src="<%= localAddresses['service-vue-client'] %>"></fragment>
-<fragment id="service-vue-file-read" src="<%= localAddresses['service-vue-file-read'] %>"></fragment>
-<fragment id="service-vue-http" src="<%= localAddresses['service-vue-http'] %>"></fragment>
-<fragment id="service-dotnet" src="http://service-dotnet:1231"></fragment>
+
+<div class="service" data-title="service-react">
+    <fragment id="service-react" src="<%= localAddresses['service-react'] %>"></fragment>
+</div>
+<div class="service" data-title="service-vue-client">
+    <fragment id="service-vue-client" src="<%= localAddresses['service-vue-client'] %>"></fragment>
+</div>
+
+<div class="service" data-title="service-vue-file-read">
+    <fragment id="service-vue-file-read" src="<%= localAddresses['service-vue-file-read'] %>"></fragment>
+</div>
+
+<div class="service" data-title="service-vue-http">
+    <fragment id="service-vue-http" src="<%= localAddresses['service-vue-http'] %>"></fragment>
+</div>
+
+<div class="service" data-title="service-dotnet">
+    <fragment id="service-dotnet" src="http://service-dotnet:1231"></fragment>
+</div>
+
 </body>
 </html>
