@@ -10,7 +10,6 @@ const { agent } = consul({
 	promisify: true
 })
 
-// @todo module.exports powinno zwracac server dopiero po rozwiazaniu:
 agent.service.register({
 	id: machineIdSync(),
 	name: 'fragment-vue-http',
