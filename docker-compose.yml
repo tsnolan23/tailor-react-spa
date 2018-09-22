@@ -23,6 +23,8 @@ services:
     build: packages/fragment-vue-client
     environment:
       - CONSUL_HOST=consul
+    ports:
+    - 2132:80
     depends_on:
       - consul
     #restart: always
@@ -62,6 +64,8 @@ services:
     build: packages/fragment-react
     environment:
       - CONSUL_HOST=consul
+    ports:
+      - 2132:80
     depends_on:
       - consul
     #restart: always
