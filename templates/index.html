@@ -13,18 +13,18 @@
                     return b[dep];
                 })
             })(i);
-        }(['<%= localAddresses["fragment-common"] %>/dist/bundle.js']));
+        }(['<%= localAddresses["service-common"] %>/dist/bundle.js']));
     </script>
 
 
     <style>
-        .fragment {
+        .service {
             padding: 25px 40px;
             margin: 25px 40px;
             border: 5px solid black
         }
 
-        .fragment::before {
+        .service::before {
             content: attr(data-title);
             color: attr(data-color, red);
             display: block;
@@ -36,24 +36,23 @@
 </head>
 <body>
 
-<div class="fragment" data-title="fragment-react">
-    <fragment id="fragment-react" src="<%= localAddresses['fragment-react'] %>"></fragment>
+<div class="service" data-title="service-react">
+    <service id="service-react" src="<%= localAddresses['service-react'] %>"></service>
 </div>
-<div class="fragment" data-title="fragment-vue-client">
-    <fragment id="fragment-vue-client" src="<%= localAddresses['fragment-vue-client'] %>"></fragment>
-</div>
-
-<div class="fragment" data-title="fragment-vue-file-read">
-    <fragment id="fragment-vue-file-read" src="<%= localAddresses['fragment-vue-file-read'] %>"></fragment>
-
+<div class="service" data-title="service-vue-client">
+    <service id="service-vue-client" src="<%= localAddresses['service-vue-client'] %>"></service>
 </div>
 
-<div class="fragment" data-title="fragment-vue-http">
-    <fragment id="fragment-vue-http" src="<%= localAddresses['fragment-vue-http'] %>"></fragment>
+<div class="service" data-title="service-vue-file-read">
+    <service id="service-vue-file-read" src="<%= localAddresses['service-vue-file-read'] %>"></service>
 </div>
 
-<div class="fragment" data-title="fragment-dotnet">
-    <fragment id="fragment-dotnet" src="http://fragment-dotnet:1231"></fragment>
+<div class="service" data-title="service-vue-http">
+    <service id="service-vue-http" src="<%= localAddresses['service-vue-http'] %>"></service>
+</div>
+
+<div class="service" data-title="service-dotnet">
+    <service id="service-dotnet" src="http://service-dotnet:1231"></service>
 </div>
 
 </body>

@@ -1,16 +1,17 @@
 # docker-compose up --force-recreate --build
+# https://medium.com/travis-on-docker/how-to-run-dockerized-apps-on-heroku-and-its-pretty-great-76e07e610e22
 version: "3.7"
 
 services:
 
   webapp:
     build: .
-    #restart: always
+    hostname: webapp
     ports:
       - 8080:80
     environment:
       - CONSUL_HOST=consul
-      - TRACING_HOST=jager
+      - TRACING_HOST=jaeger
     depends_on:
       - consul
       - jaeger
@@ -22,13 +23,12 @@ services:
 
   service-vue-client:
     build: packages/fragment-vue-client
+    hostname: service-vue-client
     environment:
       - CONSUL_HOST=consul
-      - TRACING_HOST=jager
+      - TRACING_HOST=jaeger
     depends_on:
       - consul
-
-    #restart: always
     healthcheck:
       test: ["CMD", "curl", "-f", "consul:8500"]
       interval: 30s
@@ -37,13 +37,12 @@ services:
 
   service-vue-file-read:
     build: packages/fragment-vue-file-read
+    hostname: service-vue-file-read
     environment:
       - CONSUL_HOST=consul
-      - TRACING_HOST=jager
+      - TRACING_HOST=jaeger
     depends_on:
       - consul
-
-    #restart: always
     healthcheck:
       test: ["CMD", "curl", "-f", "consul:8500"]
       interval: 30s
@@ -52,13 +51,12 @@ services:
 
   service-vue-http:
     build: packages/fragment-vue-http
+    hostname: service-vue-http
     environment:
       - CONSUL_HOST=consul
-      - TRACING_HOST=jager
+      - TRACING_HOST=jaeger
     depends_on:
       - consul
-
-    #restart: always
     healthcheck:
       test: ["CMD", "curl", "-f", "consul:8500"]
       interval: 30s
@@ -67,13 +65,12 @@ services:
 
   service-react:
     build: packages/fragment-react
+    hostname: service-react
     environment:
       - CONSUL_HOST=consul
-      - TRACING_HOST=jager
+      - TRACING_HOST=jaeger
     depends_on:
       - consul
-
-    #restart: always
     healthcheck:
       test: ["CMD", "curl", "-f", "consul:8500"]
       interval: 30s
@@ -84,13 +81,11 @@ services:
     build: packages/fragment-dotnet
     environment:
       - CONSUL_HOST=consul
-      - TRACING_HOST=jager
+      - TRACING_HOST=jaeger
     ports:
       - 1231:1231
     depends_on:
       - consul
-
-    # restart: always
     healthcheck:
       test: ["CMD", "curl", "-f", "consul:8500"]
       interval: 30s
@@ -99,15 +94,14 @@ services:
 
   service-common:
     build: packages/fragment-common
+    hostname: service-common
     environment:
       - CONSUL_HOST=consul
-      - TRACING_HOST=jager
+      - TRACING_HOST=jaeger
     ports:
       - 1234:80
     depends_on:
       - consul
-
-    #restart: always
     healthcheck:
       test: ["CMD", "curl", "-f", "consul:8500"]
       interval: 30s
