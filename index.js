@@ -7,7 +7,7 @@ const bunyan = require('bunyan')
 const consul = require('consul')
 const { render } = require('ejs')
 
-const { tracingAddress, consulAddress } = require('./environment.js')
+const { name, tracingAddress, consulAddress } = require('./environment.js')
 
 
 const { agent } = consul({
@@ -16,7 +16,7 @@ const { agent } = consul({
 })
 
 const config = {
-	serviceName: 'my:awesome:service',
+	serviceName: name,
 	reporter: {
 		agentHost: tracingAddress
 	}
