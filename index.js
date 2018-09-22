@@ -26,13 +26,13 @@ const metrics = new PrometheusMetricsFactory(promClient, namespace)
 const logger = bunyan.createLogger({
 	name: namespace
 })
-const addresses = {}
+const localAddresses = {}
 const { requestHandler } = new Tailor({
 	fetchTemplate(request) {
 		const templatePath = 'templates/index.html'
 		return tailorFragment(templatePath)(request, (baseTemplate, childTemplate) => {
 			// @todo cache based on consul services equality
-			return tailorParse(['fragment'], ['script'])(render(baseTemplate, {addresses}), childTemplate ? render(childTemplate, { addresses }) : childTemplate)
+			return tailorParse(['fragment'], ['script'])(render(baseTemplate, {localAddresses}), childTemplate ? render(childTemplate, { localAddresses }) : childTemplate)
 		})
 	},
 	tracer: initTracer(
@@ -54,7 +54,7 @@ module.exports = async (request, response) => {
 
 	Object.values(services)
 		.forEach((a) => {
-			addresses[a.Service] = 'http://' + a.Address + ':' + a.Port
+			localAddresses[a.Service] = 'http://' + a.Address + ':' + a.Port
 		})
 
 	if (request.url === '/favicon.ico') {
