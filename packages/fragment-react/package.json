@@ -19,7 +19,6 @@
     "consul": "^0.34.0",
     "ip": "^1.1.5",
     "micro": "^9.3.3",
-    "node-machine-id": "^1.1.10",
     "prop-types": "^15.6.2",
     "react": "^16.1.1",
     "react-dom": "^16.1.1",

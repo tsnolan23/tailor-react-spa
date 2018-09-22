@@ -2,7 +2,7 @@ const consul = require('consul')
 const { parse } = require('url')
 const { createReadStream } = require('fs')
 
-const { id, address, name, port, getUrl } = require('./environment.js')
+const { address, name, port, getUrl } = require('./environment.js')
 
 
 const { agent } = consul({

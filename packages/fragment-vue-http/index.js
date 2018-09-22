@@ -1,7 +1,7 @@
 const consul = require('consul')
 
 const renderStream = require('./render-stream.js')
-const { id, address, name, port } = require('./environment.js')
+const { address, name, port } = require('./environment.js')
 
 
 const { agent } = consul({

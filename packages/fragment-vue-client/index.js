@@ -2,7 +2,7 @@ const consul = require('consul')
 const url = require('url')
 const { createReadStream } = require('fs')
 
-const { id, address, name, port } = require('./environment.js')
+const { address, name, port } = require('./environment.js')
 const renderStream = require('./render-stream.js')
 
 
@@ -15,13 +15,11 @@ const { agent } = consul({
 })
 
 agent.service.register({
-	id,
 	name,
 	address,
 	port
 })
 	.catch((e) => {
-		console.log(e)
 		'logowanie do spana'
 	})
 

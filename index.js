@@ -49,7 +49,6 @@ module.exports = async (request, response) => {
 
 	Object.values(services)
 		.forEach((a) => {
-			console.log(a);
 			z.set(a.Service, 'http://' + a.Address + ':' + a.Port)
 		})
 

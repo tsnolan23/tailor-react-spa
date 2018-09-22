@@ -1,8 +1,6 @@
-const { machineIdSync } = require('node-machine-id')
 const { address } = require('ip')
 
 
-const setId = (id) => ({ id })
 const setName = (name) => ({ name })
 const setAddress = (address) => ({ address })
 const setPort = port => ({ port })
@@ -19,7 +17,6 @@ const {
 } = env
 
 module.exports = ({
-	...setId(machineIdSync()),
 	...setName(npm_package_name),
 	...setAddress(address()),
 	...setPort(Number(npm_package_config_port)),
