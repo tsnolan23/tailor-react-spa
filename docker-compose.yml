@@ -11,7 +11,7 @@ services:
       - 8080:80
     environment:
       - CONSUL_HOST=consul
-      - TRACING_HOST=jager
+      - TRACING_HOST=jaeger
     depends_on:
       - consul
       - jaeger
@@ -26,7 +26,7 @@ services:
     hostname: service-vue-client
     environment:
       - CONSUL_HOST=consul
-      - TRACING_HOST=jager
+      - TRACING_HOST=jaeger
     depends_on:
       - consul
     healthcheck:
@@ -40,7 +40,7 @@ services:
     hostname: service-vue-file-read
     environment:
       - CONSUL_HOST=consul
-      - TRACING_HOST=jager
+      - TRACING_HOST=jaeger
     depends_on:
       - consul
     healthcheck:
@@ -54,7 +54,7 @@ services:
     hostname: service-vue-http
     environment:
       - CONSUL_HOST=consul
-      - TRACING_HOST=jager
+      - TRACING_HOST=jaeger
     depends_on:
       - consul
     healthcheck:
@@ -68,7 +68,7 @@ services:
     hostname: service-react
     environment:
       - CONSUL_HOST=consul
-      - TRACING_HOST=jager
+      - TRACING_HOST=jaeger
     depends_on:
       - consul
     healthcheck:
@@ -81,7 +81,7 @@ services:
     build: packages/fragment-dotnet
     environment:
       - CONSUL_HOST=consul
-      - TRACING_HOST=jager
+      - TRACING_HOST=jaeger
     ports:
       - 1231:1231
     depends_on:
@@ -97,7 +97,7 @@ services:
     hostname: service-common
     environment:
       - CONSUL_HOST=consul
-      - TRACING_HOST=jager
+      - TRACING_HOST=jaeger
     ports:
       - 1234:80
     depends_on:
