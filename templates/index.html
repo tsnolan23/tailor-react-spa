@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0">
     <script>
         (function (d) {
-        	var i;
+            var i;
             require(d);
             var arr = ['react', 'react-dom', 'react-redux', 'redux', 'prop-types', 'classnames', 'vue', 'vuex', 'axios'];
             while (i = arr.pop()) (function (dep) {
@@ -15,12 +15,46 @@
             })(i);
         }(['<%= localAddresses["fragment-common"] %>/dist/bundle.js']));
     </script>
+
+
+    <style>
+        .fragment {
+            padding: 25px 40px;
+            margin: 25px 40px;
+            border: 5px solid black
+        }
+
+        .fragment::before {
+            content: attr(data-title);
+            color: attr(data-color, red);
+            display: block;
+            font-size: 2em;
+            border-bottom: red;
+        }
+
+    </style>
 </head>
 <body>
-<fragment id="fragment-react" src="<%= localAddresses['fragment-react'] %>"></fragment>
-<fragment id="fragment-vue-client" src="<%= localAddresses['fragment-vue-client'] %>"></fragment>
-<fragment id="fragment-vue-file-read" src="<%= localAddresses['fragment-vue-file-read'] %>"></fragment>
-<fragment id="fragment-vue-http" src="<%= localAddresses['fragment-vue-http'] %>"></fragment>
-<fragment id="fragment-dotnet" src="http://fragment-dotnet:1231"></fragment>
+
+<div class="fragment" data-title="fragment-react">
+    <fragment id="fragment-react" src="<%= localAddresses['fragment-react'] %>"></fragment>
+</div>
+<div class="fragment" data-title="fragment-vue-client">
+    <fragment id="fragment-vue-client" src="<%= localAddresses['fragment-vue-client'] %>"></fragment>
+</div>
+
+<div class="fragment" data-title="fragment-vue-file-read">
+    <fragment id="fragment-vue-file-read" src="<%= localAddresses['fragment-vue-file-read'] %>"></fragment>
+
+</div>
+
+<div class="fragment" data-title="fragment-vue-http">
+    <fragment id="fragment-vue-http" src="<%= localAddresses['fragment-vue-http'] %>"></fragment>
+</div>
+
+<div class="fragment" data-title="fragment-dotnet">
+    <fragment id="fragment-dotnet" src="http://fragment-dotnet:1231"></fragment>
+</div>
+
 </body>
 </html>
