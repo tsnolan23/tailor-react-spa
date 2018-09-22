@@ -26,10 +26,10 @@ const logger = bunyan.createLogger({
 const z = new Map();
 const tailor = new Tailor({
   templatesPath: __dirname + '/templates',
-	requestFragment(url, attributes, request, span = null) {
-  	const src = z.get(attributes.id);
-		return tailorFragment(filterReqHeadersFn)(src, attributes, request, span)
-	},
+	// requestFragment(url, attributes, request, span = null) {
+  // 	const src = z.get(attributes.id);
+	// 	return tailorFragment(filterReqHeadersFn)(src, attributes, request, span)
+	// },
 	tracer: initTracer(
 		config,
 		{
@@ -50,7 +50,7 @@ module.exports = async (request, response) => {
 	Object.values(services)
 		.forEach((a) => {
 			console.log(a);
-			z.set(a.Service, 'http://' + a.ServiceAddress + ':' + a.ServicePort)
+			z.set(a.Service, 'http://' + a.Address + ':' + a.Port)
 		})
 
 	if (request.url === '/favicon.ico') {

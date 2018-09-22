@@ -11,12 +11,20 @@ services:
     depends_on:
       - jaeger
 
-  fragment-simple-vue-test:
-    build: packages/fragment-simple-vue-test
+  fragment-vue-client:
+    build: packages/fragment-vue-client
+    #restart: always
+
+  fragment-vue-file-read:
+    build: packages/fragment-vue-file-read
     #restart: always
 
   fragment-vue-http:
     build: packages/fragment-vue-http
+    #restart: always
+
+  fragment-react:
+    build: packages/fragment-react
     #restart: always
 
   fragment-dotnet:

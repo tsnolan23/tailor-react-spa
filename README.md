@@ -16,17 +16,17 @@ Tailor also injects a RequireJS bundle to your template so you're able to use We
 
 ## Fragments
 
-Fragments are small applications. 
+Fragments are small applications.
 
 They might be React applications, or any other implementation.
 
-Fragments do not need to necessarily render something. 
+Fragments do not need to necessarily render something.
 
 This app consists basically in a couple of fragments:
 
  - fragment-common
  - fragment-header
- - fragment-applications-react
+ - fragment-react
  - fragment-chat
 
 Each fragment contains it's own `webpack.config.js` that specifies how to build it.

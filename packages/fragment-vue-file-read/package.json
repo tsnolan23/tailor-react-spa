@@ -1,5 +1,5 @@
 {
-  "name": "fragment-simple-vue-test",
+  "name": "fragment-vue-file-read",
   "sideEffects": false,
   "version": "1.0.0",
   "description": "",
@@ -29,7 +29,10 @@
     "webpack-command": "^0.4.1"
   },
   "dependencies": {
+    "consul": "^0.34.0",
+    "ip": "^1.1.5",
     "micro": "^9.3.3",
+    "node-machine-id": "^1.1.10",
     "vue": "^2.5.17"
   }
 }
