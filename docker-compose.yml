@@ -27,7 +27,6 @@ services:
       - TRACING_HOST=jager
     depends_on:
       - consul
-
     #restart: always
     healthcheck:
       test: ["CMD", "curl", "-f", "consul:8500"]
@@ -42,7 +41,6 @@ services:
       - TRACING_HOST=jager
     depends_on:
       - consul
-
     #restart: always
     healthcheck:
       test: ["CMD", "curl", "-f", "consul:8500"]
@@ -57,7 +55,6 @@ services:
       - TRACING_HOST=jager
     depends_on:
       - consul
-
     #restart: always
     healthcheck:
       test: ["CMD", "curl", "-f", "consul:8500"]
@@ -72,7 +69,6 @@ services:
       - TRACING_HOST=jager
     depends_on:
       - consul
-
     #restart: always
     healthcheck:
       test: ["CMD", "curl", "-f", "consul:8500"]
@@ -89,7 +85,6 @@ services:
       - 1231:1231
     depends_on:
       - consul
-
     # restart: always
     healthcheck:
       test: ["CMD", "curl", "-f", "consul:8500"]
@@ -106,7 +101,6 @@ services:
       - 1234:80
     depends_on:
       - consul
-
     #restart: always
     healthcheck:
       test: ["CMD", "curl", "-f", "consul:8500"]
