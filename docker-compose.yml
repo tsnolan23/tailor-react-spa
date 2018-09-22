@@ -10,34 +10,82 @@ services:
       - 8080:80
     depends_on:
       - jaeger
+      - consul
+    healthcheck:
+      test: ["CMD", "curl", "-f", "consul:8500"]
+      interval: 30s
+      timeout: 10s
+      retries: 5
 
   fragment-vue-client:
     build: packages/fragment-vue-client
+    depends_on:
+      - consul
     #restart: always
+    healthcheck:
+      test: ["CMD", "curl", "-f", "consul:8500"]
+      interval: 30s
+      timeout: 10s
+      retries: 5
 
   fragment-vue-file-read:
     build: packages/fragment-vue-file-read
+    depends_on:
+    - consul
     #restart: always
+    healthcheck:
+      test: ["CMD", "curl", "-f", "consul:8500"]
+      interval: 30s
+      timeout: 10s
+      retries: 5
 
   fragment-vue-http:
     build: packages/fragment-vue-http
+    depends_on:
+      - consul
     #restart: always
+    healthcheck:
+      test: ["CMD", "curl", "-f", "consul:8500"]
+      interval: 30s
+      timeout: 10s
+      retries: 5
 
   fragment-react:
     build: packages/fragment-react
+    depends_on:
+      - consul
     #restart: always
+    healthcheck:
+      test: ["CMD", "curl", "-f", "consul:8500"]
+      interval: 30s
+      timeout: 10s
+      retries: 5
 
   fragment-dotnet:
     build: packages/fragment-dotnet
     ports:
       - 1231:1231
+    depends_on:
+      - consul
     # restart: always
+    healthcheck:
+      test: ["CMD", "curl", "-f", "consul:8500"]
+      interval: 30s
+      timeout: 10s
+      retries: 5
 
   fragment-common:
     build: packages/fragment-common
     ports:
       - 1234:80
+    depends_on:
+      - consul
     #restart: always
+    healthcheck:
+      test: ["CMD", "curl", "-f", "consul:8500"]
+      interval: 30s
+      timeout: 10s
+      retries: 5
 
   consul:
     image: consul
@@ -70,7 +118,7 @@ services:
       - elasticsearch
     restart: always
     healthcheck:
-      test: ["CMD", "curl", "-f", "http://elasticsearch:9200"]
+      test: ["CMD", "curl", "-f", "elasticsearch:9200"]
       interval: 30s
       timeout: 10s
       retries: 5
