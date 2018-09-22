@@ -1,4 +1,4 @@
-const setConsul = (consulHost) => ({ consulHost })
+const setConsul = (consulAddress) => ({ consulAddress })
 
 const { env } = process
 const {

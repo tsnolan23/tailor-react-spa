@@ -2,7 +2,7 @@ const consul = require('consul')
 const url = require('url')
 const { createReadStream } = require('fs')
 
-const { consulHost, address, name, port } = require('./environment.js')
+const { consulAddress, address, name, port } = require('./environment.js')
 const renderStream = require('./render-stream.js')
 
 
@@ -10,7 +10,7 @@ const bundleStream = createReadStream('./dist/bundle.js')
 
 
 const { agent } = consul({
-	host: consulHost,
+	host: consulAddress,
 	promisify: true
 })
 

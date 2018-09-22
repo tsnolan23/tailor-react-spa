@@ -1,11 +1,11 @@
 const consul = require('consul')
 
 const renderStream = require('./render-stream.js')
-const { consulHost, address, name, port } = require('./environment.js')
+const { consulAddress, address, name, port } = require('./environment.js')
 
 
 const { agent } = consul({
-	host: consulHost,
+	host: consulAddress,
 	promisify: true
 })
 
