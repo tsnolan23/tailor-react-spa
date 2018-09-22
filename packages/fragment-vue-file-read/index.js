@@ -1,7 +1,7 @@
 const consul = require('consul')
 
 const renderStream = require('./render-stream.js')
-const { consulAddress, address, name, port } = require('./environment.js')
+const { consulAddress, address, hostname, port } = require('./environment.js')
 
 
 const { agent } = consul({
@@ -10,7 +10,7 @@ const { agent } = consul({
 })
 
 agent.service.register({
-	name,
+	name: hostname,
 	address,
 	port
 })

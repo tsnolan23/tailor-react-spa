@@ -2,7 +2,7 @@ const consul = require('consul')
 const { parse } = require('url')
 const { createReadStream } = require('fs')
 
-const { consulAddress, address, name, port, getUrl } = require('./environment.js')
+const { consulAddress, address, hostname, port, getUrl } = require('./environment.js')
 
 
 const { agent } = consul({
@@ -11,7 +11,7 @@ const { agent } = consul({
 })
 
 agent.service.register({
-	name,
+	name: hostname,
 	address,
 	port
 })

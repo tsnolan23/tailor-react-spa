@@ -13,14 +13,14 @@
                     return b[dep];
                 })
             })(i);
-        }(['<%= localAddresses["fragment-common"] %>/dist/bundle.js']));
+        }(['<%= localAddresses["service-common"] %>/dist/bundle.js']));
     </script>
 </head>
 <body>
-<fragment id="fragment-react" src="<%= localAddresses['fragment-react'] %>"></fragment>
-<fragment id="fragment-vue-client" src="<%= localAddresses['fragment-vue-client'] %>"></fragment>
-<fragment id="fragment-vue-file-read" src="<%= localAddresses['fragment-vue-file-read'] %>"></fragment>
-<fragment id="fragment-vue-http" src="<%= localAddresses['fragment-vue-http'] %>"></fragment>
-<fragment id="fragment-dotnet" src="http://fragment-dotnet:1231"></fragment>
+<fragment id="service-react" src="<%= localAddresses['service-react'] %>"></fragment>
+<fragment id="service-vue-client" src="<%= localAddresses['service-vue-client'] %>"></fragment>
+<fragment id="service-vue-file-read" src="<%= localAddresses['service-vue-file-read'] %>"></fragment>
+<fragment id="service-vue-http" src="<%= localAddresses['service-vue-http'] %>"></fragment>
+<fragment id="service-dotnet" src="http://service-dotnet:1231"></fragment>
 </body>
 </html>
