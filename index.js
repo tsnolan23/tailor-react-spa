@@ -26,10 +26,10 @@ const logger = bunyan.createLogger({
 const z = new Map();
 const tailor = new Tailor({
   templatesPath: __dirname + '/templates',
-	// requestFragment(url, attributes, request, span = null) {
-  // 	const src = z.get(attributes.id);
-	// 	return tailorFragment(filterReqHeadersFn)(src, attributes, request, span)
-	// },
+	requestFragment(url, attributes, request, span = null) {
+  	const src = z.get(attributes.id);
+		return tailorFragment(filterReqHeadersFn)(src, attributes, request, span)
+	},
 	tracer: initTracer(
 		config,
 		{
