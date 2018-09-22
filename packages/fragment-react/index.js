@@ -1,6 +1,6 @@
 const consul = require('consul')
 const { createReadStream } = require('fs')
-const url = require('url')
+const { parse } = require('url')
 
 const { presets } = require('./.babelrc.js')
 
@@ -9,7 +9,7 @@ require('@babel/register')({
 })
 
 const renderStream = require('./render-stream.js')
-const { consulAddress, address, name, port } = require('./environment.js')
+const { consulAddress, address, name, port, getUrl } = require('./environment.js')
 
 
 const { agent } = consul({
@@ -26,25 +26,29 @@ agent.service.register({
 		'logowanie do spana'
 	})
 
-module.exports = (req, res) => {
-	const pathname = url.parse(req.url).pathname
-	const jsHeader = { 'Content-Type': 'application/javascript' }
+module.exports = async (request, response) => {
+	const { pathname } = parse(request.url)
+
+	const bundle = '/dist/bundle.js'
+	const pathToBundle = `.${bundle}`
+
 	switch(pathname) {
-		case '/dist/bundle.js':
-			res.writeHead(200, jsHeader)
-			createReadStream('./dist/bundle.js').pipe(res)
+		case bundle:
+			response.writeHead(200, { 'Content-Type': 'application/javascript' })
+			createReadStream(pathToBundle)
+				.pipe(response)
       break
 		default:
-			res.writeHead(200, {
+			response.writeHead(200, {
 				'Content-Type': 'text/html',
-				'Link': '<http://localhost:80/dist/bundle.js>; rel="fragment-script"'
+				'Link': `<${getUrl(bundle)}>; rel="fragment-script"`
 			})
 
-			renderStream().then(({ stream, state }) => {
-				res.write(`
+			const { stream, state } = await renderStream()
+
+			response.write(`
      			<script>window.CONTACTS_STATE = ${JSON.stringify(state).replace(/</g, '\\\u003c')}</script>
       `)
-				stream.pipe(res)
-			})
+			stream.pipe(response)
 	}
 }
