@@ -24,7 +24,7 @@ services:
     environment:
       - CONSUL_HOST=consul
     ports:
-    - 2132:80
+    - 2131:80
     depends_on:
       - consul
     #restart: always
