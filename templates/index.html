@@ -3,20 +3,7 @@
 <head>
     <title>Tailor Example Application</title>
     <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0">
-    <script>
-        (function (d) {
-            var i;
-            require(d);
-            var arr = ['react', 'react-dom', 'react-redux', 'redux', 'prop-types', 'classnames', 'vue', 'vuex', 'axios'];
-            while (i = arr.pop()) (function (dep) {
-                define(dep, d, function (b) {
-                    return b[dep];
-                })
-            })(i);
-        }(['<%= localAddresses["service-common"] %>/dist/bundle.js']));
-    </script>
-
-
+    <script type="tailor/plugin"></script>
     <style>
         .service {
             padding: 25px 40px;
@@ -35,20 +22,19 @@
     </style>
 </head>
 <body>
-
 <div class="service" data-title="service-react">
-    <fragment id="service-react" src="<%= localAddresses['service-react'] %>"></fragment>
+    <fragment id="service-react"></fragment>
 </div>
 <div class="service" data-title="service-vue-client">
-    <fragment id="service-vue-client" src="<%= localAddresses['service-vue-client'] %>"></fragment>
+    <fragment id="service-vue-client"></fragment>
 </div>
 
 <div class="service" data-title="service-vue-file-read">
-    <fragment id="service-vue-file-read" src="<%= localAddresses['service-vue-file-read'] %>"></fragment>
+    <fragment id="service-vue-file-read"></fragment>
 </div>
 
 <div class="service" data-title="service-vue-http">
-    <fragment id="service-vue-http" src="<%= localAddresses['service-vue-http'] %>"></fragment>
+    <fragment id="service-vue-http"></fragment>
 </div>
 
 <div class="service" data-title="service-dotnet">

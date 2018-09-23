@@ -1,11 +1,8 @@
 const Tailor = require('node-tailor')
-const tailorFragment = require('node-tailor/lib/fetch-template.js')
-const tailorParse = require('node-tailor/lib/parse-template.js')
 const { initTracer, PrometheusMetricsFactory, ProbabilisticSampler } = require('jaeger-client')
 const promClient = require('prom-client')
 const bunyan = require('bunyan')
 const consul = require('consul')
-const { render } = require('ejs')
 
 const { serviceName, tracingAddress, consulAddress } = require('./environment.js')
 
@@ -25,14 +22,45 @@ const metrics = new PrometheusMetricsFactory(promClient, serviceName)
 const logger = bunyan.createLogger({
 	name: serviceName
 })
-const localAddresses = {}
 const { requestHandler } = new Tailor({
-	fetchTemplate(request) {
-		const templatePath = 'templates/index.html'
-		return tailorFragment(templatePath)(request, (baseTemplate, childTemplate) => {
-			// @todo cache based on consul services equality
-			return tailorParse(['fragment'], ['script'])(render(baseTemplate, {localAddresses}), childTemplate ? render(childTemplate, { localAddresses }) : childTemplate)
-		})
+	handledTags: ['script'],
+	handleTag(request, tag, options, context) {
+		if (tag.attributes && tag.attributes.type === 'tailor/plugin') {
+			return `<script>
+								(function (d) {
+						var i;
+						require(d);
+						var arr = ['react', 'react-dom', 'react-redux', 'redux', 'prop-types', 'classnames', 'vue', 'vuex', 'axios'];
+						while (i = arr.pop()) (function (dep) {
+							define(dep, d, function (b) {
+								return b[dep];
+							})
+						})(i);
+					}(['${context['service-common'].src}/dist/bundle.js']));
+			</script>`
+		}
+
+		return ''
+	},
+	fetchContext: async () => {
+		const [ services, error ] = await agent.service.list()
+			.then((result) => [ result ])
+			.catch((error) => [, error ])
+
+		error && 'do spana i zabic serwer'
+
+		const urls = Object.values(services)
+			.map(({ Address, Port }) => 'http://' + Address + ':' + Port)
+
+		return Promise.resolve(
+			Object.keys(services)
+				.reduce((prev, curr, index) => ({
+					...prev,
+					[curr]: {
+						src: urls[index]
+					}
+				}), {})
+		)
 	},
 	tracer: initTracer(
 		config,
@@ -45,17 +73,6 @@ const { requestHandler } = new Tailor({
 })
 
 module.exports = async (request, response) => {
-  const [ services, error ] = await agent.service.list()
-		.then((result) => [ result ])
-		.catch((error) => [, error ])
-
-  error && 'do spana i zabic serwer'
-
-	Object.values(services)
-		.forEach((a) => {
-			localAddresses[a.Service] = 'http://' + a.Address + ':' + a.Port
-		})
-
 	if (request.url === '/favicon.ico') {
 		response.writeHead(200, { 'Content-Type': 'image/x-icon' })
 		response.end('')
