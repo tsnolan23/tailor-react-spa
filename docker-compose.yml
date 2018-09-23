@@ -110,7 +110,10 @@ services:
 
   consul:
     image: consul
-    # UI dać
+
+  consul-ui:
+    image: consul
+    command: "consul -ui"
 
   elasticsearch:
     image: docker.elastic.co/elasticsearch/elasticsearch:6.4.0
