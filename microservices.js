@@ -22,6 +22,9 @@ module.exports = ({ agent }, tracer) => {
 
 			return ''
 		},
+		filterRequestHeaders(attributes, request) {
+
+		},
 		fetchContext: async () => {
 			const [ services, error ] = await agent.service.list()
 				.then((result) => [ result ])

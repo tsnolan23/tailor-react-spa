@@ -146,3 +146,27 @@ services:
       interval: 30s
       timeout: 10s
       retries: 5
+
+  # running kibana at http://localhost:5601
+  kibana:
+    image: docker.elastic.co/kibana/kibana:6.4.1
+    ports:
+    - 5601:5601
+    depends_on:
+    - elasticsearch
+
+  # running grafana at http://localhost:3000
+  grafana:
+    image: grafana/grafana:5.1.0
+    ports:
+    - 3000:3000
+    depends_on:
+    - elasticsearch
+
+  # running prometheus at http://localhost:9090
+  prometheus:
+    image: prom/prometheus
+    ports:
+    - 9090:9090
+    depends_on:
+    - elasticsearch
