@@ -4,16 +4,18 @@ version: "3.7"
 
 services:
 
-  webapp:
-    build: .
-    hostname: webapp
+
+
+
+  service-vue-file-read:
+    build: packages/fragment-vue-file-read
+    hostname: service-vue-file-read
     ports:
-      - 8080:80
+    - 8080:80
     environment:
       - CONSUL_HOST=consul
       - TRACING_HOST=jaeger
     depends_on:
-      - consul
       - jaeger
     healthcheck:
       test: ["CMD", "curl", "-f", "consul:8500"]
@@ -21,99 +23,6 @@ services:
       timeout: 10s
       retries: 5
 
-  service-vue-client:
-    build: packages/fragment-vue-client
-    hostname: service-vue-client
-    environment:
-      - CONSUL_HOST=consul
-      - TRACING_HOST=jaeger
-    depends_on:
-      - consul
-    healthcheck:
-      test: ["CMD", "curl", "-f", "consul:8500"]
-      interval: 30s
-      timeout: 10s
-      retries: 5
-
-  service-vue-file-read:
-    build: packages/fragment-vue-file-read
-    hostname: service-vue-file-read
-    environment:
-      - CONSUL_HOST=consul
-      - TRACING_HOST=jaeger
-    depends_on:
-      - consul
-    healthcheck:
-      test: ["CMD", "curl", "-f", "consul:8500"]
-      interval: 30s
-      timeout: 10s
-      retries: 5
-
-  service-vue-http:
-    build: packages/fragment-vue-http
-    hostname: service-vue-http
-    environment:
-      - CONSUL_HOST=consul
-      - TRACING_HOST=jaeger
-    depends_on:
-      - consul
-    healthcheck:
-      test: ["CMD", "curl", "-f", "consul:8500"]
-      interval: 30s
-      timeout: 10s
-      retries: 5
-
-  service-react:
-    build: packages/fragment-react
-    hostname: service-react
-    environment:
-      - CONSUL_HOST=consul
-      - TRACING_HOST=jaeger
-    depends_on:
-      - consul
-    healthcheck:
-      test: ["CMD", "curl", "-f", "consul:8500"]
-      interval: 30s
-      timeout: 10s
-      retries: 5
-
-  service-dotnet:
-    build: packages/fragment-dotnet
-    environment:
-      - CONSUL_HOST=consul
-      - TRACING_HOST=jaeger
-    ports:
-      - 1231:1231
-    depends_on:
-      - consul
-    healthcheck:
-      test: ["CMD", "curl", "-f", "consul:8500"]
-      interval: 30s
-      timeout: 10s
-      retries: 5
-
-  service-common:
-    build: packages/fragment-common
-    hostname: service-common
-    environment:
-      - CONSUL_HOST=consul
-      - TRACING_HOST=jaeger
-    ports:
-      - 1234:80
-    depends_on:
-      - consul
-    healthcheck:
-      test: ["CMD", "curl", "-f", "consul:8500"]
-      interval: 30s
-      timeout: 10s
-      retries: 5
-
-  consul:
-    image: consul
-
-  consul-ui:
-    image: consul
-    command: "consul -ui"
 
   elasticsearch:
     image: docker.elastic.co/elasticsearch/elasticsearch:6.4.0
@@ -147,26 +56,3 @@ services:
       timeout: 10s
       retries: 5
 
-  # running kibana at http://localhost:5601
-  kibana:
-    image: docker.elastic.co/kibana/kibana:6.4.1
-    ports:
-    - 5601:5601
-    depends_on:
-    - elasticsearch
-
-  # running grafana at http://localhost:3000
-  grafana:
-    image: grafana/grafana:5.1.0
-    ports:
-    - 3000:3000
-    depends_on:
-    - elasticsearch
-
-  # running prometheus at http://localhost:9090
-  prometheus:
-    image: prom/prometheus
-    ports:
-    - 9090:9090
-    depends_on:
-    - elasticsearch
