@@ -1,4 +1,5 @@
 const Tailor = require('node-tailor')
+const filterReqHeadersFn = require('node-tailor/lib/filter-headers.js')
 
 
 module.exports = ({ agent }, tracer) => {
@@ -23,7 +24,10 @@ module.exports = ({ agent }, tracer) => {
 			return ''
 		},
 		filterRequestHeaders(attributes, request) {
-
+			return {
+				...filterReqHeadersFn(attributes, request),
+				'Custom-header': 12312312312
+			}
 		},
 		fetchContext: async () => {
 			const [ services, error ] = await agent.service.list()
