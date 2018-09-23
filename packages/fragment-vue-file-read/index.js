@@ -41,6 +41,7 @@ agent.service.register({
 
 module.exports = (request, response, a, b) => {
 	const { globalTracer, Tags, FORMAT_HTTP_HEADERS } = require('opentracing');
+	// @todo dlaczego globalTracer nie loguje, tylko musze instancje?
 	const tracer = globalTracer()
 	const parentSpanContext = d.extract(
 		FORMAT_HTTP_HEADERS,
