@@ -4,18 +4,16 @@ version: "3.7"
 
 services:
 
-
-
-
-  service-vue-file-read:
-    build: packages/fragment-vue-file-read
-    hostname: service-vue-file-read
+  webapp:
+    build: .
+    hostname: webapp
     ports:
-    - 8080:80
+      - 8080:80
     environment:
       - CONSUL_HOST=consul
       - TRACING_HOST=jaeger
     depends_on:
+      - consul
       - jaeger
     healthcheck:
       test: ["CMD", "curl", "-f", "consul:8500"]
@@ -23,6 +21,28 @@ services:
       timeout: 10s
       retries: 5
 
+
+
+  service-vue-file-read:
+    build: packages/fragment-vue-file-read
+    hostname: service-vue-file-read
+    environment:
+      - CONSUL_HOST=consul
+      - TRACING_HOST=jaeger
+    depends_on:
+      - consul
+    healthcheck:
+      test: ["CMD", "curl", "-f", "consul:8500"]
+      interval: 30s
+      timeout: 10s
+      retries: 5
+
+  consul:
+    image: consul
+
+  consul-ui:
+    image: consul
+    command: "consul -ui"
 
   elasticsearch:
     image: docker.elastic.co/elasticsearch/elasticsearch:6.4.0
