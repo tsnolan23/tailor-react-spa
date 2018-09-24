@@ -1,8 +1,9 @@
 const consul = require('consul')
-const { readFileSync } = require('fs');
+const { readFileSync } = require('fs')
 
 const renderStream = require('./render-stream.js')
 const { consulAddress, address, hostname, port } = require('./environment.js')
+
 
 const { agent } = consul({
 	host: consulAddress,
