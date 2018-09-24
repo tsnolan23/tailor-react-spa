@@ -1,7 +1,9 @@
 const consul = require('consul')
+const { readFileSync } = require('fs')
 const { initTracer, PrometheusMetricsFactory, ProbabilisticSampler } = require('jaeger-client')
 const promClient = require('prom-client')
 const bunyan = require('bunyan')
+const { Tags, FORMAT_HTTP_HEADERS } = require('opentracing')
 
 const renderStream = require('./render-stream.js')
 const { consulAddress, address, hostname, port } = require('./environment.js')
@@ -9,7 +11,7 @@ const { consulAddress, address, hostname, port } = require('./environment.js')
 const tracingAddress = 'jaeger'
 const serviceName = 'frontend:microservices'
 
-const d = initTracer(
+const tracer = initTracer(
 	{
 		serviceName,
 		reporter: {
@@ -39,26 +41,30 @@ agent.service.register({
 		'logowanie do spana'
 	})
 
-module.exports = (request, response, a, b) => {
-	const { globalTracer, Tags, FORMAT_HTTP_HEADERS } = require('opentracing');
-	// @todo dlaczego globalTracer nie loguje, tylko musze instancje?
-	const tracer = globalTracer()
-	const parentSpanContext = d.extract(
+module.exports = (request, response) => {
+	const file = readFileSync('file-to-read.txt')
+
+	response.write(file)
+
+	const parentSpanContext = tracer.extract(
 		FORMAT_HTTP_HEADERS,
 		request.headers
-	);
-	const spanOptions = parentSpanContext ? { childOf: parentSpanContext } : {};
+	)
+	const spanOptions = parentSpanContext ? { childOf: parentSpanContext } : {}
 
-	const span = d.startSpan('teststata_asdaa', spanOptions);
+	const span = tracer.startSpan('teststata_asdaa', spanOptions)
 	span.addTags({
 		[Tags.HTTP_URL]: 'teateatae',
 		[Tags.SPAN_KIND]: Tags.SPAN_KIND_RPC_SERVER
-	});
+	})
 
-	console.log(request.headers)
 	response.writeHead(200, {
-    'Content-Type': 'text/html'
-  })
-  renderStream().pipe(response)
-	span.finish();
+		'Content-Type': 'text/html'
+	})
+	renderStream()
+		.on('error', ({ message, stack }) => {
+			console.log(message, stack)
+		})
+		.pipe(response)
+	span.finish()
 }
