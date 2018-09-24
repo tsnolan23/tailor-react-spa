@@ -17,9 +17,6 @@
 </template>
 
 <script>
-
-    console.log('poc-vue-test');
-
     export default {
     	methods: {
     	    test(id) {

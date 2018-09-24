@@ -23,6 +23,9 @@ module.exports = async (request, response) => {
     'Content-Type': 'text/html'
   })
 
-  renderStream()
-    .pipe(response)
+	renderStream()
+		.on('error', ({ message, stack }) => {
+			console.log(message, stack)
+		})
+		.pipe(response)
 }

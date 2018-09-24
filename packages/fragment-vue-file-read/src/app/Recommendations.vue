@@ -5,9 +5,6 @@
 </template>
 
 <script>
-
-    console.log('poc-vue-test');
-
     export default {
         computed: {
             gimmeDate() {

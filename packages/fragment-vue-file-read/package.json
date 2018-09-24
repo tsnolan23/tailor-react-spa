@@ -29,9 +29,12 @@
     "webpack-command": "^0.4.1"
   },
   "dependencies": {
+    "bunyan": "^1.8.12",
     "consul": "^0.34.0",
     "ip": "^1.1.5",
+    "jaeger-client": "^3.12.0",
     "micro": "^9.3.3",
+    "prom-client": "^11.1.3",
     "vue": "^2.5.17"
   }
 }

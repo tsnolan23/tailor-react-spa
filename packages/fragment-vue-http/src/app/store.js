@@ -3,7 +3,7 @@ import Vuex from 'vuex';
 import axios from 'axios';
 
 
-Vue.use(Vuex);
+Vue.use(Vuex)
 
 export default function createStore() {
 	return new Vuex.Store({
@@ -13,7 +13,6 @@ export default function createStore() {
 		actions: {
 			fetchItems({ commit }) {
 				return axios.get('https://jsonplaceholder.typicode.com/comments')
-                    .catch(() => ({data: []}))
 					.then(({data}) => {
 						commit('setItems', data)
 					})
@@ -21,8 +20,8 @@ export default function createStore() {
 		},
 		mutations: {
 			setItems(state, items) {
-				state.items = items;
+				state.items = items
 			}
 		}
-	});
+	})
 }

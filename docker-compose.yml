@@ -8,13 +8,13 @@ services:
     build: .
     hostname: webapp
     ports:
-      - 8080:80
+    - 8080:80
     environment:
-      - CONSUL_HOST=consul
-      - TRACING_HOST=jaeger
+    - CONSUL_HOST=consul
+    - TRACING_HOST=jaeger
     depends_on:
-      - consul
-      - jaeger
+    - consul
+    - jaeger
     healthcheck:
       test: ["CMD", "curl", "-f", "consul:8500"]
       interval: 30s
@@ -25,10 +25,10 @@ services:
     build: packages/fragment-vue-client
     hostname: service-vue-client
     environment:
-      - CONSUL_HOST=consul
-      - TRACING_HOST=jaeger
+    - CONSUL_HOST=consul
+    - TRACING_HOST=jaeger
     depends_on:
-      - consul
+    - consul
     healthcheck:
       test: ["CMD", "curl", "-f", "consul:8500"]
       interval: 30s
@@ -39,10 +39,10 @@ services:
     build: packages/fragment-vue-file-read
     hostname: service-vue-file-read
     environment:
-      - CONSUL_HOST=consul
-      - TRACING_HOST=jaeger
+    - CONSUL_HOST=consul
+    - TRACING_HOST=jaeger
     depends_on:
-      - consul
+    - consul
     healthcheck:
       test: ["CMD", "curl", "-f", "consul:8500"]
       interval: 30s
@@ -53,10 +53,10 @@ services:
     build: packages/fragment-vue-http
     hostname: service-vue-http
     environment:
-      - CONSUL_HOST=consul
-      - TRACING_HOST=jaeger
+    - CONSUL_HOST=consul
+    - TRACING_HOST=jaeger
     depends_on:
-      - consul
+    - consul
     healthcheck:
       test: ["CMD", "curl", "-f", "consul:8500"]
       interval: 30s
@@ -67,10 +67,10 @@ services:
     build: packages/fragment-react
     hostname: service-react
     environment:
-      - CONSUL_HOST=consul
-      - TRACING_HOST=jaeger
+    - CONSUL_HOST=consul
+    - TRACING_HOST=jaeger
     depends_on:
-      - consul
+    - consul
     healthcheck:
       test: ["CMD", "curl", "-f", "consul:8500"]
       interval: 30s
@@ -80,12 +80,12 @@ services:
   service-dotnet:
     build: packages/fragment-dotnet
     environment:
-      - CONSUL_HOST=consul
-      - TRACING_HOST=jaeger
+    - CONSUL_HOST=consul
+    - TRACING_HOST=jaeger
     ports:
-      - 1231:1231
+    - 1231:1231
     depends_on:
-      - consul
+    - consul
     healthcheck:
       test: ["CMD", "curl", "-f", "consul:8500"]
       interval: 30s
@@ -96,12 +96,12 @@ services:
     build: packages/fragment-common
     hostname: service-common
     environment:
-      - CONSUL_HOST=consul
-      - TRACING_HOST=jaeger
+    - CONSUL_HOST=consul
+    - TRACING_HOST=jaeger
     ports:
-      - 1234:80
+    - 1234:80
     depends_on:
-      - consul
+    - consul
     healthcheck:
       test: ["CMD", "curl", "-f", "consul:8500"]
       interval: 30s
