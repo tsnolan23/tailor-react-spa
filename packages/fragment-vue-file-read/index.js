@@ -63,8 +63,9 @@ module.exports = (request, response) => {
 	})
 	renderStream()
 		.on('error', ({ message, stack }) => {
-			console.log(message, stack)
+			span.setTag(Tags.ERROR, true)
+			span.log({ message, stack })
+			span.finish()
 		})
 		.pipe(response)
-	span.finish()
 }
