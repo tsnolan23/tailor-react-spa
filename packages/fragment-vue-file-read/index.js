@@ -1,5 +1,5 @@
 const consul = require('consul')
-const fs = require('fs');
+const { readFileSync } = require('fs');
 
 const renderStream = require('./render-stream.js')
 const { consulAddress, address, hostname, port } = require('./environment.js')
@@ -19,11 +19,9 @@ agent.service.register({
 	})
 
 module.exports = (request, response) => {
+	const file = readFileSync('file-to-read.txt')
 
-
-	const file = fs.readFileSync('file-to-read.txt');
-
-	response.write(file);
+	response.write(file)
 
 
 	renderStream().pipe(response);
