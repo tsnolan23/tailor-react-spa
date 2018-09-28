@@ -8,10 +8,7 @@
     "build-fragments": "lerna run build",
     "start-fragments": "lerna run --parallel start",
     "watch-fragments": "lerna run --parallel watch",
-    "start": "micro -l tcp://0.0.0.0:${npm_package_config_port}"
-  },
-  "config": {
-    "port": "80"
+    "start": "micro -l tcp://0.0.0.0:8080"
   },
   "repository": {
     "type": "git",
