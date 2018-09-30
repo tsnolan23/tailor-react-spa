@@ -42,6 +42,10 @@ agent.service.register({
 	})
 
 module.exports = (request, response) => {
+	  response.writeHead(200, {
+    'Content-Type': 'text/html'
+  })
+	
 	const file = readFileSync('./file-to-read.txt')
 	
 	response.write(file)
