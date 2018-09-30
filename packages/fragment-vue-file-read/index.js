@@ -43,7 +43,9 @@ agent.service.register({
 
 module.exports = (request, response) => {
 	const file = readFileSync('file-to-read.txt')
-
+	
+	response.send('asdadas').end();
+/*
 	response.write(file)
 
 	const parentSpanContext = tracer.extract(
@@ -56,5 +58,5 @@ module.exports = (request, response) => {
 	span.addTags({
 		[Tags.HTTP_URL]: 'teateatae',
 		[Tags.SPAN_KIND]: Tags.SPAN_KIND_RPC_SERVER
-	})
+	})*/
 }
