@@ -1,5 +1,5 @@
 const consul = require('consul')
-const { readFileSync } = require('fs')
+const { createReadStream } = require('fs')
 const { initTracer, PrometheusMetricsFactory, ProbabilisticSampler } = require('jaeger-client')
 const promClient = require('prom-client')
 const bunyan = require('bunyan')
@@ -42,9 +42,14 @@ agent.service.register({
 	})
 
 module.exports = (request, response) => {
-	const file = readFileSync('file-to-read.txt')
 
-	response.write(file)
+	response.writeHead(200, {
+		'Content-Type': 'text/html'
+	})
+
+	const file = createReadStream('file-to-read.txt')
+
+	file.pipe(response);
 
 	const parentSpanContext = tracer.extract(
 		FORMAT_HTTP_HEADERS,
@@ -57,15 +62,4 @@ module.exports = (request, response) => {
 		[Tags.HTTP_URL]: 'teateatae',
 		[Tags.SPAN_KIND]: Tags.SPAN_KIND_RPC_SERVER
 	})
-
-	response.writeHead(200, {
-		'Content-Type': 'text/html'
-	})
-	renderStream()
-		.on('error', ({ message, stack }) => {
-			span.setTag(Tags.ERROR, true)
-			span.log({ message, stack })
-			span.finish()
-		})
-		.pipe(response)
 }
