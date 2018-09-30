@@ -7,7 +7,7 @@
   "scripts": {
     "build": "webpack --mode production --config webpack.server.config.js",
     "watch": "webpack --watch",
-    "start": "micro -l tcp://0.0.0.0:9000"
+    "start": "micro -l tcp://0.0.0.0:488"
   },
   "keywords": [],
   "author": "",
