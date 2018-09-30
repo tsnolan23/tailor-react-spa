@@ -57,15 +57,4 @@ module.exports = (request, response) => {
 		[Tags.HTTP_URL]: 'teateatae',
 		[Tags.SPAN_KIND]: Tags.SPAN_KIND_RPC_SERVER
 	})
-
-	response.writeHead(200, {
-		'Content-Type': 'text/html'
-	})
-	renderStream()
-		.on('error', ({ message, stack }) => {
-			span.setTag(Tags.ERROR, true)
-			span.log({ message, stack })
-			span.finish()
-		})
-		.pipe(response)
 }
