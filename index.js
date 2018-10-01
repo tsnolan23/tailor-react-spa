@@ -2,7 +2,6 @@ const { initTracer, PrometheusMetricsFactory, ProbabilisticSampler } = require('
 const promClient = require('prom-client')
 const bunyan = require('bunyan')
 const consul = require('consul')
-const http = require('http')
 
 const { serviceName, tracingAddress, consulAddress } = require('./environment.js')
 const microservices = require('./microservices.js')
@@ -31,7 +30,7 @@ const { requestHandler } = microservices(
 		})
 )
 
-http.createServer(function (request, response) {
+module.exports = async (request, response) => {
 	if (request.url === '/favicon.ico') {
 		response.writeHead(200, { 'Content-Type': 'image/x-icon' })
 		response.end('')
@@ -42,4 +41,4 @@ http.createServer(function (request, response) {
 	request.url = '/index'
 
 	requestHandler(request, response)
-}).listen(80);
+}
