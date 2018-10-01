@@ -9,6 +9,9 @@
     "watch": "webpack --watch",
     "start": "HOSTNAME=localhost CONSUL_HOST=localhost TRACING_HOST=localhost micro -l tcp://0.0.0.0:6000"
   },
+  "config": {
+    "port": 5000
+  },
   "keywords": [],
   "author": "",
   "license": "ISC",
