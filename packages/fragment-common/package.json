@@ -6,7 +6,7 @@
   "scripts": {
     "build": "webpack --mode production",
     "watch": "webpack --watch",
-    "start": "TRACING_HOST=localhost micro -l tcp://0.0.0.0:7000"
+    "start": "HOSTNAME=localhost CONSUL_HOST=localhost TRACING_HOST=localhost micro -l tcp://0.0.0.0:7000"
   },
   "author": "",
   "license": "ISC",
