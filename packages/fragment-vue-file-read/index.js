@@ -32,12 +32,15 @@ const { agent } = consul({
 	promisify: true
 })
 
+console.log({ consulAddress, address, hostname, port });
+
 agent.service.register({
 	name: hostname,
 	address,
 	port
 })
-	.catch(() => {
+	.catch((e) => {
+	console.log(e);
 		'logowanie do spana'
 	})
 
