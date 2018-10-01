@@ -4,6 +4,7 @@ const { initTracer, PrometheusMetricsFactory, ProbabilisticSampler } = require('
 const promClient = require('prom-client')
 const bunyan = require('bunyan')
 const { Tags, FORMAT_HTTP_HEADERS } = require('opentracing')
+var http = require('http');
 
 const renderStream = require('./render-stream.js')
 const { consulAddress, address, hostname, port } = require('./environment.js')
@@ -44,6 +45,29 @@ agent.service.register({
 		'logowanie do spana'
 	})
 
+http.createServer(function (request, response) => {
+
+	response.writeHead(200, {
+		'Content-Type': 'text/html'
+	})
+
+	const file = createReadStream('file-to-read.txt')
+
+	file.pipe(response);
+
+	const parentSpanContext = tracer.extract(
+		FORMAT_HTTP_HEADERS,
+		request.headers
+	)
+	const spanOptions = parentSpanContext ? { childOf: parentSpanContext } : {}
+
+	const span = tracer.startSpan('teststata_asdaa', spanOptions)
+	span.addTags({
+		[Tags.HTTP_URL]: 'teateatae',
+		[Tags.SPAN_KIND]: Tags.SPAN_KIND_RPC_SERVER
+	})
+}).listen(5000);
+/*
 module.exports = (request, response) => {
 
 	response.writeHead(200, {
@@ -66,3 +90,4 @@ module.exports = (request, response) => {
 		[Tags.SPAN_KIND]: Tags.SPAN_KIND_RPC_SERVER
 	})
 }
+*/
