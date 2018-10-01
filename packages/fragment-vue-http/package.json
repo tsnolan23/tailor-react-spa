@@ -7,7 +7,7 @@
   "scripts": {
     "build": "webpack --mode production --config webpack.server.config.js",
     "watch": "webpack --watch",
-    "start": "micro -l tcp://0.0.0.0:6000"
+    "start": "TRACING_HOST=localhost micro -l tcp://0.0.0.0:6000"
   },
   "keywords": [],
   "author": "",
