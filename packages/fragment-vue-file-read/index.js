@@ -45,7 +45,7 @@ agent.service.register({
 		'logowanie do spana'
 	})
 
-http.createServer(function (request, response) => {
+http.createServer(function (request, response)  {
 
 	response.writeHead(200, {
 		'Content-Type': 'text/html'
