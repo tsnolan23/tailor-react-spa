@@ -4,8 +4,8 @@ const { initTracer, PrometheusMetricsFactory, ProbabilisticSampler } = require('
 const promClient = require('prom-client')
 const bunyan = require('bunyan')
 const { Tags, FORMAT_HTTP_HEADERS } = require('opentracing')
+const { createServer } = require('http')
 
-const renderStream = require('./render-stream.js')
 const { consulAddress, address, hostname, port } = require('./environment.js')
 
 const tracingAddress = 'jaeger'
@@ -41,8 +41,7 @@ agent.service.register({
 		'logowanie do spana'
 	})
 
-module.exports = (request, response) => {
-
+createServer((request, response) => {
 	response.writeHead(200, {
 		'Content-Type': 'text/html'
 	})
@@ -62,4 +61,4 @@ module.exports = (request, response) => {
 		[Tags.HTTP_URL]: 'teateatae',
 		[Tags.SPAN_KIND]: Tags.SPAN_KIND_RPC_SERVER
 	})
-}
+}).listen(port)

@@ -7,7 +7,7 @@
   "scripts": {
     "build": "webpack --mode production --config webpack.server.config.js",
     "watch": "webpack --watch",
-    "start": "micro -l tcp://0.0.0.0:${npm_package_config_port}"
+    "start": "node index.js"
   },
   "config": {
     "port": "80"
@@ -33,7 +33,6 @@
     "consul": "^0.34.0",
     "ip": "^1.1.5",
     "jaeger-client": "^3.12.0",
-    "micro": "^9.3.3",
     "prom-client": "^11.1.3",
     "vue": "^2.5.17"
   }
