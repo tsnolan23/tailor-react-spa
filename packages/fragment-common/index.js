@@ -1,6 +1,7 @@
 const consul = require('consul')
 const { parse } = require('url')
 const { createReadStream } = require('fs')
+const { createServer } = require('http')
 
 const { consulAddress, address, hostname, port, getUrl } = require('./environment.js')
 
@@ -19,7 +20,7 @@ agent.service.register({
 		'logowanie do spana'
 	})
 
-module.exports = (request, response) => {
+createServer((request, response) => {
 	const { pathname } = parse(request.url)
 
 	const bundle = '/dist/bundle.js'
@@ -38,4 +39,4 @@ module.exports = (request, response) => {
 			})
 			return response.end('')
 	}
-}
+}).listen(port)

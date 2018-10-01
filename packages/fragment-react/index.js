@@ -1,6 +1,7 @@
 const consul = require('consul')
 const { createReadStream } = require('fs')
 const { parse } = require('url')
+const { createServer } = require('http')
 
 const { presets } = require('./.babelrc.js')
 
@@ -25,7 +26,7 @@ agent.service.register({
 		'logowanie do spana'
 	})
 
-module.exports = async (request, response) => {
+createServer(async (request, response) => {
 	const { pathname } = parse(request.url)
 
 	const bundle = '/dist/bundle.js'
@@ -36,7 +37,7 @@ module.exports = async (request, response) => {
 			response.writeHead(200, { 'Content-Type': 'application/javascript' })
 			createReadStream(pathToBundle)
 				.pipe(response)
-      break
+			break
 		default:
 			response.writeHead(200, {
 				'Content-Type': 'text/html',
@@ -50,4 +51,4 @@ module.exports = async (request, response) => {
       `)
 			stream.pipe(response)
 	}
-}
+}).listen(port)
