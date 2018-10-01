@@ -31,7 +31,6 @@ const { requestHandler } = microservices(
 )
 
 module.exports = async (request, response) => {
-	/*
 	if (request.url === '/favicon.ico') {
 		response.writeHead(200, { 'Content-Type': 'image/x-icon' })
 		response.end('')
@@ -42,6 +41,5 @@ module.exports = async (request, response) => {
 	request.url = '/index'
 
 	requestHandler(request, response)
-*/
-	response.end('test');
+
 }
