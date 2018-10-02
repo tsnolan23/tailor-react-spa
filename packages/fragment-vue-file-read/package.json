@@ -7,7 +7,7 @@
   "scripts": {
     "build": "webpack --mode production --config webpack.server.config.js",
     "watch": "webpack --watch",
-    "start": "CONSUL_HOST=localhost TRACING_HOST=localhost node index.js"
+    "start": "HOSTNAME=service-vue-file-read CONSUL_HOST=localhost TRACING_HOST=localhost node index.js"
   },
   "config": {
     "port": "5000"
