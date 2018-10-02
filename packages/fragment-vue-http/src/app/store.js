@@ -12,7 +12,7 @@ export default function createStore() {
 		},
 		actions: {
 			fetchItems({ commit }) {
-return axios.get('response')
+return axios.get('http://localhost:6000/response')
 					.then(({data}) => {
 						commit('setItems', data)
 					})
