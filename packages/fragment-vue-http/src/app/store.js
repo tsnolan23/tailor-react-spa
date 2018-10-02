@@ -1,6 +1,7 @@
 import Vue from 'vue';
 import Vuex from 'vuex';
 import axios from 'axios';
+import { readFileSync } from 'fs';
 
 
 Vue.use(Vuex)
@@ -12,10 +13,12 @@ export default function createStore() {
 		},
 		actions: {
 			fetchItems({ commit }) {
-				return axios.get('https://jsonplaceholder.typicode.com/comments')
-					.then(({data}) => {
-						commit('setItems', data)
-					})
+				return new Promise((res) => {
+					const data = readFileSync('/response.json', 'utf-8');
+					commit('setItems', data)
+					
+					res();
+				});
 			}
 		},
 		mutations: {
