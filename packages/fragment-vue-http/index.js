@@ -20,6 +20,12 @@ agent.service.register({
 	})
 
 createServer((request, response) => {
+	if (request.url === '/response.json') {
+		response.writeHead(200, { 'Content-Type': 'image/x-icon' })
+		response.end('')
+		return
+	}
+	
 	response.writeHead(200, {
 		'Content-Type': 'text/html'
 	})
