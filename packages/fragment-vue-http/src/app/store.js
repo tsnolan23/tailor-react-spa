@@ -14,7 +14,7 @@ export default function createStore() {
 		actions: {
 			fetchItems({ commit }) {
 				return new Promise((res) => {
-					const data = readFileSync('/response.json', 'utf-8');
+					const data = readFileSync('response.json', 'utf-8');
 					commit('setItems', data)
 					
 					res();
