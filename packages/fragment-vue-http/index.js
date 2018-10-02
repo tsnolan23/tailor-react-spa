@@ -21,7 +21,7 @@ agent.service.register({
 	})
 
 createServer((request, response) => {
-	if (request.url === '/response.json') {
+	if (request.url === '/response') {
 	const file = createReadStream('response.json')
 
 	file.pipe(response);
