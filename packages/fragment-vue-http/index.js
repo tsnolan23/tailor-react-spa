@@ -1,5 +1,6 @@
 const consul = require('consul')
 const { createServer } = require('http')
+const { createReadStream } = require('fs')
 
 const renderStream = require('./render-stream.js')
 const { consulAddress, address, hostname, port } = require('./environment.js')
@@ -21,8 +22,10 @@ agent.service.register({
 
 createServer((request, response) => {
 	if (request.url === '/response.json') {
-		response.writeHead(200, { 'Content-Type': 'image/x-icon' })
-		response.end('')
+	const file = createReadStream('response.json')
+
+	file.pipe(response);
+		
 		return
 	}
 	
