@@ -35,7 +35,7 @@ module.exports = ({ agent }, tracer) => {
 				.catch((error) => [, error ])
 
 			error && 'do spana i zabic serwer'
-
+console.log(services);
 			const urls = Object.values(services)
 				.map(({ Address, Port }) => 'http://' + Address + ':' + Port)
 
