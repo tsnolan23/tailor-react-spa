@@ -35,10 +35,10 @@ module.exports = ({ agent }, tracer) => {
 				.catch((error) => [, error ])
 
 			error && 'do spana i zabic serwer'
-console.log(services);
+
 			const urls = Object.values(services)
-				//.map(({ Address, Port }) => 'http://' + Address + ':' + Port)
-				.map(({ Address, Port }) => 'http://localhost:' + Port)
+				.map(({ Address, Port }) => 'http://' + Address + ':' + Port)
+				//.map(({ Address, Port }) => 'http://localhost:' + Port)
 
 			return Promise.resolve(
 				Object.keys(services)
