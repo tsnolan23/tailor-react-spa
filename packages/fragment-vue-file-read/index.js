@@ -4,7 +4,7 @@ const { initTracer, PrometheusMetricsFactory, ProbabilisticSampler } = require('
 const promClient = require('prom-client')
 const bunyan = require('bunyan')
 const { Tags, FORMAT_HTTP_HEADERS } = require('opentracing')
-var { createServer } = require('http');
+const { createServer } = require('http')
 
 const { consulAddress, address, hostname, port } = require('./environment.js')
 
@@ -31,8 +31,6 @@ const { agent } = consul({
 	host: consulAddress,
 	promisify: true
 })
-
-console.log({ consulAddress, address, hostname, port });
 
 agent.service.register({
 	name: hostname,
@@ -65,4 +63,4 @@ createServer(function (request, response)  {
 		[Tags.HTTP_URL]: 'teateatae',
 		[Tags.SPAN_KIND]: Tags.SPAN_KIND_RPC_SERVER
 	})
-}).listen(port);
+}).listen(port)
