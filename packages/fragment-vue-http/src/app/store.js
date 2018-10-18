@@ -12,8 +12,8 @@ export default function createStore() {
 		},
 		actions: {
 			fetchItems({ commit }) {
-				return axios.get('https://jsonplaceholder.typicode.com/comments')
-					.then(({data}) => {
+				return axios.get('/mock')
+					.then(({ data }) => {
 						commit('setItems', data)
 					})
 			}
