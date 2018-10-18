@@ -21,8 +21,8 @@ agent.service.register({
 	})
 
 createServer((request, response) => {
-	if (request.url === '/response') {
-		const file = createReadStream('response.json')
+	if (request.url === '/mock') {
+		const file = createReadStream('mock.json')
 
 		file.pipe(response)
 

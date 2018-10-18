@@ -38,12 +38,10 @@ agent.service.register({
 	port
 })
 	.catch((e) => {
-		console.log(e);
 		'logowanie do spana'
 	})
 
 createServer(function (request, response)  {
-
 	response.writeHead(200, {
 		'Content-Type': 'text/html'
 	})
