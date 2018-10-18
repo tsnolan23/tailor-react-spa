@@ -6,10 +6,10 @@
   "scripts": {
     "build": "webpack --mode production",
     "watch": "webpack --watch",
-    "start": "HOSTNAME=localhost CONSUL_HOST=localhost TRACING_HOST=localhost node index.js"
+    "start": "node index.js"
   },
   "config": {
-    "port": "7000"
+    "port": "80"
   },
   "author": "",
   "license": "ISC",

@@ -37,7 +37,7 @@ agent.service.register({
 	address,
 	port
 })
-	.catch((e) => {
+	.catch(() => {
 		'logowanie do spana'
 	})
 
