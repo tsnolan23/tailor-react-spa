@@ -8,10 +8,10 @@
     "build-fragments": "lerna run build",
     "start-fragments": "lerna run --parallel start",
     "watch-fragments": "lerna run --parallel watch",
-    "start": "CONSUL_HOST=localhost TRACING_HOST=localhost node index.js"
+    "start": "node index.js"
   },
   "config": {
-    "port": "8080"
+    "port": "80"
   },
   "repository": {
     "type": "git",

@@ -7,10 +7,10 @@
   "scripts": {
     "build": "webpack --mode production --config webpack.server.config.js",
     "watch": "webpack --watch",
-    "start": "HOSTNAME=service-vue-http CONSUL_HOST=localhost TRACING_HOST=localhost node index.js"
+    "start": "node index.js"
   },
   "config": {
-    "port": "6000"
+    "port": "80"
   },
   "keywords": [],
   "author": "",
