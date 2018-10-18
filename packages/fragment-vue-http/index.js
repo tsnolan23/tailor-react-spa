@@ -22,13 +22,13 @@ agent.service.register({
 
 createServer((request, response) => {
 	if (request.url === '/response') {
-	const file = createReadStream('response.json')
+		const file = createReadStream('response.json')
 
-	file.pipe(response);
-		
+		file.pipe(response)
+
 		return
 	}
-	
+
 	response.writeHead(200, {
 		'Content-Type': 'text/html'
 	})
