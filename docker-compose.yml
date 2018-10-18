@@ -63,6 +63,20 @@ services:
       timeout: 10s
       retries: 5
 
+  service-react:
+    build: packages/fragment-react
+    hostname: service-react
+    environment:
+    - CONSUL_HOST=consul
+    - TRACING_HOST=jaeger
+    depends_on:
+    - consul
+    healthcheck:
+      test: ["CMD", "curl", "-f", "consul:8500"]
+      interval: 30s
+      timeout: 10s
+      retries: 5
+
   service-dotnet:
     build: packages/fragment-dotnet
     environment:
