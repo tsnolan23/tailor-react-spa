@@ -38,7 +38,6 @@ module.exports = ({ agent }, tracer) => {
 
 			const urls = Object.values(services)
 				.map(({ Address, Port }) => 'http://' + Address + ':' + Port)
-				//.map(({ Address, Port }) => 'http://localhost:' + Port)
 
 			return Promise.resolve(
 				Object.keys(services)
