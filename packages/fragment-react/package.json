@@ -6,7 +6,7 @@
   "scripts": {
     "build": "webpack --mode production",
     "watch": "webpack --watch",
-    "start": "cross-env BABEL_ENV=server node index.js"
+    "start": "cross-env NODE_ENV=production node index.js"
   },
   "config": {
     "port": "80"
