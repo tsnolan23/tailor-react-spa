@@ -3,7 +3,6 @@ import PropTypes from 'prop-types'
 import { Provider, connect } from 'react-redux';
 
 import Contact from '../Contact/index'
-import ContactPropType from '../PropTypes/Contact/index'
 
 import styles from './styles.scss'
 
@@ -19,7 +18,7 @@ const Contacts = ({ contacts }) => (
 )
 
 Contacts.propTypes = {
-  contacts: PropTypes.arrayOf(ContactPropType)
+  contacts: PropTypes.arrayOf(PropTypes.object)
 }
 
 const foo = (state) => ({ contacts: state });

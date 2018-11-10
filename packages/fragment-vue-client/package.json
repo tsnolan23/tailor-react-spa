@@ -5,7 +5,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build:prod": "webpack --config webpack.server.config.js",
+    "build": "npm run build:client && npm run build:server",
+    "build:client": "webpack --config webpack.client.js",
+    "build:server": "webpack --config webpack.server.js",
     "watch": "webpack --watch",
     "start": "cross-env NODE_ENV=production node index.js"
   },

@@ -4,7 +4,8 @@
   "version": "1.0.0",
   "description": "",
   "scripts": {
-    "build:prod": "webpack",
+    "build": "npm run build:client",
+    "build:client": "webpack --config webpack.client.js",
     "watch": "webpack --watch",
     "start": "cross-env NODE_ENV=production node index.js"
   },

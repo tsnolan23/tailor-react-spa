@@ -4,12 +4,14 @@
   "version": "1.0.0",
   "description": "",
   "scripts": {
-    "build:prod": "webpack",
+    "build": "npm run build:client && npm run build:server",
+    "build:client": "webpack --config webpack.client.js",
+    "build:server": "webpack",
     "watch": "webpack --watch",
     "start": "cross-env NODE_ENV=production node index.js"
   },
   "config": {
-    "port": "80"
+    "port": "3232"
   },
   "author": "",
   "license": "ISC",

@@ -1,3 +1,5 @@
+import { renderToNodeStream } from 'react-dom/server.js'
+
 const consul = require('consul')
 const { createReadStream } = require('fs')
 const { parse } = require('url')
@@ -9,7 +11,8 @@ require('@babel/register')({
   presets
 })
 
-const renderStream = require('./render-stream.js')
+import entryServer from './src/entry-server'
+
 const { consulAddress, address, hostname, port, getUrl } = require('./environment.js')
 
 
@@ -44,7 +47,11 @@ createServer(async (request, response) => {
 				'Link': `<${getUrl(bundle)}>; rel="fragment-script"`
 			})
 
-			const { stream, state } = await renderStream()
+			const { stream, state } = await entryServer()
+				.then(({ state, markup }) => ({
+					stream: renderToNodeStream(markup),
+					state
+				}))
 
 			response.write(`
      			<script>window.CONTACTS_STATE = ${JSON.stringify(state).replace(/</g, '\\\u003c')}</script>

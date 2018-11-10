@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "install-fragment-dependencies": "lerna bootstrap",
-    "build-fragments": "lerna run build:prod",
+    "build-fragments": "lerna run build",
     "start-fragments": "lerna run --parallel start",
     "watch-fragments": "lerna run --parallel watch",
     "start": "cross-env NODE_ENV=production node index.js"
