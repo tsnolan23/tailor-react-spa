@@ -6,8 +6,8 @@
   "main": "index.js",
   "scripts": {
     "build": "npm run build:client && npm run build:server",
-    "build:client": "webpack --config webpack.client.js",
-    "build:server": "webpack --config webpack.server.js",
+    "build:client": "cross-env NODE_ENV=production webpack --mode production --config webpack.client.js",
+    "build:server": "cross-env NODE_ENV=production webpack --mode production --config webpack.server.js",
     "watch": "webpack --watch",
     "start": "cross-env NODE_ENV=production node index.js"
   },

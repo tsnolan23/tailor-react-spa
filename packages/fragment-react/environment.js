@@ -10,7 +10,7 @@ const setPort = port => ({ port })
 
 const getUrlFromPort = (port) => (path) => {
 	// @todo
-	return `//localhost:${port}/${path}`
+	return `//localhost:${port}${path}`
 }
 
 const { env } = process

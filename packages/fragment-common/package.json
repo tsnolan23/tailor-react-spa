@@ -5,7 +5,7 @@
   "description": "",
   "scripts": {
     "build": "npm run build:client",
-    "build:client": "webpack --config webpack.client.js",
+    "build:client": "cross-env NODE_ENV=production webpack --mode production --config webpack.client.js",
     "watch": "webpack --watch",
     "start": "cross-env NODE_ENV=production node index.js"
   },

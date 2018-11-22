@@ -5,8 +5,8 @@
   "description": "",
   "scripts": {
     "build": "npm run build:client && npm run build:server",
-    "build:client": "webpack --config webpack.client.js",
-    "build:server": "webpack",
+    "build:client": "cross-env NODE_ENV=production webpack --mode production --config webpack.client.js",
+    "build:server": "cross-env NODE_ENV=production webpack --mode production --config webpack.server.js",
     "watch": "webpack --watch",
     "start": "cross-env NODE_ENV=production node index.js"
   },
@@ -30,7 +30,6 @@
     "@babel/core": "^7.0.0",
     "@babel/preset-env": "^7.0.0",
     "@babel/preset-react": "^7.0.0",
-    "@babel/register": "^7.0.0",
     "babel-loader": "^8.0.2",
     "babel-plugin-css-modules-transform": "^1.6.1",
     "cross-env": "^5.2.0",

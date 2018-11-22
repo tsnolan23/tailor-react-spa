@@ -2,17 +2,24 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { Provider, connect } from 'react-redux';
 
-import Contact from '../Contact/index'
+// import Contact from '../Contact/index'
 
-import styles from './styles.scss'
+// import styles from './styles.scss'
 
+// const Contacts = ({ contacts }) => (
+// 	<div className={styles.contacts}>
+// 		{contacts.map((contact, index) => (
+// 			<Contact
+// 				key={index}
+// 				contact={contact}
+// 			/>
+// 		))}
+// 	</div>
+// )
 const Contacts = ({ contacts }) => (
-	<div className={styles.contacts}>
+	<div>
 		{contacts.map((contact, index) => (
-			<Contact
-				key={index}
-				contact={contact}
-			/>
+			<div key={index}>asdada</div>
 		))}
 	</div>
 )
