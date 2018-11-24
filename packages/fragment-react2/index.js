@@ -1,40 +1,22 @@
-const { createReadStream } = require('fs')
-
-const consulRegistration = require('./node/consul.js')
-const createServer = require('./node/server.js')
-const environment = require('./node/environment.js')
-
-const bootstrap = require('./node/react')
-
-const serverCode = require('./dist/server')
+const consulRegistration = require('./ssr/consul.js')
+const createServer = require('./ssr/server.js')
+const initializeRoutes = require('./ssr/routes.js')
+const environment = require('./ssr/environment.js')
 
 
 const pipe = (...fns) => x => fns.reduce((v, f) => f(v), x)
 
+// @todo store, czy jesli apka nie potrzebuje store to ladowac reacta wczesniej
+// @todo sprytnie zeby na serwerze ladowalo to co trzeba tylko - tak zrobic foldery
+// @todo merge htmlState, css ze strumieniem
+// @todo browserlist
+// @todo apka kliencka, dev mode
+// @todo optimize webpack
+
 pipe(
 	consulRegistration,
 	async consul => consul.catch(() => /* @todo  obsluga */ null),
-
 	createServer,
-
-	server => server.get('/favicon.ico', (_, reply) => reply
-		.type('image/x-icon')
-		.send(null)
-	),
-	server => server.get('/foo.js', (_, reply) => reply
-		.type('application/javascript')
-		.send(createReadStream('./dist/bundle.js'))
-	),
-	server => server.get('/', (_, reply) => reply
-		.type('text/html')
-		.header('link', `<foo.js>; rel="fragment-script"`)
-		// @todo apka react
-		// @todo merge htmlState ze strumieniem
-		// @todo css
-		// @todo state
-		// .send(htmlState)
-		.send(bootstrap(serverCode).stream)
-	),
-
+	initializeRoutes,
 	server => server.listen(environment.port)
 )(environment)
