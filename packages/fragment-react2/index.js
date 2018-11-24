@@ -1,6 +1,6 @@
 const { createReadStream } = require('fs')
 
-const registerConsul = require('./node/consul.js')
+const consulRegistration = require('./node/consul.js')
 const createServer = require('./node/server.js')
 const environment = require('./node/environment.js')
 
@@ -12,7 +12,7 @@ const serverCode = require('./dist/server')
 const pipe = (...fns) => x => fns.reduce((v, f) => f(v), x)
 
 pipe(
-	registerConsul,
+	consulRegistration,
 	async consul => consul.catch(() => /* @todo  obsluga */ null),
 
 	createServer,
@@ -28,7 +28,10 @@ pipe(
 	server => server.get('/', (_, reply) => reply
 		.type('text/html')
 		.header('link', `<foo.js>; rel="fragment-script"`)
-		// @todo merge strumieni
+		// @todo apka react
+		// @todo merge htmlState ze strumieniem
+		// @todo css
+		// @todo state
 		// .send(htmlState)
 		.send(bootstrap(serverCode).stream)
 	),
