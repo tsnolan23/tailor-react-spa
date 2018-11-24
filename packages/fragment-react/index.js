@@ -1,6 +1,3 @@
-import { makeRequest } from './src/api'
-import { setData } from './src/actions'
-
 const {renderToNodeStream } = require('react-dom/server.js')
 const React = require('react')
 const consul = require('consul')
@@ -46,9 +43,6 @@ createServer(async (request, response) => {
 			response.write(`
      			<script>window.CONTACTS_STATE = ${JSON.stringify(store.getState()).replace(/</g, '\\\u003c')}</script>
       `)
-
-			makeRequest()
-				.then(() => store.dispatch(setData));
 
 			renderToNodeStream(app)
 				.pipe(response)
