@@ -1,7 +1,7 @@
 const { createReadStream } = require('fs')
 
-const bootstrapApplication = require('./ssr/react')
-const { code, store } = require('./dist/server.js')
+const bootstrapApplication = require('./react')
+const { code, store } = require('../dist/server.js')
 
 
 module.exports = server => server
