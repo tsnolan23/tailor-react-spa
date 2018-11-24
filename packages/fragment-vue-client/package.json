@@ -5,9 +5,11 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build": "webpack --mode production && webpack --mode production --config webpack.server.config.js",
+    "build": "npm run build:client && npm run build:server",
+    "build:client": "cross-env NODE_ENV=production webpack --mode production --config webpack.client.js",
+    "build:server": "cross-env NODE_ENV=production webpack --mode production --config webpack.server.js",
     "watch": "webpack --watch",
-    "start": "node index.js"
+    "start": "cross-env NODE_ENV=production node index.js"
   },
   "config": {
     "port": "80"
@@ -31,6 +33,7 @@
   "dependencies": {
     "axios": "^0.18.0",
     "consul": "^0.34.0",
+    "cross-env": "5.2.0",
     "ip": "^1.1.5",
     "vue": "^2.5.17",
     "vuex": "^3.0.1"

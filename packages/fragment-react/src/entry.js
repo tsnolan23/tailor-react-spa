@@ -1,10 +1,12 @@
-import React  from 'react'
 import { hydrate } from 'react-dom';
 
-import createApp from './index.js'
+import createApp from './index.js';
+
+
+const { app } = createApp(window.CONTACTS_STATE);
 
 
 hydrate(
-	createApp(window.CONTACTS_STATE),
+	app,
 	document.getElementById('contacts')
 );

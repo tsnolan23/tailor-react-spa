@@ -1,15 +1,11 @@
+const {renderToNodeStream } = require('react-dom/server.js')
+const React = require('react')
 const consul = require('consul')
 const { createReadStream } = require('fs')
 const { parse } = require('url')
 const { createServer } = require('http')
 
-const { presets } = require('./.babelrc.js')
-
-require('@babel/register')({
-  presets
-})
-
-const renderStream = require('./render-stream.js')
+const { app, store } = require('./dist/server');
 const { consulAddress, address, hostname, port, getUrl } = require('./environment.js')
 
 
@@ -44,11 +40,11 @@ createServer(async (request, response) => {
 				'Link': `<${getUrl(bundle)}>; rel="fragment-script"`
 			})
 
-			const { stream, state } = await renderStream()
-
 			response.write(`
-     			<script>window.CONTACTS_STATE = ${JSON.stringify(state).replace(/</g, '\\\u003c')}</script>
+     			<script>window.CONTACTS_STATE = ${JSON.stringify(store.getState()).replace(/</g, '\\\u003c')}</script>
       `)
-			stream.pipe(response)
+
+			renderToNodeStream(app)
+				.pipe(response)
 	}
 }).listen(port)
