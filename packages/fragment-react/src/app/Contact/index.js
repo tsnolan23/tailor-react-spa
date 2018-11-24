@@ -1,10 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
-import ContactPropType from '../PropTypes/Contact/index'
-
 import styles from './styles.scss'
-import ContactsDeep from '../ContactsDeep'
 
 const Contact = ({
   contact
@@ -18,12 +15,11 @@ const Contact = ({
       </div>
       <span className={styles['contact-email']}>{contact.email}</span>
     </div>
-    <ContactsDeep/>
   </div>
 )
 
 Contact.propTypes = {
-  contact: ContactPropType.isRequired
+  contact: PropTypes.object.isRequired
 }
 
 export default Contact
