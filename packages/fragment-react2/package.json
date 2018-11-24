@@ -1,0 +1,24 @@
+{
+  "name": "fragment-react2",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "cross-env NODE_ENV=production node index.js"
+  },
+  "config": {
+    "port": 1321
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "consul": "0.34.1",
+    "cross-env": "5.2.0",
+    "fastify": "1.13.0",
+    "react": "16.6.3",
+    "react-dom": "16.6.3",
+    "react-redux": "5.1.1",
+    "redux": "4.0.1"
+  }
+}
