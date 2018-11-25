@@ -4,16 +4,18 @@ const bootstrapApplication = require('./react')
 const { code, store } = require('../dist/server.js')
 
 
+// @todo te bootstrap i disty nie pasuja tutaj - nie jest czysto
+
 module.exports = server => server
 	.get('/foo.js', (_, reply) => reply
 		.type('application/javascript')
 		.send(createReadStream('./dist/bundle.js'))
 	)
 
-	.get('/server.css', (_, reply) => reply
-		.type('text/css')
-		.send(createReadStream('./dist/server.css'))
-	)
+	// .get('/server.css', (_, reply) => reply
+	// 	.type('text/css')
+	// 	.send(createReadStream('./dist/server.css'))
+	// )
 
 	.get('/favicon.ico', (_, reply) => reply
 		.type('image/x-icon')

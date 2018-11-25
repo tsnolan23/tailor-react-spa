@@ -14,9 +14,9 @@ module.exports = () => {
 			filename: 'server.js'
 		},
 		plugins: [
-			new MiniCssExtractPlugin({
-				filename: 'server.css'
-			})
+			// new MiniCssExtractPlugin({
+			// 	filename: 'server.css'
+			// })
 		],
 		module: {
 			rules: [
@@ -28,7 +28,7 @@ module.exports = () => {
 				{
 					test: /\.scss$/,
 					use: [
-						MiniCssExtractPlugin.loader,
+						// MiniCssExtractPlugin.loader,
 						{
 							loader: 'css-loader',
 							options: {

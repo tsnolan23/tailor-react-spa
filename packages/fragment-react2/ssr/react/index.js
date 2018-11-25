@@ -1,15 +1,18 @@
 const { renderToNodeStream } = require('react-dom/server.js')
 
-const htmlState = require('./html-state.js')
-const preloadState = require('./preload.js')
-const preloadStyles = require('./styles.js')
+const createState = require('./store')
 
 const pipe = (...fns) => x => fns.reduce((v, f) => f(v), x)
 
+const { Readable } = require('stream')
+const s = new Readable({ encoding: 'utf8' })
+s.push('your text here')
+s.push(null);
+
+s.on('data', (v) => console.log(v))
+s.on('end', () => console.log(1))
 
 module.exports = pipe(
-	// @todo async await
-	({ store, code }) => preloadState() && ({ store, code }),
-	({ store, code }) => ({ code, htmlState: htmlState(store.getState()) }),
+  ({ store, code }) => ({ code, state: createState(store) }),
 	({ code }) => renderToNodeStream(code)
 )

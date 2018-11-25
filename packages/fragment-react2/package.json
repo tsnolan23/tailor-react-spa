@@ -19,6 +19,7 @@
     "consul": "0.34.1",
     "cross-env": "5.2.0",
     "fastify": "1.13.0",
+    "pino": "5.9.0",
     "react": "16.6.3",
     "react-dom": "16.6.3",
     "react-redux": "5.1.1",

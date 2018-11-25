@@ -1,6 +1,6 @@
 const fastify = require('fastify')
 
 
-module.exports = () => fastify({
-	logger: true
+module.exports = logger => fastify({
+	logger
 })

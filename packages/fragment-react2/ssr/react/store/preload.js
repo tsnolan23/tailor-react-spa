@@ -1,6 +1,6 @@
-module.exports = function preloadData() {
+module.exports = function preloadData(store) {
 	// makeRequest()
 	// 	.then(() => store.dispatch(setData));
 
-	return true;
+	return store;
 }
