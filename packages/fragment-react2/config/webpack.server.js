@@ -7,6 +7,7 @@ module.exports = () => {
 		entry: resolve('src/test.jsx'),
 		target: 'node',
 		// exclude all imports from build starts without relative path
+    // https://github.com/liady/webpack-node-externals
 		externals: /^[a-z\-0-9]+$/,
 		output: {
 			path: resolve('dist'),
@@ -14,9 +15,9 @@ module.exports = () => {
 			filename: 'server.js'
 		},
 		plugins: [
-			// new MiniCssExtractPlugin({
-			// 	filename: 'server.css'
-			// })
+			new MiniCssExtractPlugin({
+				filename: 'server.css'
+			})
 		],
 		module: {
 			rules: [
@@ -28,11 +29,12 @@ module.exports = () => {
 				{
 					test: /\.scss$/,
 					use: [
-						// MiniCssExtractPlugin.loader,
+						MiniCssExtractPlugin.loader,
 						{
 							loader: 'css-loader',
 							options: {
 								importLoaders: 1,
+								locals: true,
 								modules: true,
 								localIdentName: '[path]___[name]__[local]___[hash:base64:5]'
 							}
