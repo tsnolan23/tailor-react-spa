@@ -23,6 +23,5 @@ module.exports = server => server
 	.get('/', (_, reply) => reply
 		.type('text/html')
 		.header('link', `<foo.js>; rel="fragment-script", <server.css>; rel="stylesheet"`)
-		.send(bootstrapApplication({ code, store })
-		)
+		.send(bootstrapApplication({ code, store }))
 	)
