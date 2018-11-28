@@ -1,7 +1,7 @@
 const pino = require('pino')
 
 
-const logger = pino(pino.destination('./logs'))
+const logger = pino()
 
 process.on('uncaughtException', pino.final(logger, (err, finalLogger) => {
   finalLogger.error(err, 'uncaughtException')

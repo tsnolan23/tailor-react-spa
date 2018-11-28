@@ -7,7 +7,7 @@
     "build": "npm run build:client && npm run build:server",
     "build:client": "cross-env NODE_ENV=production webpack --mode production --config config/webpack.client.js",
     "build:server": "cross-env NODE_ENV=production webpack --mode production --config config/webpack.server.js",
-    "start": "cross-env NODE_ENV=production node index.js"
+    "start": "cross-env NODE_ENV=production node index.js | pino-tee warn ./warn-logs > ./all-logs"
   },
   "config": {
     "port": 1321
@@ -20,6 +20,7 @@
     "cross-env": "5.2.0",
     "fastify": "1.13.0",
     "pino": "5.9.0",
+    "pino-tee": "0.2.2",
     "react": "16.6.3",
     "react-dom": "16.6.3",
     "react-redux": "5.1.1",

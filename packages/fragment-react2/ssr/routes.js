@@ -12,10 +12,10 @@ module.exports = server => server
 		.send(createReadStream('./dist/bundle.js'))
 	)
 
-	// .get('/server.css', (_, reply) => reply
-	// 	.type('text/css')
-	// 	.send(createReadStream('./dist/server.css'))
-	// )
+	.get('/bundle.css', (_, reply) => reply
+		.type('text/css')
+		.send(createReadStream('./dist/bundle.css'))
+	)
 
 	.get('/favicon.ico', (_, reply) => reply
 		.type('image/x-icon')
@@ -24,6 +24,6 @@ module.exports = server => server
 
 	.get('/', (_, reply) => reply
 		.type('text/html')
-		.header('link', `<foo.js>; rel="fragment-script", <server.css>; rel="stylesheet"`)
+		.header('link', `<foo.js>; rel="fragment-script", <bundle.css>; rel="stylesheet"`)
 		.send(bootstrapApplication({ code, store }))
 	)

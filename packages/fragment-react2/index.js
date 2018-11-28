@@ -7,8 +7,12 @@ const pipe = (...fns) => x => fns.reduce((v, f) => f(v), x)
 // @todo merge htmlState, css ze strumieniem https://blog.vullum.io/javascript-flow-callback-hell-vs-async-vs-highland/
 // @todo apka kliencka, dev mode
 // @todo optimize webpack
-// @todo server.css czy bundle.css
-// @todo logger reqeusts log, logger.js stworzyc i dodac do pipe, http logger
+// @todo do strumienia trzeba dodac artefakty npkg
+
+// @todo consul jak bedzie zwracac
+
+// @todo pino tee api - pino.destination do obslugi strumieni
+// @todo css, js hash
 
 pipe(
   environment => ({ environment, server: prepareServer(environment) }),

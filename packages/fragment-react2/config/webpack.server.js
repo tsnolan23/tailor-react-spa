@@ -16,7 +16,7 @@ module.exports = () => {
 		},
 		plugins: [
 			new MiniCssExtractPlugin({
-				filename: 'server.css'
+				filename: 'bundle.css'
 			})
 		],
 		module: {
