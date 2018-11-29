@@ -1,0 +1,9 @@
+<style>
+  <%= compilation.assets[htmlWebpackPlugin.files.css].source() %>
+</style>
+
+<!-- react -->
+
+<% for(let i=0; i < htmlWebpackPlugin.files.js.length; i++) {%>
+  <script type="text/javascript" src="<%= htmlWebpackPlugin.files.js[i] %>"></script>
+<% } %>

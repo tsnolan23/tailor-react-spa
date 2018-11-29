@@ -1,5 +1,6 @@
 const { resolve } = require('path')
 const MiniCssExtractPlugin = require("mini-css-extract-plugin")
+const HtmlWebpackPlugin = require('html-webpack-plugin')
 
 
 module.exports = () => {
@@ -15,6 +16,14 @@ module.exports = () => {
 			filename: 'server.js'
 		},
 		plugins: [
+		  // @todo it should be in webpack.client
+      new HtmlWebpackPlugin({
+        // @todo valid place for template
+        template: './config/index.ejs',
+        // hash : true
+        inject: false
+      }),
+      // @todo should be in webpack.client
 			new MiniCssExtractPlugin({
 				filename: 'bundle.css'
 			})
