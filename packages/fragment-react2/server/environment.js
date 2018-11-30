@@ -4,6 +4,7 @@ const setPort = port => ({ port })
 
 
 const {
+  PORT,
 	CONSUL_HOST,
 	npm_package_name,
 	npm_package_config_port
@@ -12,5 +13,5 @@ const {
 module.exports = ({
 	...setConsul(CONSUL_HOST),
 	...setApplicationName(npm_package_name),
-	...setPort(npm_package_config_port)
+	...setPort(PORT || npm_package_config_port)
 })

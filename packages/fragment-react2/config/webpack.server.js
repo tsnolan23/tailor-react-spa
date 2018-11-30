@@ -1,33 +1,17 @@
 const { resolve } = require('path')
-const MiniCssExtractPlugin = require("mini-css-extract-plugin")
-const HtmlWebpackPlugin = require('html-webpack-plugin')
+const nodeExternals = require('webpack-node-externals')
 
 
 module.exports = () => {
 	return {
 		entry: resolve('src/test.jsx'),
 		target: 'node',
-		// exclude all imports from build starts without relative path
-    // https://github.com/liady/webpack-node-externals
-		externals: /^[a-z\-0-9]+$/,
+		externals: [nodeExternals()],
 		output: {
 			path: resolve('dist'),
 			libraryTarget: 'commonjs2',
-			filename: 'server.js'
+			filename: 'bundle.server.js'
 		},
-		plugins: [
-		  // @todo it should be in webpack.client
-      new HtmlWebpackPlugin({
-        // @todo valid place for template
-        template: './config/index.ejs',
-        // hash : true
-        inject: false
-      }),
-      // @todo should be in webpack.client
-			new MiniCssExtractPlugin({
-				filename: 'bundle.css'
-			})
-		],
 		module: {
 			rules: [
 				{
@@ -38,9 +22,8 @@ module.exports = () => {
 				{
 					test: /\.scss$/,
 					use: [
-						MiniCssExtractPlugin.loader,
 						{
-							loader: 'css-loader',
+							loader: 'css-loader/locals',
 							options: {
 								importLoaders: 1,
 								locals: true,

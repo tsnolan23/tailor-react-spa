@@ -4,10 +4,10 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build": "npm run build:client && npm run build:server",
-    "build:client": "cross-env NODE_ENV=production webpack --mode production --config config/webpack.client.js",
-    "build:server": "cross-env NODE_ENV=production webpack --mode production --config config/webpack.server.js",
-    "start": "cross-env NODE_ENV=production node index.js | pino-tee warn ./warn-logs > ./all-logs"
+    "build": "rimraf dist && npm run build:client && npm run build:server",
+    "build:client": "npx cross-env NODE_ENV=production webpack --mode production --config config/webpack.client.js",
+    "build:server": "npx cross-env NODE_ENV=production webpack --mode production --config config/webpack.server.js",
+    "start": "npx cross-env NODE_ENV=production node index.js | npx pino-tee warn ./logs/warn > ./logs/all"
   },
   "config": {
     "port": 1321
@@ -17,7 +17,6 @@
   "license": "ISC",
   "dependencies": {
     "consul": "0.34.1",
-    "cross-env": "5.2.0",
     "fastify": "1.13.0",
     "pino": "5.9.0",
     "pino-tee": "0.2.2",
@@ -37,6 +36,7 @@
     "node-sass": "4.10.0",
     "sass-loader": "7.1.0",
     "webpack": "4.26.0",
-    "webpack-cli": "3.1.2"
+    "webpack-cli": "3.1.2",
+    "webpack-node-externals": "1.7.2"
   }
 }

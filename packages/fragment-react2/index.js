@@ -1,4 +1,4 @@
-const prepareServer = require('./ssr')
+const prepareServer = require('./server')
 
 
 const pipe = (...fns) => x => fns.reduce((v, f) => f(v), x)
@@ -13,8 +13,9 @@ const pipe = (...fns) => x => fns.reduce((v, f) => f(v), x)
 
 // @todo pino tee api - pino.destination do obslugi strumieni
 // @todo css, js hash
+// @todo routes.js cleanup
 
 pipe(
   environment => ({ environment, server: prepareServer(environment) }),
   ({ environment, server }) => server.listen(environment.port, () => console.log(`${process.pid}`))
-)(require('./ssr/environment.js'))
+)(require('./server/environment.js'))
