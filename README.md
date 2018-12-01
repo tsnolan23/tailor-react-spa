@@ -60,22 +60,18 @@ The dependency management is handled with RequireJS on runtime.
 
 ## Setting up
 
-1. Clone this repository using `git clone https://github.com/armand1m/mosaic-tailor-react-example.git`
-1. Install all of the base dependencies with `npm install`
-1. Install all of the fragment dependencies with `npm run install-fragment-dependencies`
-1. Build the fragments with `npm run build-fragments`
+1. Clone this repository using `git clone https://github.com/tsnolan23/mosaic-tailor-react-example.git`
+1. Install all dependencies with `npm install` _(will install packages dependencies too)_
 
 ## Running
 
-1. In one terminal, start the fragments servers with `npm run start-fragments`
-1. In another terminal, start the Tailor service with `npm start`
+1. Start the Tailor service and fragments services with `npm start`
 1. Navigate to `http://localhost:8080`
 
 ## Running in development mode
 
-1. In one terminal, start the fragments watchers with `npm run watch-fragments`
-1. In another terminal, start the fragments servers with `npm run start-fragments`
-1. In another terminal, start the Tailor service with `npm start`
+1. In one terminal, start the watchers with `npm run watch`
+1. In another terminal, start the servers with `npm start`
 1. Navigate to `http://localhost:8080`
 
 ## References

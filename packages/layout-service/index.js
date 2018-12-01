@@ -6,6 +6,8 @@ const tailor = new Tailor({
   templatesPath: __dirname + '/templates'
 })
 
+const PORT = process.env.PORT || 8080
+
 http
   .createServer((req, res) => {
     if (req.url === '/favicon.ico') {
@@ -14,10 +16,14 @@ http
     }
 
     req.headers['x-request-uri'] = req.url
-    req.url = '/index'
+
+    if (req.url === '/') {
+      req.url = '/index'
+    }
 
     tailor.requestHandler(req, res)
   })
-  .listen(8080, function() {
-    console.log('Tailor server listening on port 8080')
+  .listen(PORT, '0.0.0.0', function() {
+    /* eslint-disable-next-line */
+    console.log('Tailor server listening on port: ', PORT)
   })
