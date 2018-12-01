@@ -12,35 +12,33 @@ const compiled = require('./dist/bundle.server.js')
 
 // @todo consul jak bedzie zwracac
 
-// @todo pino tee api - pino.destination do obslugi strumieni
-
 const template = readFileSync('dist/index.html', 'utf8')
 const clientScript = readFileSync('dist/bundle.client.js', 'utf8')
 
 getServer(environment)
-  .get('/favicon.ico', (_, reply) => reply
-    .type('image/x-icon')
+  .get('/favicon.ico', (_, response) => response
+    .type('ico')
     .send(null)
   )
-  .get('/bundle.client.js', (_, reply) => reply
-    .type('application/javascript')
+  .get('/bundle.client.js', (_, response) => response
+    .type('js')
     .send(clientScript)
   )
-  .get('/', (_, reply) => {
+  .get('/', (_, response) => {
     // @todo tailor potrzebuje absolutne linki
     // @todo jak developowac
     // @todo shashowane adresy
 
+    // @todo morgan winston
 
-    // @todo express
+    response
+      .type('html')
+      .set({
+        'Link': `<http://localhost:1321/bundle.server.js>; rel="fragment-script"`
+      })
+      .write(template)
 
-    reply.res.writeHead(200, {
-      'Content-Type': 'text/html',
-      'Link': `<http://localhost:1321/bundle.server.js>; rel="fragment-script"`
-    })
-
-    reply.res.write(template)
     renderer(compiled)
-      .pipe(reply.res)
+      .pipe(response)
   })
   .listen(environment.port)

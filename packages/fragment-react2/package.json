@@ -7,7 +7,7 @@
     "build": "rimraf dist && npm run build:client && npm run build:server",
     "build:client": "npx cross-env NODE_ENV=production webpack --mode production --config config/webpack.client.js",
     "build:server": "npx cross-env NODE_ENV=production webpack --mode production --config config/webpack.server.js",
-    "start": "npx cross-env NODE_ENV=production node index.js | npx pino-tee warn ./logs/warn > ./logs/all"
+    "start": "npx cross-env NODE_ENV=production node index.js"
   },
   "config": {
     "port": 1321,
@@ -19,9 +19,6 @@
   "license": "ISC",
   "dependencies": {
     "consul": "0.34.1",
-    "fastify": "1.13.0",
-    "pino": "5.9.0",
-    "pino-tee": "0.2.2",
     "react": "16.6.3",
     "react-dom": "16.6.3",
     "react-redux": "5.1.1",

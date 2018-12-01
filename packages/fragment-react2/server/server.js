@@ -1,11 +1,4 @@
-const fastify = require('fastify')
+const express = require('express')
 
 
-module.exports = logger => fastify({
-	logger
-})
-  // @todo to another file
-  // https://github.com/fastify/fastify/issues/534
-  .addContentTypeParser('*', function (req, done) {
-  done()
-})
+module.exports = logger => express()
