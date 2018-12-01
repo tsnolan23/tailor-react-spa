@@ -5,11 +5,13 @@ const HtmlWebpackPlugin = require('html-webpack-plugin')
 
 module.exports = () => {
   return {
-    entry: resolve('src/test.jsx'),
+    entry: resolve('src/index.jsx'),
     output: {
       path: resolve('dist'),
       libraryTarget: 'amd',
-      filename: 'bundle.client.js'
+      filename: '[contenthash].client.js',
+      // @todo env var
+      // publicPath: 'adadasda'
     },
     plugins: [
       new HtmlWebpackPlugin({
@@ -17,9 +19,9 @@ module.exports = () => {
         // hash : true
         inject: false
       }),
-      // new MiniCssExtractPlugin({
-      //   filename: 'bundle.client.css'
-      // })
+      new MiniCssExtractPlugin({
+        filename: '[contenthash].client.css'
+      })
     ],
     module: {
       rules: [
@@ -31,7 +33,7 @@ module.exports = () => {
         {
           test: /\.scss$/,
           use: [
-            // MiniCssExtractPlugin.loader,
+            MiniCssExtractPlugin.loader,
             {
               loader: 'css-loader',
               options: {

@@ -12,7 +12,6 @@ const pipe = (...fns) => x => fns.reduce((v, f) => f(v), x)
 // @todo consul jak bedzie zwracac
 
 // @todo pino tee api - pino.destination do obslugi strumieni
-// @todo css, js hash
 // @todo routes.js cleanup
 
 pipe(
