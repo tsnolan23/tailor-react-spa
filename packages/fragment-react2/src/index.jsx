@@ -1,6 +1,6 @@
 import React from 'react'
 
-import styles from './test.scss'
+import styles from './index.scss'
 
 
 const code = <div className={styles.test}>asdasdas</div>

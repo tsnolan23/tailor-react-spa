@@ -8,17 +8,18 @@ module.exports = () => {
   return {
     entry: resolve('src/index.jsx'),
     output: {
-      path: resolve('dist'),
+      path: resolve('dist/client'),
       libraryTarget: 'amd',
-      filename: '[contenthash].client.js'
+      filename: '[contenthash].js',
       // @todo env var
-      // publicPath: 'adadasda'
+      publicPath: ''
     },
     plugins: [
       new HtmlWebpackPlugin({
         template: resolve('src/index.ejs'),
         // hash : true
-        inject: false
+        inject: false,
+        filename: resolve('dist/index.html')
       }),
       new MiniCssExtractPlugin({
         filename: '[contenthash].client.css'

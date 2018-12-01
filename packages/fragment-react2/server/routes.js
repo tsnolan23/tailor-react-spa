@@ -1,11 +1,13 @@
 const { createReadStream, readFileSync } = require('fs')
 const { resolve } = require('path')
+const { readdirSync } = require('fs')
 
 const html = readFileSync(resolve('dist/index.html'), 'utf8')
 const bootstrapApplication = require('./react')
 const { code, store } = require('../dist/bundle.server.js')
 
-
+const clientFiles = readdirSync(resolve('dist/client'))
+console.log(clientFiles)
 // @todo te bootstrap i disty nie pasuja tutaj - nie jest czysto
 
 module.exports = server => server
