@@ -10,7 +10,10 @@
     "start": "npx cross-env NODE_ENV=production node index.js | npx pino-tee warn ./logs/warn > ./logs/all"
   },
   "config": {
-    "port": 1321
+    "port": 1321,
+    "cdn": "",
+    "consul": "localhost",
+    "assets": "dist/assets.json"
   },
   "keywords": [],
   "author": "",

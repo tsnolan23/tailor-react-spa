@@ -1,19 +1,19 @@
-const { createReadStream, readFileSync } = require('fs')
-const { resolve } = require('path')
-const { readdirSync } = require('fs')
+const { readFileSync } = require('fs')
+const { resolve, dirname } = require('path')
 
-const html = readFileSync(resolve('dist/index.html'), 'utf8')
 const bootstrapApplication = require('./react')
-const { code, store } = require('../dist/bundle.server.js')
+const { assets } = require('./environment.js')
+const { client, server, view } = require(resolve(assets))
+const { code, store } = require(resolve(dirname(assets), server.js))
+const jsClient = readFileSync(resolve(dirname(assets), client.js), 'utf8')
+const index = readFileSync(resolve(dirname(assets), view.html), 'utf8')
 
-const clientFiles = readdirSync(resolve('dist/client'))
-console.log(clientFiles)
+
 // @todo te bootstrap i disty nie pasuja tutaj - nie jest czysto
-
 module.exports = server => server
-	.get('/bundle.client.js', (_, reply) => reply
+	.get(`/${client.js}`, (_, reply) => reply
 		.type('application/javascript')
-		.send(createReadStream('./dist/bundle.client.js'))
+		.send(jsClient)
 	)
 
 	.get('/favicon.ico', (_, reply) => reply
@@ -22,10 +22,10 @@ module.exports = server => server
 	)
 
 	.get('/', (_, reply) => {
-    reply.res.write(html)
+    reply.res.write(index)
     bootstrapApplication({ code, store }).pipe(reply.res)
 
     reply
       .type('text/html')
-      .header('link', `<bundle.client.js>; rel="fragment-script"`)
+      .header('link', `<${client.js}>; rel="fragment-script"`)
   })
