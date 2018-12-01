@@ -1,6 +1,7 @@
 const { resolve } = require('path')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
+const HTMLInlineCSSWebpackPlugin = require('html-inline-css-webpack-plugin').default
 
 
 module.exports = () => {
@@ -9,7 +10,7 @@ module.exports = () => {
     output: {
       path: resolve('dist'),
       libraryTarget: 'amd',
-      filename: '[contenthash].client.js',
+      filename: '[contenthash].client.js'
       // @todo env var
       // publicPath: 'adadasda'
     },
@@ -21,6 +22,12 @@ module.exports = () => {
       }),
       new MiniCssExtractPlugin({
         filename: '[contenthash].client.css'
+      }),
+      new HTMLInlineCSSWebpackPlugin({
+        replace: {
+          removeTarget: true,
+          target: '<!-- inline_css_plugin -->'
+        }
       })
     ],
     module: {
