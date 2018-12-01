@@ -12,8 +12,7 @@
   "config": {
     "port": 1321,
     "cdn": "",
-    "consul": "localhost",
-    "assets": "dist/assets.json"
+    "consul": "localhost"
   },
   "keywords": [],
   "author": "",

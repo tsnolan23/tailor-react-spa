@@ -2,49 +2,31 @@ const { resolve } = require('path')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const HTMLInlineCSSWebpackPlugin = require('html-inline-css-webpack-plugin').default
-const AssetsPlugin = require('assets-webpack-plugin')
 
-
-const { cdn } = require('../server/environment.js')
+const { cdn } = require('../environment.js')
 
 
 module.exports = () => {
   return {
-    entry: {
-      client: resolve('src/index.jsx')
-    },
+    entry: resolve('src/index.jsx'),
     output: {
       path: resolve('dist'),
       libraryTarget: 'amd',
-      filename: '[contenthash].js',
+      filename: 'bundle.client.js',
       publicPath: cdn
     },
     plugins: [
       new HtmlWebpackPlugin({
-        template: resolve('src/index.ejs'),
+        templateContent: '<!-- inline_css_plugin -->',
         inject: false
       }),
       new MiniCssExtractPlugin({
-        filename: '[contenthash].client.css'
+        filename: 'bundle.client.css'
       }),
       new HTMLInlineCSSWebpackPlugin({
         replace: {
           removeTarget: true,
           target: '<!-- inline_css_plugin -->'
-        }
-      }),
-      new AssetsPlugin({
-        path: resolve('dist'),
-        filename: 'assets.json',
-        update: true,
-        processOutput: function (assets) {
-          // object with html does not have key.
-          // we need fix it
-          assets = Object.keys(assets)
-            .map(key => ({ [key || 'view']: assets[key] }))
-            .reduce((prev, curr) => ({ ...prev, ...curr }), {})
-
-          return JSON.stringify(assets)
         }
       })
     ],

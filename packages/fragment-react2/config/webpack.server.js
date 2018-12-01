@@ -1,13 +1,10 @@
 const { resolve } = require('path')
 const nodeExternals = require('webpack-node-externals')
-const AssetsPlugin = require('assets-webpack-plugin')
 
 
 module.exports = () => {
 	return {
-		entry: {
-		  server: resolve('src/index.jsx')
-    },
+		entry: resolve('src/index.jsx'),
 		target: 'node',
 		externals: [ nodeExternals() ],
 		output: {
@@ -15,13 +12,6 @@ module.exports = () => {
 			libraryTarget: 'commonjs2',
 			filename: 'bundle.server.js'
 		},
-    plugins: [
-      new AssetsPlugin({
-        path: resolve('dist'),
-        filename: 'assets.json',
-        update: true
-      })
-    ],
 		module: {
 			rules: [
 				{
