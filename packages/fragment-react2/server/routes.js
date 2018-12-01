@@ -1,7 +1,7 @@
 const { readFileSync } = require('fs')
 const { resolve, dirname } = require('path')
 
-const bootstrapApplication = require('./react')
+const react = require('./react')
 const { assets } = require('./environment.js')
 const { client, server, view } = require(resolve(assets))
 const { code, store } = require(resolve(dirname(assets), server.js))
@@ -23,7 +23,7 @@ module.exports = server => server
 
 	.get('/', (_, reply) => {
     reply.res.write(index)
-    bootstrapApplication({ code, store }).pipe(reply.res)
+    react({ code, store }).pipe(reply.res)
 
     reply
       .type('text/html')
