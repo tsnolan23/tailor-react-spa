@@ -4,11 +4,11 @@
   "description": "mosaic-tailor-react-example",
   "main": "index.js",
   "scripts": {
-    "start": "node tailor.js",
-    "install-fragment-dependencies": "lerna bootstrap",
-    "build-fragments": "lerna run build",
-    "start-fragments": "lerna run --parallel start",
-    "watch-fragments": "lerna run --parallel watch"    
+    "prestart": "npm run build",
+    "start": "lerna run --parallel start",
+    "build": "lerna run --parallel build",
+    "watch": "lerna run --parallel watch",
+    "install": "lerna bootstrap"
   },
   "repository": {
     "type": "git",
@@ -26,8 +26,6 @@
     "eslint-import-resolver-webpack": "^0.8.3",
     "eslint-plugin-import": "^2.8.0",
     "eslint-plugin-react": "^7.5.1",
-    "lerna": "^2.5.1",
-    "node-tailor": "^3.4.0",
-    "webpack": "^3.8.1"
+    "lerna": "^2.5.1"
   }
 }
