@@ -5,11 +5,12 @@ import { attach } from 'proppy-react'
 
 import Logo from '../Logo'
 import NavItem from '../NavItem'
+import ContactsFilterInput from '../ContactsFilterInput'
 
 import './styles.scss'
 
 const withHeaderState = compose(
-  withState('active', 'setActive', 1),
+  withState('active', 'setActive', 0),
   withProps({ items: [ 0, 1, 2 ,3 ] })
 )
 
@@ -19,17 +20,22 @@ const Header = ({
   setActive
 }) => (
   <div className="header">
-    <Logo/>
-    {
-      items.map((item, index) => (
-        <NavItem
-          key={index}
-          index={index}
-          active={index === active}
-          onClick={setActive}
-        />
-      ))
-    }
+    <div className="header__left">
+      <Logo/>
+      {
+        items.map((_item, index) => (
+          <NavItem
+            key={index}
+            index={index}
+            active={index === active}
+            onClick={setActive}
+          />
+        ))
+      }
+    </div>
+    <div className="header__right">
+      <ContactsFilterInput/>
+    </div>
   </div>
 )
 

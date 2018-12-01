@@ -8,7 +8,7 @@
     "install-fragment-dependencies": "lerna bootstrap",
     "build-fragments": "lerna run build",
     "start-fragments": "lerna run --parallel start",
-    "watch-fragments": "lerna run --parallel watch"    
+    "watch-fragments": "lerna run --parallel watch"
   },
   "repository": {
     "type": "git",

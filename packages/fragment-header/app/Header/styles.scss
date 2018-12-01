@@ -10,4 +10,11 @@
     height: 80px;
     padding: 0 30px;
     background: #5e81ac;
+    justify-content: space-between;
+
+    &__left,
+    &__right {
+        display: flex;
+        align-items: center;
+    }
 }
