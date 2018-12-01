@@ -8,21 +8,37 @@ import ContactPropType from '../PropTypes/Contact'
 
 import './styles.scss'
 
-const withContacts = compose(
+const withLogic = compose(
+  withState('filter', 'setFilter', ''),
   withState('contacts', 'setContacts', []),
   didSubscribe(props => {
-    fetch('https://randomuser.me/api/?results=20')
+    fetch('https://randomuser.me/api/?results=30')
       .then(response => response.json())
       .then(data => data.results)
       .then(props.setContacts)
+
+    const setFilter = event =>
+      props.setFilter(event.detail.value)
+
+    window.addEventListener('fragment-header::contactsFilterChange', setFilter)
+
+    return () => window.removeEventListener('fragment-header::contactsFilterChange', setFilter)  
   })
-);
+)
+
+const byName = filter => contact => {
+  const fullname = `${contact.name.first} ${contact.name.last}`
+  return fullname.toLowerCase().includes(filter.toLowerCase())
+}
 
 const Contacts = ({
+  filter,
   contacts
 }) => (
   <div className="contacts">
-    {contacts.map((contact, index) => (
+    {contacts
+    .filter(byName(filter))
+    .map((contact, index) => (
       <Contact
         key={index}
         contact={contact}
@@ -32,11 +48,13 @@ const Contacts = ({
 )
 
 Contacts.propTypes = {
+  filter: PropTypes.string,
   contacts: PropTypes.arrayOf(ContactPropType)
 }
 
 Contacts.defaultProps = {
+  filter: '',
   contacts: []
 }
 
-export default attach(withContacts)(Contacts)
+export default attach(withLogic)(Contacts)

@@ -1,0 +1,13 @@
+.Header__Input {
+    height: 2rem;
+    background: transparent;
+    border: none;
+    border-bottom: .1rem solid #81a1c1;
+    width: 250px;
+    outline: none;
+    color: lighten(#81a1c1, 10%);
+
+    &::-webkit-input-placeholder {
+        color: lighten(#81a1c1, 10%);
+    }
+}
