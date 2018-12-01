@@ -27,22 +27,20 @@ getServer(environment)
     .send(clientScript)
   )
   .get('/', (_, reply) => {
-    // reply.res.write(template)
-    // renderer(compiled)
-    //   .pipe(reply.res)
+    // @todo tailor potrzebuje absolutne linki
+    // @todo jak developowac
+    // @todo shashowane adresy
+
+
+    // @todo express
 
     reply.res.writeHead(200, {
       'Content-Type': 'text/html',
-      // 'Link': `<bundle.server.js>; rel="fragment-script"`
+      'Link': `<http://localhost:1321/bundle.server.js>; rel="fragment-script"`
     })
 
     reply.res.write(template)
-    reply.res.end()
-    // reply
-    //   .type('text/html')
-    // @todo co z cdn? moze ten link nie jest potrzebny, jesli sie to zrobi bezposrednio w index
-      // @todo to nie dziala w tailorze wtf
-    // @todo tailor potrzebuje absolutne linki
-      // .header('link', `<bundle.client.js>; rel="fragment-script"`)
+    renderer(compiled)
+      .pipe(reply.res)
   })
   .listen(environment.port)
