@@ -7,7 +7,7 @@ module.exports = server => server.use(
     transports: [
       new winston.transports.Console(),
       new winston.transports.File({
-        filename: 'combined.log'
+        filename: 'logs/info.log'
       })
     ],
     format: winston.format.combine(
@@ -23,7 +23,7 @@ module.exports = server => server.use(
     transports: [
       new winston.transports.Console(),
       new winston.transports.File({
-        filename: 'errors.log'
+        filename: 'logs/errors.log'
       })
     ],
     format: winston.format.combine(
