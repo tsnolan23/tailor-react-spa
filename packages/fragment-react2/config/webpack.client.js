@@ -3,7 +3,7 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const HTMLInlineCSSWebpackPlugin = require('html-inline-css-webpack-plugin').default
 const AssetsPlugin = require('assets-webpack-plugin')
-const WebpackCdnPlugin = require('webpack-cdn-plugin')
+const nodeExternals = require('webpack-node-externals')
 
 const { cdn } = require('../environment.js')
 
@@ -13,6 +13,7 @@ module.exports = () => {
     entry: {
       client: resolve('src/index.jsx')
     },
+    externals: [ nodeExternals() ],
     output: {
       path: resolve('dist'),
       libraryTarget: 'amd',
@@ -33,11 +34,6 @@ module.exports = () => {
       }),
       new AssetsPlugin({
         useCompilerPath: true
-      }),
-      new WebpackCdnPlugin({
-        modules: [
-          { name: 'react', var: 'React', path: `umd/react.${process.env.NODE_ENV}.min.js` }
-        ]
       })
     ],
     module: {

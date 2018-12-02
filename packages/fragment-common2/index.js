@@ -1,0 +1,1 @@
+const getServer = require('./server')

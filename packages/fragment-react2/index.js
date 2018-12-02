@@ -10,9 +10,8 @@ const { client } = require('./dist/webpack-assets.json')
 // @todo store, czy jesli apka nie potrzebuje store to ladowac reacta wczesniej
 // @todo apka kliencka, dev mode
 // @todo optimize webpack
-// @todo do strumienia trzeba dodac artefakty npkg
 // @todo jak zakazac importu fragment-react do fragment-vue
-
+// @todo common
 // @todo consul jak bedzie zwracac
 
 const filename = basename(client.js)
