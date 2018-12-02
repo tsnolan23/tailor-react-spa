@@ -2,17 +2,21 @@ const { resolve } = require('path')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const HTMLInlineCSSWebpackPlugin = require('html-inline-css-webpack-plugin').default
+const AssetsPlugin = require('assets-webpack-plugin')
+const WebpackCdnPlugin = require('webpack-cdn-plugin')
 
 const { cdn } = require('../environment.js')
 
 
 module.exports = () => {
   return {
-    entry: resolve('src/index.jsx'),
+    entry: {
+      client: resolve('src/index.jsx')
+    },
     output: {
       path: resolve('dist'),
       libraryTarget: 'amd',
-      filename: 'bundle.client.js',
+      filename: '[chunkhash].client.js',
       publicPath: cdn
     },
     plugins: [
@@ -20,14 +24,20 @@ module.exports = () => {
         templateContent: '<!-- inline_css_plugin -->',
         inject: false
       }),
-      new MiniCssExtractPlugin({
-        filename: 'bundle.client.css'
-      }),
+      new MiniCssExtractPlugin(),
       new HTMLInlineCSSWebpackPlugin({
         replace: {
           removeTarget: true,
           target: '<!-- inline_css_plugin -->'
         }
+      }),
+      new AssetsPlugin({
+        useCompilerPath: true
+      }),
+      new WebpackCdnPlugin({
+        modules: [
+          { name: 'react', var: 'React', path: `umd/react.${process.env.NODE_ENV}.min.js` }
+        ]
       })
     ],
     module: {
