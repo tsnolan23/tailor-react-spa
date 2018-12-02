@@ -27,14 +27,12 @@ getServer(environment)
   .get('/', (_, response) => {
     // @todo tailor potrzebuje absolutne linki
     // @todo jak developowac
-    // @todo shashowane adresy
-
-    // @todo morgan winston
+    // @todo hashowane adresy
 
     response
       .type('html')
       .set({
-        'Link': `<http://localhost:1321/bundle.server.js>; rel="fragment-script"`
+        'Link': `<http://localhost:1321/bundle.client.js>; rel="fragment-script"`
       })
       .write(template)
 
