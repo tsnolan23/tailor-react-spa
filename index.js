@@ -36,6 +36,8 @@ createServer((request, response) => {
 		response.writeHead(200, { 'Content-Type': 'image/x-icon' })
 		response.end('')
 		return
+	} else if (request.url !== '/') {
+		return;
 	}
 
 	request.headers['x-request-uri'] = request.url
