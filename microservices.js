@@ -4,6 +4,7 @@ const filterReqHeadersFn = require('node-tailor/lib/filter-headers.js')
 
 module.exports = ({ agent }, tracer) => {
 	return new Tailor({
+		maxAssetLinks: 3,
 		handledTags: ['script'],
 		handleTag(request, tag, options, context) {
 			if (tag.attributes && tag.attributes.type === 'tailor/plugin') {

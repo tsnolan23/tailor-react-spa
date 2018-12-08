@@ -11,7 +11,7 @@
     "start": "cross-env NODE_ENV=production node index.js"
   },
   "config": {
-    "port": "3232"
+    "port": "1321"
   },
   "author": "",
   "license": "ISC",
