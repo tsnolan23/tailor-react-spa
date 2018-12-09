@@ -8,7 +8,11 @@ import reducers from './redux/reducers'
 
 
 const code = <div className={styles.test} onClick={() => console.log(23131)}>asdasdas</div>
-if (typeof window !== 'undefined') ReactDOM.hydrate(document.getElementsByTagName('div')[0], code)
+
+if (typeof window !== 'undefined') {
+  const c =document.getElementsByTagName('div')
+  ReactDOM.hydrate(code, c[1])
+}
 
 
 const store = createStore(

@@ -35,9 +35,10 @@ module.exports = () => {
       new MicroservicesWebpackPlugin([
         { name: 'redux', path: 'dist/redux.min.js' },
         { name: 'react-redux', path: 'dist/react-redux.min.js' },
+        { name: 'redux-thunk', path: 'dist/redux-thunk.min.js' },
         { name: 'axios', path: 'dist/axios.min.js' },
-        { name: 'react-dom', path: 'umd/react-dom.production.min.js' },
-        { name: 'react', path: 'umd/react.production.min.js' }
+        { name: 'react-dom', path: 'umd/react-dom.development.js' },
+        { name: 'react', path: 'umd/react.development.js' }
       ]),
       new AssetsPlugin({
         useCompilerPath: true
