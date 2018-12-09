@@ -18,13 +18,15 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "axios": "0.18.0",
     "consul": "0.34.1",
     "express-winston": "3.0.1",
     "microservices-webpack-plugin": "1.0.1",
     "react": "16.6.3",
     "react-dom": "16.6.3",
     "react-redux": "5.1.1",
-    "redux": "4.0.1"
+    "redux": "4.0.1",
+    "redux-thunk": "2.3.0"
   },
   "devDependencies": {
     "@babel/cli": "7.1.5",

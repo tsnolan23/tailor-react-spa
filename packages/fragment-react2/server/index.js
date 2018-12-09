@@ -10,5 +10,5 @@ module.exports = pipe(
 	// @todo
 	async (a) => a.catch(() => {}),
 	createServer,
-  createLogger
+  // createLogger
 )

@@ -1,16 +1,17 @@
 const { readFileSync } = require('fs')
 const { basename, join } = require('path')
+const { renderToNodeStream } = require('react-dom/server.js')
 
 const environment = require('./environment.js')
 const getServer = require('./server')
-const renderer = require('./server/react')
-const compiled = require('./dist/bundle.server.js')
+const loadResourcesToStore = require('./server/react/store')
+const { code, store } = require('./dist/bundle.server.js')
 const { client } = require('./dist/webpack-assets.json')
 
-// @todo store
+// @todo react podpinanie sie
+// @todo store zwracanie po stronie serwera, podpiecie na frontach
 // @todo apka kliencka, dev mode
 // @todo optimize webpack
-// @todo react podpinanie sie
 // @todo environment variables from webpack, bez package.json
 // @todo store initial state name
 
@@ -29,7 +30,7 @@ getServer(environment)
     .type('js')
     .send(clientScript)
   )
-  .get('/', (_, response) => {
+  .get('/', async (_, response) => {
     response
       .type('html')
       .set({
@@ -37,7 +38,12 @@ getServer(environment)
       })
       .write(template)
 
-    renderer(compiled)
+    const htmlState = await loadResourcesToStore(store)
+
+    response
+      .write(htmlState)
+
+    renderToNodeStream(code)
       .pipe(response)
   })
   .listen(environment.port)

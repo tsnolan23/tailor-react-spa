@@ -1,10 +1,7 @@
-import { loadListing } from '../../../src/actions/listing.js'
+const { loadListing } = require('../../../src/redux/actions.js')
 
+module.exports = async function preloadData(store) {
+  await store.dispatch(loadListing())
 
-module.exports = function preloadData(store) {
-  loadListing(1231)
-	// makeRequest()
-	// 	.then(() => store.dispatch(setData));
-
-	return store;
+	return store
 }

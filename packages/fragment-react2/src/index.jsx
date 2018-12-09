@@ -1,16 +1,20 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
+import { createStore, applyMiddleware } from 'redux'
+import thunk from 'redux-thunk'
 
 import styles from './index.scss'
+import reducers from './redux/reducers'
 
 
 const code = <div className={styles.test} onClick={() => console.log(23131)}>asdasdas</div>
 if (typeof window !== 'undefined') ReactDOM.hydrate(document.getElementsByTagName('div')[0], code)
-const store = {
-	getState() {
-		return []
-	}
-}
+
+
+const store = createStore(
+  reducers,
+  applyMiddleware(thunk)
+)
 
 export {
 	code,
