@@ -7,10 +7,9 @@ const renderer = require('./server/react')
 const compiled = require('./dist/bundle.server.js')
 const { client } = require('./dist/webpack-assets.json')
 
-// @todo store, czy jesli apka nie potrzebuje store to ladowac reacta wczesniej
+// @todo store
 // @todo apka kliencka, dev mode
 // @todo optimize webpack
-// @todo jak zakazac importu fragment-react do fragment-vue
 // @todo react podpinanie sie
 // @todo environment variables from webpack, bez package.json
 // @todo store initial state name
