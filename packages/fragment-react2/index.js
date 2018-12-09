@@ -1,7 +1,6 @@
 const { readFileSync } = require('fs')
 const { basename, join } = require('path')
 const { renderToNodeStream } = require('react-dom/server.js')
-const { createElement }= require('react')
 
 const environment = require('./environment.js')
 const getServer = require('./server')
