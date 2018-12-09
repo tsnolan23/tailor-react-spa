@@ -33,8 +33,11 @@ module.exports = () => {
         }
       }),
       new MicroservicesWebpackPlugin([
-            { name: 'react-dom', path: 'umd/react-dom.production.min.js' },
-            { name: 'react', path: 'umd/react.production.min.js' }
+        { name: 'redux', path: 'dist/redux.min.js' },
+        { name: 'react-redux', path: 'dist/react-redux.min.js' },
+        { name: 'axios', path: 'dist/axios.min.js' },
+        { name: 'react-dom', path: 'umd/react-dom.production.min.js' },
+        { name: 'react', path: 'umd/react.production.min.js' }
       ]),
       new AssetsPlugin({
         useCompilerPath: true

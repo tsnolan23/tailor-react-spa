@@ -13,7 +13,7 @@ const { client } = require('./dist/webpack-assets.json')
 // @todo apka kliencka, dev mode
 // @todo optimize webpack
 // @todo environment variables from webpack, bez package.json
-
+// @todo absolute path w node i react
 
 const filename = basename(client.js)
 const template = readFileSync('dist/index.html', 'utf8')
