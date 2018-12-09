@@ -6,5 +6,5 @@ const pipe = (...fns) => x => fns.reduce((v, f) => v.then(f), Promise.resolve(x)
 
 module.exports = pipe(
   preloadState,
-  store => Promise.resolve(toHtml(store))
+  ({ store, name }) => Promise.resolve(toHtml({ store, name }))
 )

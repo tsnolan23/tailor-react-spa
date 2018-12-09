@@ -13,7 +13,6 @@ const { client } = require('./dist/webpack-assets.json')
 // @todo apka kliencka, dev mode
 // @todo optimize webpack
 // @todo environment variables from webpack, bez package.json
-// @todo store initial state name
 
 
 const filename = basename(client.js)
@@ -38,7 +37,10 @@ getServer(environment)
       })
       .write(template)
 
-    const htmlState = await loadResourcesToStore(store)
+    const htmlState = await loadResourcesToStore({
+      store,
+      name: environment.applicationName
+    })
 
     response
       .write(htmlState)

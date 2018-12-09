@@ -1,7 +1,7 @@
 const { loadListing } = require('../../../src/redux/actions.js')
 
-module.exports = async function preloadData(store) {
+module.exports = async function preloadData({ store, name }) {
   await store.dispatch(loadListing())
 
-	return store
+	return { store, name }
 }
