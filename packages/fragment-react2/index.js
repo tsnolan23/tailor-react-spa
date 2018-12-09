@@ -11,8 +11,10 @@ const { client } = require('./dist/webpack-assets.json')
 // @todo apka kliencka, dev mode
 // @todo optimize webpack
 // @todo jak zakazac importu fragment-react do fragment-vue
-// @todo common
-// @todo consul jak bedzie zwracac
+// @todo react podpinanie sie
+// @todo environment variables from webpack, bez package.json
+// @todo store initial state name
+
 
 const filename = basename(client.js)
 const template = readFileSync('dist/index.html', 'utf8')
