@@ -46,7 +46,6 @@ getServer(environment)
       .write(htmlState)
 
     renderToNodeStream(application)
-      .on('error', (e) => console.log(e))
       .pipe(response)
   })
   .listen(environment.port)
