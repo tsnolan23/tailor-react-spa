@@ -13,7 +13,7 @@ const setListing = (listing) => ({
 
 const loadListing = () => {
   return (dispatch) => axios
-    .get('https://jsonplaceholder.typicode.com/todos')
+    .get('https://jsonplaceholder.typicode.com/users')
     .then(
       ({ data }) => dispatch(setListing(data)),
       (error) => undefined

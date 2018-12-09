@@ -22,7 +22,7 @@ module.exports = () => {
     },
     plugins: [
       new HtmlWebpackPlugin({
-        template: resolve('src/index.ejs'),
+        templateContent: '<!-- inline_css_plugin -->',
         inject: false
       }),
       new MiniCssExtractPlugin(),

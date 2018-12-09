@@ -1,25 +1,24 @@
 const { readFileSync } = require('fs')
 const { basename, join } = require('path')
 const { renderToNodeStream } = require('react-dom/server.js')
+const { createElement }= require('react')
 
 const environment = require('./environment.js')
 const getServer = require('./server')
 const loadResourcesToStore = require('./server/react/store')
-const { code, store } = require('./dist/bundle.server.js')
+const { serverSideApplication } = require('./dist/bundle.server.js')
 const { client } = require('./dist/webpack-assets.json')
 
-// @todo react podpinanie sie
-// @todo store zwracanie po stronie serwera, podpiecie na frontach
 // @todo apka kliencka, dev mode
 // @todo optimize webpack
 // @todo environment variables from webpack, bez package.json
 // @todo absolute path w node i react
-// @todo podpinanie react
 
 const filename = basename(client.js)
 const template = readFileSync('dist/index.html', 'utf8')
 // @todo jak to wyladuje na cdn to bedzie problem:
 const clientScript = readFileSync(join('dist', filename), 'utf8')
+const { application, store } = serverSideApplication()
 
 getServer(environment)
   .get('/favicon.ico', (_, response) => response
@@ -46,7 +45,8 @@ getServer(environment)
     response
       .write(htmlState)
 
-    renderToNodeStream(code)
+    renderToNodeStream(application)
+      .on('error', (e) => console.log(e))
       .pipe(response)
   })
   .listen(environment.port)
