@@ -16,18 +16,18 @@ Tailor also injects a RequireJS bundle to your template so you're able to use We
 
 ## Fragments
 
-Fragments are small applications. 
+Fragments are small applications.
 
 They might be React applications, or any other implementation.
 
-Fragments do not need to necessarily render something. 
+Fragments do not need to necessarily render something.
 
 This app consists basically in a couple of fragments:
 
- - fragment-common
- - fragment-header
- - fragment-contacts
- - fragment-chat
+- fragment-common
+- fragment-header
+- fragment-contacts
+- fragment-chat
 
 Each fragment contains it's own `webpack.config.js` that specifies how to build it.
 
@@ -35,12 +35,12 @@ Each fragment contains it's own `webpack.config.js` that specifies how to build 
 
 Fragments have several cross-dependencies that need to be shared:
 
- - `react`
- - `react-dom`
- - `prop-types`
- - `classnames`
- - `proppy`
- - `proppy-react`
+- `react`
+- `react-dom`
+- `prop-types`
+- `classnames`
+- `proppy`
+- `proppy-react`
 
 In order to handle this, there is one fragment called `fragment-common`.
 
@@ -61,26 +61,25 @@ The dependency management is handled with RequireJS on runtime.
 ## Setting up
 
 1. Clone this repository using `git clone https://github.com/armand1m/mosaic-tailor-react-example.git`
-1. Install all of the base dependencies with `npm install`
-1. Install all of the fragment dependencies with `npm run install-fragment-dependencies`
-1. Build the fragments with `npm run build-fragments`
+1. Install all of the project dependencies with `yarn install`
+1. Build the fragments with `yarn run build:fragments`
 
 ## Running
 
-1. In one terminal, start the fragments servers with `npm run start-fragments`
-1. In another terminal, start the Tailor service with `npm start`
+1. In one terminal, start the fragments servers with `yarn run start:fragments`
+1. In another terminal, start the Tailor service with `yarn start`
 1. Navigate to `http://localhost:8080`
 
 ## Running in development mode
 
-1. In one terminal, start the fragments watchers with `npm run watch-fragments`
-1. In another terminal, start the fragments servers with `npm run start-fragments`
-1. In another terminal, start the Tailor service with `npm start`
+1. In one terminal, start the fragments watchers with `yarn run watch:fragments`
+1. In another terminal, start the fragments servers with `yarn run start:fragments`
+1. In another terminal, start the Tailor service with `yarn start`
 1. Navigate to `http://localhost:8080`
 
 ## References
 
- - [Mosaic9](https://mosaic9.org)
- - [Tailor Repository](https://github.com/zalando/tailor)
- - [The Recipe For Scalable Frontends (Zalando)](https://www.youtube.com/watch?v=m32EdvitXy4)
- - [Slides](https://www.slideshare.net/Codemotion/dan-persa-maximilian-fellner-the-recipe-for-scalable-frontends-codemotion-milan-2017)
+- [Mosaic9](https://mosaic9.org)
+- [Tailor Repository](https://github.com/zalando/tailor)
+- [The Recipe For Scalable Frontends (Zalando)](https://www.youtube.com/watch?v=m32EdvitXy4)
+- [Slides](https://www.slideshare.net/Codemotion/dan-persa-maximilian-fellner-the-recipe-for-scalable-frontends-codemotion-milan-2017)
