@@ -15,6 +15,7 @@
     "build": "webpack -p",
     "build:prod": "webpack --env=prod",
     "publish:prod" : "node publish.js",
+    "docker-build": "docker build -t fragment-header ./release/",
     "watch": "webpack -w",
     "start": "node fragment.js"
   },

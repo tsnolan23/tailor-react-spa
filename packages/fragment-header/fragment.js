@@ -19,5 +19,5 @@ const server = http.createServer((req, res) => {
 })
 
 server.listen(_PORT_, () => {
-  console.log('SPA Fragment Server started at 8081')
+  console.log('SPA Fragment Server started at _PORT_')
 })
