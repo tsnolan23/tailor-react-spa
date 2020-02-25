@@ -7,9 +7,5 @@ shell.cp('-R', 'public', 'release');
 shell.cp('package.json','release/package.json');
 shell.cp('fragment.js','release/fragment.js');
 shell.cp('DockerFile','release/Dockerfile');
-shell.cd("release")
-shell.ls('*.js').forEach(function (file) {
-  shell.sed('-i', '_HOST_', 'http://fragment-header.bar', file);
-  shell.sed('-i', '_PORT_', '49160', file);
-});
-shell.cd("..")
+shell.sed('-i', '8081', '49160', "release/fragment.js");
+shell.sed('-i', 'http://localhost', 'http://fragment-header.bar', "release/fragment.js");

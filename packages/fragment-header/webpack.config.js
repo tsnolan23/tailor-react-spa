@@ -1,3 +1,3 @@
 module.exports = (env) => {
-  return require(`./webpack.config.${env}.js`)
+  return require(`./webpack.config.${env ||"dev"}.js`)
 }
